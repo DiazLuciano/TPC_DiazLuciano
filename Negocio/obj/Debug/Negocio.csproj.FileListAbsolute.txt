@@ -1,0 +1,102 @@
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Negocio\bin\Debug\Negocio.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Negocio\bin\Debug\Negocio.pdb
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Negocio\bin\Debug\Dominio.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Negocio\bin\Debug\Dominio.pdb
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Negocio\obj\Debug\Negocio.csprojAssemblyReference.cache
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Negocio\obj\Debug\Negocio.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Negocio\obj\Debug\Negocio.pdb
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Negocio\bin\Debug\Microsoft.Data.Tools.Schema.Sql.UnitTesting.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Negocio\bin\Debug\Microsoft.Data.Tools.Schema.Sql.UnitTestingAdapter.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Negocio\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Negocio\bin\Debug\Microsoft.Build.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Negocio\bin\Debug\Microsoft.Build.Framework.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Negocio\bin\Debug\System.Collections.Immutable.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Negocio\bin\Debug\System.IO.Compression.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Negocio\bin\Debug\System.Threading.Tasks.Dataflow.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Negocio\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Negocio\bin\Debug\es\Microsoft.Data.Tools.Schema.Sql.UnitTesting.resources.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Negocio\bin\Debug\es\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Negocio\bin\Debug\cs\Microsoft.Build.resources.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Negocio\bin\Debug\de\Microsoft.Build.resources.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Negocio\bin\Debug\en\Microsoft.Build.resources.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Negocio\bin\Debug\es\Microsoft.Build.resources.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Negocio\bin\Debug\fr\Microsoft.Build.resources.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Negocio\bin\Debug\it\Microsoft.Build.resources.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Negocio\bin\Debug\ja\Microsoft.Build.resources.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Negocio\bin\Debug\ko\Microsoft.Build.resources.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Negocio\bin\Debug\pl\Microsoft.Build.resources.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Negocio\bin\Debug\pt-BR\Microsoft.Build.resources.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Negocio\bin\Debug\ru\Microsoft.Build.resources.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Negocio\bin\Debug\tr\Microsoft.Build.resources.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Negocio\bin\Debug\zh-Hans\Microsoft.Build.resources.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Negocio\bin\Debug\zh-Hant\Microsoft.Build.resources.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Negocio\obj\Debug\Negocio.csprojAssemblyReference.cache
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Negocio\obj\Debug\Negocio.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Negocio\obj\Debug\Negocio.pdb
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Negocio\bin\Debug\Negocio.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Negocio\bin\Debug\Negocio.pdb
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Negocio\bin\Debug\Dominio.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Negocio\bin\Debug\Microsoft.Data.Tools.Schema.Sql.UnitTesting.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Negocio\bin\Debug\Microsoft.Data.Tools.Schema.Sql.UnitTestingAdapter.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Negocio\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Negocio\bin\Debug\Microsoft.Build.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Negocio\bin\Debug\Microsoft.Build.Framework.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Negocio\bin\Debug\System.Collections.Immutable.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Negocio\bin\Debug\System.IO.Compression.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Negocio\bin\Debug\System.Threading.Tasks.Dataflow.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Negocio\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Negocio\bin\Debug\Dominio.pdb
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Negocio\bin\Debug\es\Microsoft.Data.Tools.Schema.Sql.UnitTesting.resources.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Negocio\bin\Debug\es\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Negocio\bin\Debug\cs\Microsoft.Build.resources.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Negocio\bin\Debug\de\Microsoft.Build.resources.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Negocio\bin\Debug\en\Microsoft.Build.resources.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Negocio\bin\Debug\es\Microsoft.Build.resources.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Negocio\bin\Debug\fr\Microsoft.Build.resources.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Negocio\bin\Debug\it\Microsoft.Build.resources.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Negocio\bin\Debug\ja\Microsoft.Build.resources.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Negocio\bin\Debug\ko\Microsoft.Build.resources.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Negocio\bin\Debug\pl\Microsoft.Build.resources.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Negocio\bin\Debug\pt-BR\Microsoft.Build.resources.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Negocio\bin\Debug\ru\Microsoft.Build.resources.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Negocio\bin\Debug\tr\Microsoft.Build.resources.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Negocio\bin\Debug\zh-Hans\Microsoft.Build.resources.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Negocio\bin\Debug\zh-Hant\Microsoft.Build.resources.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\Negocio.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\Negocio.pdb
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\Dominio.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\Microsoft.Data.Tools.Schema.Sql.UnitTesting.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\Microsoft.Data.Tools.Schema.Sql.UnitTestingAdapter.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\Microsoft.Build.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\Microsoft.Build.Framework.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\System.Collections.Immutable.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\System.IO.Compression.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\System.Threading.Tasks.Dataflow.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\Dominio.pdb
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\es\Microsoft.Data.Tools.Schema.Sql.UnitTesting.resources.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\es\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\cs\Microsoft.Build.resources.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\de\Microsoft.Build.resources.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\en\Microsoft.Build.resources.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\es\Microsoft.Build.resources.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\fr\Microsoft.Build.resources.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\it\Microsoft.Build.resources.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\ja\Microsoft.Build.resources.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\ko\Microsoft.Build.resources.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\pl\Microsoft.Build.resources.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\pt-BR\Microsoft.Build.resources.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\ru\Microsoft.Build.resources.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\tr\Microsoft.Build.resources.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\zh-Hans\Microsoft.Build.resources.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\zh-Hant\Microsoft.Build.resources.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\obj\Debug\Negocio.csprojAssemblyReference.cache
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\obj\Debug\Negocio.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\obj\Debug\Negocio.pdb

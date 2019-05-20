@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.489
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentacion", "Presentacion\Presentacion.csproj", "{D6D17794-3E35-4811-A71F-D7CEF8130EE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio", "Dominio\Dominio.csproj", "{81C1BD46-4DEF-410A-A577-5A1734B38A74}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocio", "Negocio\Negocio.csproj", "{B0659DB0-99C1-4C0B-BD4E-FE5EAF2C72B1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D6D17794-3E35-4811-A71F-D7CEF8130EE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6D17794-3E35-4811-A71F-D7CEF8130EE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6D17794-3E35-4811-A71F-D7CEF8130EE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6D17794-3E35-4811-A71F-D7CEF8130EE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81C1BD46-4DEF-410A-A577-5A1734B38A74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81C1BD46-4DEF-410A-A577-5A1734B38A74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81C1BD46-4DEF-410A-A577-5A1734B38A74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81C1BD46-4DEF-410A-A577-5A1734B38A74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0659DB0-99C1-4C0B-BD4E-FE5EAF2C72B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0659DB0-99C1-4C0B-BD4E-FE5EAF2C72B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0659DB0-99C1-4C0B-BD4E-FE5EAF2C72B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0659DB0-99C1-4C0B-BD4E-FE5EAF2C72B1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BEFE8558-DFCB-4197-9622-9DC5F9452925}
+	EndGlobalSection
+EndGlobal

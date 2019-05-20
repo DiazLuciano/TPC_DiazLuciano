@@ -1,0 +1,57 @@
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Presentacion\bin\Debug\Presentacion.exe.config
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Presentacion\bin\Debug\Presentacion.exe
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Presentacion\bin\Debug\Presentacion.pdb
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Presentacion\obj\Debug\Presentacion.csprojAssemblyReference.cache
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Presentacion\obj\Debug\Presentacion.Login.resources
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Presentacion\obj\Debug\Presentacion.Principal.resources
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Presentacion\obj\Debug\Presentacion.Properties.Resources.resources
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.cache
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Presentacion\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Presentacion\obj\Debug\Presentacion.exe
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Presentacion\obj\Debug\Presentacion.pdb
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Presentacion\bin\Debug\Dominio.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Presentacion\bin\Debug\Dominio.pdb
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Presentacion\obj\Debug\Presentacion.csproj.CopyComplete
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Presentacion\obj\Debug\Presentacion.VerClientes.resources
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Presentacion\bin\Debug\Negocio.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Presentacion\bin\Debug\Negocio.pdb
+D:\Abel\Desktop\3 Cuatri\Prog III\TPCuatrimestral - DIAZ\Presentacion\obj\Debug\Presentacion.VerArticulos.resources
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Presentacion\obj\Debug\Presentacion.csprojAssemblyReference.cache
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Presentacion\obj\Debug\Presentacion.frmLogin.resources
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Presentacion\obj\Debug\Presentacion.frmPrincipal.resources
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Presentacion\obj\Debug\Presentacion.Properties.Resources.resources
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Presentacion\obj\Debug\Presentacion.VerArticulos.resources
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Presentacion\obj\Debug\Presentacion.VerClientes.resources
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.cache
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Presentacion\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Presentacion\obj\Debug\Presentacion.exe
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Presentacion\obj\Debug\Presentacion.pdb
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Presentacion\bin\Debug\Presentacion.exe.config
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Presentacion\bin\Debug\Presentacion.exe
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Presentacion\bin\Debug\Presentacion.pdb
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Presentacion\bin\Debug\Dominio.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Presentacion\bin\Debug\Negocio.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Presentacion\bin\Debug\Dominio.pdb
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Presentacion\bin\Debug\Negocio.pdb
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Presentacion\obj\Debug\Presentacion.csproj.CopyComplete
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Presentacion\obj\Debug\Presentacion.frmCargarCliente.resources
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_DIAZ\Presentacion\obj\Debug\Presentacion.frmModificarCliente.resources
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\bin\Debug\Presentacion.exe.config
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\bin\Debug\Presentacion.exe
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\bin\Debug\Presentacion.pdb
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\bin\Debug\Dominio.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\bin\Debug\Negocio.dll
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\bin\Debug\Dominio.pdb
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\bin\Debug\Negocio.pdb
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\Debug\Presentacion.csprojAssemblyReference.cache
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\Debug\Presentacion.frmCargarCliente.resources
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\Debug\Presentacion.frmLogin.resources
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\Debug\Presentacion.frmPrincipal.resources
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\Debug\Presentacion.Properties.Resources.resources
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\Debug\Presentacion.VerArticulos.resources
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.cache
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\Debug\Presentacion.csproj.CopyComplete
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\Debug\Presentacion.exe
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\Debug\Presentacion.pdb
+D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\Debug\Presentacion.frmClientes.resources
