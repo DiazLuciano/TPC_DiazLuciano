@@ -99,6 +99,14 @@ namespace Presentacion
             {
           
             }
+
+            //combo de tipo de telefono, le agrego las opciones a mano. Estas deberían ser de la base de datos en realidad.
+            //pero nuestro teléfono debería a su vez tener un atributo clase TIPO para poder asignarlo.
+            cmbTipoTel.Items.Add("Trabajo");
+            cmbTipoTel.Items.Add("Casa");
+            cmbTipoTel.Items.Add("Celular");
+            //seteo el primero por default
+            cmbTipoTel.SelectedIndex = 0;
         }
 
         private void dtpFechaNac_ValueChanged(object sender, EventArgs e)

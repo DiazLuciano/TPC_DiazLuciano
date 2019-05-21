@@ -70,7 +70,7 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(99, 66);
+            this.txtDescripcion.Location = new System.Drawing.Point(140, 66);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(268, 20);
             this.txtDescripcion.TabIndex = 5;
@@ -119,7 +119,7 @@
             // 
             this.pbBuscarCliente.BackColor = System.Drawing.Color.Transparent;
             this.pbBuscarCliente.Image = ((System.Drawing.Image)(resources.GetObject("pbBuscarCliente.Image")));
-            this.pbBuscarCliente.Location = new System.Drawing.Point(373, 51);
+            this.pbBuscarCliente.Location = new System.Drawing.Point(423, 51);
             this.pbBuscarCliente.Name = "pbBuscarCliente";
             this.pbBuscarCliente.Size = new System.Drawing.Size(50, 44);
             this.pbBuscarCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

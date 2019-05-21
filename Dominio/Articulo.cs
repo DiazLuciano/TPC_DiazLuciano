@@ -14,7 +14,7 @@ namespace Dominio
         public decimal precioventa { get; set; }
         public decimal precioventamayorista { get; set; }
         public string tipoarticulo { get; set; }
-        public bool Estado { get; set; }
+        public Boolean Estado { get; set; }
 
     }
 }

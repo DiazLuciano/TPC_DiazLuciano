@@ -11,7 +11,7 @@ namespace Dominio
         public int ID { get; set; }
         public string nombre { get; set; }
         public string contraseña { get; set; }
-        public bool Estado { get; set; }
+        public Boolean Estado { get; set; }
 
 
     }

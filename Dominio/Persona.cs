@@ -22,8 +22,9 @@ namespace Dominio
         public Usuario usuario { get; set; }
         public string tipo { get; set; }
         public string razonsocial { get; set; }
-        public List<Telefono> telefonos = new List<Telefono>();
+        public IList<Telefono> telefonos { get; set; }
         public List<string> emails = new List<string>();
+        public Boolean Estado { get; set; }
 
     }
 }
