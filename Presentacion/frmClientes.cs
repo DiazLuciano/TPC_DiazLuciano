@@ -14,6 +14,8 @@ namespace Presentacion
 {
     public partial class frmClientes : Form
     {
+
+        public List<Cliente> ListaC;
         public frmClientes()
         {
             InitializeComponent();           
@@ -29,12 +31,9 @@ namespace Presentacion
 
                 //para ordenar las columnas de la grilla
                 //dgvContactos.Columns[4].DisplayIndex = 0;
-                dgvClientes.Columns[0].Visible = false;
-                dgvClientes.Columns[5].Visible = false;
-                dgvClientes.Columns[6].Visible = false;
-                dgvClientes.Columns[7].Visible = false;
-                dgvClientes.Columns[8].Visible = false;
-                dgvClientes.Columns[9].Visible = false;
+                dgvClientes.Columns[10].Visible = false;
+                
+                
                 //para ocultar
 
             }
@@ -94,7 +93,6 @@ namespace Presentacion
 
         private void pbRestaurar_Click(object sender, EventArgs e)
         {
-            
             WindowState = FormWindowState.Normal;
             pbRestaurar.Visible = false;
             pbMaximizar.Visible = true;
@@ -144,6 +142,30 @@ namespace Presentacion
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+            }
+        }
+
+        
+
+        private void txtDescripcion_TextChanged(object sender, EventArgs e)
+        {
+            ClientesNegocio CN = new ClientesNegocio();
+            ListaC = CN.ListarClientes();
+            if (txtDescripcion.Text == "")
+            {
+                dgvClientes.DataSource = ListaC;
+
+            }
+            else
+            {
+                if (txtDescripcion.Text.Length >= 2)
+                {
+                    List<Cliente> lista;
+                    lista = ListaC.FindAll(X => X.nombre.ToUpper().Contains(txtDescripcion.Text.ToUpper()));
+                    
+                    dgvClientes.DataSource = lista;
+                }
+
             }
         }
     }

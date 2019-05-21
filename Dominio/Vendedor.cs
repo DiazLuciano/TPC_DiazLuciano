@@ -10,5 +10,6 @@ namespace Dominio
     {
         public int ID_vendedor { get; set; }
         public List<Venta> ventas = new List<Venta>();
+        public bool Estado { get; set; }
     }
 }

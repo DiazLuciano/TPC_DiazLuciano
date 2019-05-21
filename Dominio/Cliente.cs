@@ -9,5 +9,6 @@ namespace Dominio
     public class Cliente : Persona
     {
         public int ID_cliente { get; set; }
+        public bool Estado { get; set; }
     }
 }

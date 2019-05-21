@@ -65,22 +65,22 @@
             this.dgvClientes.Location = new System.Drawing.Point(12, 131);
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvClientes.Size = new System.Drawing.Size(776, 139);
+            this.dgvClientes.Size = new System.Drawing.Size(951, 139);
             this.dgvClientes.TabIndex = 0;
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtDescripcion.Location = new System.Drawing.Point(12, 66);
+            this.txtDescripcion.Location = new System.Drawing.Point(99, 66);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(268, 20);
             this.txtDescripcion.TabIndex = 5;
+            this.txtDescripcion.TextChanged += new System.EventHandler(this.txtDescripcion_TextChanged);
             // 
             // pbAgregarCliente
             // 
             this.pbAgregarCliente.BackColor = System.Drawing.Color.Transparent;
             this.pbAgregarCliente.Image = ((System.Drawing.Image)(resources.GetObject("pbAgregarCliente.Image")));
-            this.pbAgregarCliente.Location = new System.Drawing.Point(416, 42);
+            this.pbAgregarCliente.Location = new System.Drawing.Point(602, 51);
             this.pbAgregarCliente.Name = "pbAgregarCliente";
             this.pbAgregarCliente.Size = new System.Drawing.Size(60, 60);
             this.pbAgregarCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -93,7 +93,7 @@
             // 
             this.pbModificarCliente.BackColor = System.Drawing.Color.Transparent;
             this.pbModificarCliente.Image = ((System.Drawing.Image)(resources.GetObject("pbModificarCliente.Image")));
-            this.pbModificarCliente.Location = new System.Drawing.Point(491, 42);
+            this.pbModificarCliente.Location = new System.Drawing.Point(677, 51);
             this.pbModificarCliente.Name = "pbModificarCliente";
             this.pbModificarCliente.Size = new System.Drawing.Size(60, 60);
             this.pbModificarCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -106,7 +106,7 @@
             // 
             this.pbEliminarCliente.BackColor = System.Drawing.Color.Transparent;
             this.pbEliminarCliente.Image = ((System.Drawing.Image)(resources.GetObject("pbEliminarCliente.Image")));
-            this.pbEliminarCliente.Location = new System.Drawing.Point(567, 42);
+            this.pbEliminarCliente.Location = new System.Drawing.Point(753, 51);
             this.pbEliminarCliente.Name = "pbEliminarCliente";
             this.pbEliminarCliente.Size = new System.Drawing.Size(60, 60);
             this.pbEliminarCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -119,7 +119,7 @@
             // 
             this.pbBuscarCliente.BackColor = System.Drawing.Color.Transparent;
             this.pbBuscarCliente.Image = ((System.Drawing.Image)(resources.GetObject("pbBuscarCliente.Image")));
-            this.pbBuscarCliente.Location = new System.Drawing.Point(293, 42);
+            this.pbBuscarCliente.Location = new System.Drawing.Point(373, 51);
             this.pbBuscarCliente.Name = "pbBuscarCliente";
             this.pbBuscarCliente.Size = new System.Drawing.Size(50, 44);
             this.pbBuscarCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -132,7 +132,7 @@
             this.pbCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pbCerrar.BackColor = System.Drawing.Color.Transparent;
             this.pbCerrar.Image = ((System.Drawing.Image)(resources.GetObject("pbCerrar.Image")));
-            this.pbCerrar.Location = new System.Drawing.Point(766, 11);
+            this.pbCerrar.Location = new System.Drawing.Point(941, 11);
             this.pbCerrar.Name = "pbCerrar";
             this.pbCerrar.Size = new System.Drawing.Size(25, 25);
             this.pbCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -146,7 +146,7 @@
             this.pbRestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pbRestaurar.BackColor = System.Drawing.Color.Transparent;
             this.pbRestaurar.Image = ((System.Drawing.Image)(resources.GetObject("pbRestaurar.Image")));
-            this.pbRestaurar.Location = new System.Drawing.Point(735, 11);
+            this.pbRestaurar.Location = new System.Drawing.Point(910, 12);
             this.pbRestaurar.Name = "pbRestaurar";
             this.pbRestaurar.Size = new System.Drawing.Size(25, 25);
             this.pbRestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -154,14 +154,14 @@
             this.pbRestaurar.TabStop = false;
             this.toolTip1.SetToolTip(this.pbRestaurar, "Restaurar");
             this.pbRestaurar.Visible = false;
-            this.pbRestaurar.Click += new System.EventHandler(this.pbMaximizar_Click);
+            this.pbRestaurar.Click += new System.EventHandler(this.pbRestaurar_Click);
             // 
             // pbMinimizar
             // 
             this.pbMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pbMinimizar.BackColor = System.Drawing.Color.Transparent;
             this.pbMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("pbMinimizar.Image")));
-            this.pbMinimizar.Location = new System.Drawing.Point(704, 11);
+            this.pbMinimizar.Location = new System.Drawing.Point(879, 11);
             this.pbMinimizar.Name = "pbMinimizar";
             this.pbMinimizar.Size = new System.Drawing.Size(25, 25);
             this.pbMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -175,14 +175,14 @@
             this.pbMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pbMaximizar.BackColor = System.Drawing.Color.Transparent;
             this.pbMaximizar.Image = ((System.Drawing.Image)(resources.GetObject("pbMaximizar.Image")));
-            this.pbMaximizar.Location = new System.Drawing.Point(735, 11);
+            this.pbMaximizar.Location = new System.Drawing.Point(910, 11);
             this.pbMaximizar.Name = "pbMaximizar";
             this.pbMaximizar.Size = new System.Drawing.Size(25, 25);
             this.pbMaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMaximizar.TabIndex = 13;
             this.pbMaximizar.TabStop = false;
             this.toolTip1.SetToolTip(this.pbMaximizar, "Maximizar");
-            this.pbMaximizar.Click += new System.EventHandler(this.pbRestaurar_Click);
+            this.pbMaximizar.Click += new System.EventHandler(this.pbMaximizar_Click);
             // 
             // frmClientes
             // 
@@ -191,7 +191,7 @@
             this.AutoScroll = true;
             this.AutoSize = true;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(800, 391);
+            this.ClientSize = new System.Drawing.Size(975, 391);
             this.Controls.Add(this.pbMaximizar);
             this.Controls.Add(this.pbMinimizar);
             this.Controls.Add(this.pbRestaurar);

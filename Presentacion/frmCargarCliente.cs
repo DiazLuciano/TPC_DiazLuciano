@@ -77,9 +77,14 @@ namespace Presentacion
 
         private void pbCerrar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             frmPrincipal principal = new frmPrincipal();
             principal.Show();
+        }
+
+        private void pbMinimizar_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
         }
 
         private void frmCargarCliente_Load(object sender, EventArgs e)
@@ -94,6 +99,29 @@ namespace Presentacion
             {
           
             }
+        }
+
+        private void dtpFechaNac_ValueChanged(object sender, EventArgs e)
+        {
+            lblEdadNum.Text = (DateTime.Today.AddTicks(-dtpFechaNac.Value.Ticks).Year - 1).ToString();
+        }
+
+        private void txtDNI_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar < 48 || e.KeyChar > 59) && e.KeyChar != 8 && txtDNI.TextLength == 8)
+                e.Handled = true;
+        }
+
+        private void txtCUIL_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar < 48 || e.KeyChar > 59) && e.KeyChar != 8)
+                e.Handled = true;
+        }
+
+        private void txtCUIT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar < 48 || e.KeyChar > 59) && e.KeyChar != 8)
+                e.Handled = true;
         }
     }
 }
