@@ -4,6 +4,8 @@ use DIAZ_DB
 go
 --USUARIOS
 
+select *from contactos
+
 create table Usuarios(
 	ID int not null primary key identity (1,1),
 	Nombre varchar(50) not null,
@@ -21,7 +23,7 @@ CREATE TABLE Clientes(
 	DNI int not null unique,
 	Nombre varchar (50) not null,
 	Apellido varchar (50) not null,
-	/*Genero varchar (50) not null,
+	Genero varchar (50) not null,
 	Edad int not null,
 	Fnac datetime not null,
 	CUIL int not null,
@@ -30,7 +32,8 @@ CREATE TABLE Clientes(
 	CP int not null foreign key references Localidad(CP),
 	IDUsuario int null foreign key references Usuarios(ID),
 	Tipo varchar(50) not null,
-	RazonSocial varchar(100) null*/
+	RazonSocial varchar(100) null,
+	Estado int not null -- ME FALA ESTE!! */
 )
 GO
 INSERT INTO Clientes (DNI,Nombre,Apellido) 

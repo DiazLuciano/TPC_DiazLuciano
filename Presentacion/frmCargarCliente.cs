@@ -116,7 +116,7 @@ namespace Presentacion
 
         private void txtDNI_KeyPress_1(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar < 48 || e.KeyChar > 59) && e.KeyChar != 8 && txtDNI.TextLength == 8)
+            if ((e.KeyChar < 48 || e.KeyChar > 59) && (e.KeyChar != 8) && txtDNI.TextLength == 8)
                 e.Handled = true;
         }
 
