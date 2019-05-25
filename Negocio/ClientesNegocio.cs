@@ -81,29 +81,41 @@ namespace Negocio
         {
             SqlConnection conexion = new SqlConnection();
             SqlCommand comando = new SqlCommand();
-            SqlDataReader Lector;
+            SqlDataReader lector;
             List<Cliente> listado = new List<Cliente>();           
             Cliente cli = new Cliente();
 
             try
             {
+                //DONDE ESTA LA BD
                 conexion.ConnectionString = AccesoDatos.cadenaConexion;
+                //CONSULTA A ENVIAR 
                 comando.CommandType = System.Data.CommandType.Text;
-                //accesoDatos.setearConsulta( 
                 comando.CommandText = ("select ID,DNI, Nombre, Apellido From Clientes");
                 comando.Connection = conexion;
+                //CONTENEDOR DEL RESULTADO
+                lector = comando.ExecuteReader();
+
                 conexion.Open();
-                Lector = comando.ExecuteReader();
-                //accesoDatos.abrirConexion();
-                // accesoDatos.ejecutarConsulta();
-                while (Lector.Read())
+
+                while (lector.Read())
                 {
                     cli = new Cliente();
-                    cli.ID = (int)Lector["ID"];
-                    cli.DNI = (int)Lector["DNI"];
-                    cli.nombre = Lector["Nombre"].ToString();
-                    cli.apellido = Lector["Apellido"].ToString();
+                    cli.ID = lector.GetInt32(0);
+                    cli.DNI = lector.GetInt32(1);
+                    cli.nombre = lector.GetString(2);
+                    cli.apellido = lector.GetString(3);
+                    cli.genero = lector.GetString(4);
+                    cli.fnac = lector.GetDateTime(5);
+                    cli.edad = lector.GetInt32(6);
+                    cli.CUILCUIT = lector.GetInt32(7);
+                    cli.direccion = lector.GetString(8);
+                    cli.
+
+                    //cli.edad = (int)Lector["Edad"];
                     listado.Add(cli);
+
+
                 }
 
 
@@ -208,6 +220,58 @@ namespace Negocio
             {
                 acceso.cerrarConexion();
             }
+        }
+
+        public IList<Cliente> Buscar(string campo , string clave)
+        {
+
+            IList<Cliente> lista = new List<Cliente>();
+            TelefonoNegocio serviceTel = new TelefonoNegocio();
+            String consulta = "Select Nombre, Apellido, Direccion From DIAZ_DB C inner join LOCALIDADES L On C.CP = L.CP Where C.Estado = 1 and ";
+            DataAccessLayer conexion = new DataAccessLayer();
+
+            try
+            {
+                switch (campo)
+                {
+                    case "Nombre/Apellido":
+                        consulta = consulta + "AND NOMBRE " + " Like '%" + clave + "%'" + "OR APELLIDO " + " LIKE '%" + clave + "%'";
+                        break;
+                    case "DNI":
+                        consulta = consulta + campo + " Like '%" + clave + "%'";
+                        break;
+                }
+
+                conexion.setearComandoText(consulta);
+                conexion.abrirConexion();
+                conexion.ejecutarQuery();
+
+                while (conexion.Lector.Read())
+                {
+                    Cliente cli = new Cliente();
+                    cli.nombre = conexion.Lector.GetString(0);
+                    cli.apellido = conexion.Lector.GetString(1);
+                    cli.direccion = conexion.Lector.GetString(2);
+                  
+
+                   /* //esto para validar si viene nulo de la base de datos...
+                    if (!(conexion.Lector.IsDBNull(conexion.Lector.GetOrdinal("fechaNacimiento"))))
+                    {
+                        cli.fnac = conexion.Lector.GetDateTime(9);
+                    }*/
+
+
+                    lista.Add(cli);
+                }
+                return lista;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
         }
     }
 }

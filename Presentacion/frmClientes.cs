@@ -36,6 +36,9 @@ namespace Presentacion
                 
                 //para ocultar
 
+
+
+
             }
             catch (Exception ex)
             {
@@ -77,6 +80,9 @@ namespace Presentacion
         {
             CargarGrillaClientes();
             //dgvClientes.DataSource = Cargargrilla("Clientes").Tables[0]; //data source necesita que le asigne un dataset para que me llene el DGV (Mi metodo llenar)
+            cmbBuscarPor.Items.Add("DNI");
+            cmbBuscarPor.Items.Add("Nombre/Apellido");
+            cmbBuscarPor.SelectedIndex =0;
         }
 
         private void pbAgregarCliente_Click(object sender, EventArgs e)
@@ -150,8 +156,18 @@ namespace Presentacion
         private void txtDescripcion_TextChanged(object sender, EventArgs e)
         {
             ClientesNegocio CN = new ClientesNegocio();
-            ListaC = CN.ListarClientes();
-            if (txtDescripcion.Text == "")
+            //ListaC = CN.ListarClientes();
+            try
+            {
+                dgvClientes.DataSource = CN.Buscar(cmbBuscarPor.SelectedItem.ToString(), txtDescripcion.Text.Trim());
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+             
+            }
+            /*if (txtDescripcion.Text == "")
             {
                 dgvClientes.DataSource = ListaC;
 
@@ -166,7 +182,7 @@ namespace Presentacion
                     dgvClientes.DataSource = lista;
                 }
 
-            }
+            }*/
         }
     }
 }

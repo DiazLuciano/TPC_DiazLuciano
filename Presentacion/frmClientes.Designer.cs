@@ -41,6 +41,7 @@
             this.pbMinimizar = new System.Windows.Forms.PictureBox();
             this.pbMaximizar = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.cmbBuscarPor = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAgregarCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbModificarCliente)).BeginInit();
@@ -184,6 +185,14 @@
             this.toolTip1.SetToolTip(this.pbMaximizar, "Maximizar");
             this.pbMaximizar.Click += new System.EventHandler(this.pbMaximizar_Click);
             // 
+            // cmbBuscarPor
+            // 
+            this.cmbBuscarPor.FormattingEnabled = true;
+            this.cmbBuscarPor.Location = new System.Drawing.Point(12, 65);
+            this.cmbBuscarPor.Name = "cmbBuscarPor";
+            this.cmbBuscarPor.Size = new System.Drawing.Size(121, 21);
+            this.cmbBuscarPor.TabIndex = 14;
+            // 
             // frmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -192,6 +201,7 @@
             this.AutoSize = true;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(975, 391);
+            this.Controls.Add(this.cmbBuscarPor);
             this.Controls.Add(this.pbMaximizar);
             this.Controls.Add(this.pbMinimizar);
             this.Controls.Add(this.pbRestaurar);
@@ -233,5 +243,6 @@
         private System.Windows.Forms.PictureBox pbMinimizar;
         private System.Windows.Forms.PictureBox pbMaximizar;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ComboBox cmbBuscarPor;
     }
 }

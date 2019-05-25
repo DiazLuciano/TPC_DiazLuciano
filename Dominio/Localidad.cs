@@ -8,14 +8,19 @@ namespace Dominio
 {
     public class Localidad
     {
-        public Int32 ID { get; set; }
-        public Int32 CP { get; set; }
+        public int ID { get; set; }
+        public int CP { get; set; }
         public string Provincia { get; set; }
         public string Pais { get; set; }
         public string nombre
         {
             set { nombre = value; }
             get { return nombre; }
+        }
+
+        public override string ToString()
+        {
+            return CP.ToString() + " - " + nombre;
         }
 
     }

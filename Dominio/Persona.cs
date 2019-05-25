@@ -12,18 +12,20 @@ namespace Dominio
         public int DNI { get; set; }
         public string nombre { get; set; }
         public string apellido { get; set; }
-        public int Edad { get; set; }
+        public string genero { get; set; }
         public DateTime fnac { get; set; }
-        public string Genero { get; set; }
-        public int CUIL { get; set; }
-        public int CUIT { get; set; }
+        public int edad { get; set; }
+        public int CUILCUIT { get; set; }
+        public string direccion { get; set; }
+        public Localidad localidad { get; set; }
         public CuentaBancaria cuentabancaria { get; set; }
-        public Direccion direccion { get; set; }
+        
         public Usuario usuario { get; set; }
         public string tipo { get; set; }
         public string razonsocial { get; set; }
         public IList<Telefono> telefonos { get; set; }
-        public List<string> emails = new List<string>();
+        public string email1 { get; set; }
+        public string email2 { get; set; }
         public Boolean Estado { get; set; }
 
     }

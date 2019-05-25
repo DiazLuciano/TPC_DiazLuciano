@@ -9,7 +9,7 @@ namespace Dominio
     public class Sucursal
     {
         public int ID { get; set; }
-        public Direccion direccion { get; set; }
+        public string direccion { get; set; }
         public List<Proveedor> proveedores = new List<Proveedor>();
 
     }

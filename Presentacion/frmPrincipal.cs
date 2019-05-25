@@ -18,8 +18,6 @@ namespace Presentacion
 
         }
 
-
-
         private void pbCliente_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -37,6 +35,7 @@ namespace Presentacion
         private void pbCerrar_Click(object sender, EventArgs e)
         {
             Application.Exit();
+                
         }
 
         private void pbMaximizar_Click(object sender, EventArgs e)

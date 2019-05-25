@@ -44,7 +44,6 @@
     <Compile Include="Articulo.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="CuentaBancaria.cs" />
-    <Compile Include="Direccion.cs" />
     <Compile Include="Localidad.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="Proveedor.cs" />

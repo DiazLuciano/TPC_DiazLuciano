@@ -19,21 +19,19 @@ GO
 --CLIENTES
 
 CREATE TABLE Clientes(
-	ID int not null primary key identity(1,1),
-	DNI int not null unique,
-	Nombre varchar (50) not null,
-	Apellido varchar (50) not null,
-	Genero varchar (50) not null,
+	ID int not null primary key identity(1,1), 
+	DNI int not null unique, 
+	Nombre varchar (50) not null, 
+	Apellido varchar (50) not null, 
+	Genero varchar (50) not null, 
+	Fnac datetime not null, 
 	Edad int not null,
-	Fnac datetime not null,
-	CUIL int not null,
-	CUIT int null,
+	CUILCUIT int not null,
 	Direccion varchar(100) not null,
 	CP int not null foreign key references Localidad(CP),
-	IDUsuario int null foreign key references Usuarios(ID),
 	Tipo varchar(50) not null,
 	RazonSocial varchar(100) null,
-	Estado int not null -- ME FALA ESTE!! */
+	Estado bit not null 
 )
 GO
 INSERT INTO Clientes (DNI,Nombre,Apellido) 
