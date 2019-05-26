@@ -15,7 +15,7 @@ namespace Dominio
         public string genero { get; set; }
         public DateTime fnac { get; set; }
         public int edad { get; set; }
-        public int CUILCUIT { get; set; }
+        public Int64 CUILCUIT { get; set; }
         public string direccion { get; set; }
         public Localidad localidad { get; set; }
         public CuentaBancaria cuentabancaria { get; set; }

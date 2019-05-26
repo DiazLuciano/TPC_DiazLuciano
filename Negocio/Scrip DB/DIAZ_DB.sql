@@ -2,9 +2,9 @@ create database DIAZ_DB
 go
 use DIAZ_DB
 go
+SET DATEFORMAT DMY
 --USUARIOS
 
-select *from contactos
 
 create table Usuarios(
 	ID int not null primary key identity (1,1),
@@ -12,9 +12,20 @@ create table Usuarios(
 	Contraseña varchar(50) not null
 )
 go
-
-insert into Usuarios (Nombre,Contraseña) values ('admin', 'admin')
+INSERT INTO Usuarios (Nombre,Contraseña) values ('admin', 'admin')
 GO
+
+--LOCALIDAD
+create table Localidades(
+	CPLoc int not null primary key,
+	NombreLoc varchar (100) not null,
+	Pais varchar (50) null,
+	Provincia varchar (50) null,
+	Ciudad varchar (50) null	
+)
+go
+INSERT INTO Localidades (CPLoc,NombreLoc,Pais,Provincia,Ciudad)
+VALUES (1617,'El Talar','Argentina','Buenos Aires','Tigre')
 
 --CLIENTES
 
@@ -26,16 +37,17 @@ CREATE TABLE Clientes(
 	Genero varchar (50) not null, 
 	Fnac datetime not null, 
 	Edad int not null,
-	CUILCUIT int not null,
+	CUILCUIT bigint not null,
 	Direccion varchar(100) not null,
-	CP int not null foreign key references Localidad(CP),
+	CP int not null foreign key references Localidades(CPLoc),
 	Tipo varchar(50) not null,
 	RazonSocial varchar(100) null,
 	Estado bit not null 
 )
-GO
-INSERT INTO Clientes (DNI,Nombre,Apellido) 
-values (39105320,'Luciano','Diaz')
+GO	
+
+INSERT INTO Clientes (DNI,Nombre,Apellido,Genero,Fnac,Edad,CUILCUIT,Direccion,CP,Tipo,Estado) 
+values (39105320,'Luciano','Diaz','Masculino','10-09-1995',23,20391053201,'Groussac 2038',1617, 'Fisico',1)
 GO
 --ARTICULOS
 create table Articulos(
@@ -69,15 +81,7 @@ create table CuentasBancarias(
 )
 go
 
---LOCALIDAD
-create table Localidad(
-	CP int not null primary key,
-	Nombre varchar (100) not null,
-	Pais varchar (50) null,
-	Provincia varchar (50) null,
-	Ciudad varchar (50) null	
-)
-go
+
 
 --PROVEEDORES
 create table Proveedores(

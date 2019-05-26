@@ -79,8 +79,11 @@ namespace Negocio
 
         public List<Cliente> ListarClientes()
         {
+            
+            AccesoDatos AD = new AccesoDatos();
             SqlConnection conexion = new SqlConnection();
             SqlCommand comando = new SqlCommand();
+
             SqlDataReader lector;
             List<Cliente> listado = new List<Cliente>();           
             Cliente cli = new Cliente();
@@ -88,37 +91,59 @@ namespace Negocio
             try
             {
                 //DONDE ESTA LA BD
-                conexion.ConnectionString = AccesoDatos.cadenaConexion;
+               /* conexion.ConnectionString = AccesoDatos.cadenaConexion;
                 //CONSULTA A ENVIAR 
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = ("select ID,DNI, Nombre, Apellido From Clientes");
+                comando.CommandText = ("Select ID,DNI, Nombre, Apellido,Genero,Fnac,Edad,CUILCUIT,Direccion,CP From Clientes");
                 comando.Connection = conexion;
+             
                 //CONTENEDOR DEL RESULTADO
-                lector = comando.ExecuteReader();
+                lector = comando.ExecuteReader();*/
 
-                conexion.Open();
+                AD.setearConsulta("Select C.ID,C.DNI, C.Nombre,C.Apellido,C.Genero,C.Fnac,C.Edad,C.CUILCUIT,C.Direccion,C.CP,L.NombreLoc From Clientes AS C Inner Join Localidades AS L On L.CPLoc=C.CP");
+                AD.abrirConexion();
+                AD.ejecutarConsulta();
 
-                while (lector.Read())
+
+
+                while (AD.Lector.Read())
                 {
-                    cli = new Cliente();
-                    cli.ID = lector.GetInt32(0);
-                    cli.DNI = lector.GetInt32(1);
-                    cli.nombre = lector.GetString(2);
-                    cli.apellido = lector.GetString(3);
-                    cli.genero = lector.GetString(4);
-                    cli.fnac = lector.GetDateTime(5);
-                    cli.edad = lector.GetInt32(6);
-                    cli.CUILCUIT = lector.GetInt32(7);
-                    cli.direccion = lector.GetString(8);
-                    cli.
+                    
+                    cli.ID = (int)AD.Lector["ID"];
+                    cli.DNI = (int)AD.Lector["DNI"];
+                    cli.nombre = (string)AD.Lector["Nombre"];
+                    cli.apellido = (string)AD.Lector["Apellido"];
+                    cli.genero = (string)AD.Lector["Genero"];
+                    cli.fnac = (DateTime)AD.Lector["Fnac"];
+                    cli.edad = (int)AD.Lector["Edad"];
+                    cli.CUILCUIT = (Int64)AD.Lector["CUILCUIT"];
+                    cli.direccion = (string)AD.Lector["Direccion"].ToString().Trim();
+                    cli.localidad = new Localidad() { CP = (int)AD.Lector["CP"],Loc = (string)AD.Lector["NombreLoc"] };
+                    //cli.localidad.CP = (int)AD.Lector["CP"];
+
+                    //cli.direccion = (string)lector["direccion"];
+                    //cli.CP = (int)lector["cp"];
+
+                    //cli.Telefono = (string)lector["telefono"];
+                    //cli.Email = (string)lector["email"];
+
+                    //cli.Cuit = (string)lector["cuit"];
+                    //nuevo.Observaciones = (string)lector["observaciones"];
+                    //nuevo.estado = (bool)lector["estado"];
+                    //nuevo.Provincia = new Provincia();
+                    //nuevo.Provincia.Nombre = lector["Provincia"].ToString();
+                    //nuevo.contribuyente = new Contribuyente();
+                    //nuevo.contribuyente.Descripcion = lector["CondicionIva"].ToString();
+                    //cli.genero = lector.GetString(4);
+                    //cli.fnac = lector.getdatetime(5);
+                    //cli.edad = lector.getint32(6);
+                    //cli.cuilcuit = lector.getint32(7);
+                    //cli.direccion = lector.getstring(8);
+
 
                     //cli.edad = (int)Lector["Edad"];
                     listado.Add(cli);
-
-
                 }
-
-
                 return listado;
 
             }
@@ -128,7 +153,7 @@ namespace Negocio
             }
             finally
             {
-                conexion.Close();
+                AD.cerrarConexion();
                 //accesoDatos.cerrarConexion();
             }
         }

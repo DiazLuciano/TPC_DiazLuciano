@@ -12,16 +12,21 @@ namespace Dominio
         public int CP { get; set; }
         public string Provincia { get; set; }
         public string Pais { get; set; }
-        public string nombre
-        {
-            set { nombre = value; }
-            get { return nombre; }
-        }
-
+        public string nombre { get; set; }
+        //{
+        //    set { nombre = value; }
+        //    get { return nombre; }
+        //}
+        public string Loc { get; set; }
         public override string ToString()
         {
-            return CP.ToString() + " - " + nombre;
+            return CP.ToString() + "-" + Loc;
         }
+
+        //public override string ToString()
+        //{
+        //    return CP.ToString() + " - " + nombre;
+        //}
 
     }
 }

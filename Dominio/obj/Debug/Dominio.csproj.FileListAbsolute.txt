@@ -16,3 +16,9 @@ D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Dominio\obj\Debug\Dominio.cspr
 D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
 D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Dominio\obj\Debug\Dominio.dll
 D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Dominio\obj\Debug\Dominio.pdb
+C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Dominio\bin\Debug\Dominio.dll
+C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Dominio\bin\Debug\Dominio.pdb
+C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Dominio\obj\Debug\Dominio.csprojAssemblyReference.cache
+C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Dominio\obj\Debug\Dominio.dll
+C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Dominio\obj\Debug\Dominio.pdb

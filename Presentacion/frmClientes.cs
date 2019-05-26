@@ -31,7 +31,7 @@ namespace Presentacion
 
                 //para ordenar las columnas de la grilla
                 //dgvContactos.Columns[4].DisplayIndex = 0;
-                dgvClientes.Columns[10].Visible = false;
+                //dgvClientes.Columns[10].Visible = false;
                 
                 
                 //para ocultar
@@ -42,7 +42,7 @@ namespace Presentacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Que lastima, faló... " + ex.ToString());
+                MessageBox.Show("FALLO" + ex.ToString());
             }
 
       

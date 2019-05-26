@@ -55,3 +55,22 @@ D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\Debug\Present
 D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\Debug\Presentacion.exe
 D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\Debug\Presentacion.pdb
 D:\Abel\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\Debug\Presentacion.frmClientes.resources
+C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\bin\Debug\Presentacion.exe.config
+C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\bin\Debug\Presentacion.exe
+C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\bin\Debug\Presentacion.pdb
+C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\bin\Debug\Dominio.dll
+C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\bin\Debug\Negocio.dll
+C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\bin\Debug\Dominio.pdb
+C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\bin\Debug\Negocio.pdb
+C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\Debug\Presentacion.csprojAssemblyReference.cache
+C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\Debug\Presentacion.frmCargarCliente.resources
+C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\Debug\Presentacion.frmLogin.resources
+C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\Debug\Presentacion.frmPrincipal.resources
+C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\Debug\Presentacion.Properties.Resources.resources
+C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\Debug\Presentacion.VerArticulos.resources
+C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\Debug\Presentacion.frmClientes.resources
+C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.cache
+C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\Debug\Presentacion.csproj.CopyComplete
+C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\Debug\Presentacion.exe
+C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\Debug\Presentacion.pdb
