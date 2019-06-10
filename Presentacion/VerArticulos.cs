@@ -36,7 +36,6 @@ namespace Presentacion
         }
 
         private List<Articulo> ListaArticulos;
-
         private void CargarGrillaArticulos()
         {
 

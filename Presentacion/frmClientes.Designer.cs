@@ -41,6 +41,7 @@
             this.pbMinimizar = new System.Windows.Forms.PictureBox();
             this.pbMaximizar = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.pbTelefonos = new System.Windows.Forms.PictureBox();
             this.cmbBuscarPor = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAgregarCliente)).BeginInit();
@@ -51,6 +52,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMaximizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTelefonos)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvClientes
@@ -63,7 +65,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientes.Location = new System.Drawing.Point(12, 131);
+            this.dgvClientes.Location = new System.Drawing.Point(15, 194);
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvClientes.Size = new System.Drawing.Size(951, 139);
@@ -81,7 +83,7 @@
             // 
             this.pbAgregarCliente.BackColor = System.Drawing.Color.Transparent;
             this.pbAgregarCliente.Image = ((System.Drawing.Image)(resources.GetObject("pbAgregarCliente.Image")));
-            this.pbAgregarCliente.Location = new System.Drawing.Point(602, 51);
+            this.pbAgregarCliente.Location = new System.Drawing.Point(723, 65);
             this.pbAgregarCliente.Name = "pbAgregarCliente";
             this.pbAgregarCliente.Size = new System.Drawing.Size(60, 60);
             this.pbAgregarCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -94,7 +96,7 @@
             // 
             this.pbModificarCliente.BackColor = System.Drawing.Color.Transparent;
             this.pbModificarCliente.Image = ((System.Drawing.Image)(resources.GetObject("pbModificarCliente.Image")));
-            this.pbModificarCliente.Location = new System.Drawing.Point(677, 51);
+            this.pbModificarCliente.Location = new System.Drawing.Point(798, 65);
             this.pbModificarCliente.Name = "pbModificarCliente";
             this.pbModificarCliente.Size = new System.Drawing.Size(60, 60);
             this.pbModificarCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -107,7 +109,7 @@
             // 
             this.pbEliminarCliente.BackColor = System.Drawing.Color.Transparent;
             this.pbEliminarCliente.Image = ((System.Drawing.Image)(resources.GetObject("pbEliminarCliente.Image")));
-            this.pbEliminarCliente.Location = new System.Drawing.Point(753, 51);
+            this.pbEliminarCliente.Location = new System.Drawing.Point(874, 65);
             this.pbEliminarCliente.Name = "pbEliminarCliente";
             this.pbEliminarCliente.Size = new System.Drawing.Size(60, 60);
             this.pbEliminarCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -185,6 +187,21 @@
             this.toolTip1.SetToolTip(this.pbMaximizar, "Maximizar");
             this.pbMaximizar.Click += new System.EventHandler(this.pbMaximizar_Click);
             // 
+            // pbTelefonos
+            // 
+            this.pbTelefonos.AccessibleName = "pbTelefono";
+            this.pbTelefonos.BackColor = System.Drawing.Color.Transparent;
+            this.pbTelefonos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbTelefonos.Image = ((System.Drawing.Image)(resources.GetObject("pbTelefonos.Image")));
+            this.pbTelefonos.Location = new System.Drawing.Point(646, 127);
+            this.pbTelefonos.Name = "pbTelefonos";
+            this.pbTelefonos.Size = new System.Drawing.Size(60, 61);
+            this.pbTelefonos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbTelefonos.TabIndex = 15;
+            this.pbTelefonos.TabStop = false;
+            this.toolTip1.SetToolTip(this.pbTelefonos, "Ver Telefonos");
+            this.pbTelefonos.Click += new System.EventHandler(this.PbTelefonos_Click);
+            // 
             // cmbBuscarPor
             // 
             this.cmbBuscarPor.FormattingEnabled = true;
@@ -201,6 +218,7 @@
             this.AutoSize = true;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(975, 391);
+            this.Controls.Add(this.pbTelefonos);
             this.Controls.Add(this.cmbBuscarPor);
             this.Controls.Add(this.pbMaximizar);
             this.Controls.Add(this.pbMinimizar);
@@ -226,6 +244,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbRestaurar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMaximizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTelefonos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -244,5 +263,6 @@
         private System.Windows.Forms.PictureBox pbMaximizar;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.ComboBox cmbBuscarPor;
+        private System.Windows.Forms.PictureBox pbTelefonos;
     }
 }

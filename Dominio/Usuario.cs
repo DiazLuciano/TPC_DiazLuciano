@@ -8,7 +8,7 @@ namespace Dominio
 {
     public class Usuario
     { 
-        public int ID { get; set; }
+        public long ID { get; set; }
         public string nombre { get; set; }
         public string contraseña { get; set; }
         public Boolean Estado { get; set; }

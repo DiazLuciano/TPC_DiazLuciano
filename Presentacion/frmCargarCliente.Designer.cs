@@ -39,9 +39,9 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.pbCerrar = new System.Windows.Forms.PictureBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
-            this.txtCUILCUIT = new System.Windows.Forms.TextBox();
+            this.txtCUIL = new System.Windows.Forms.TextBox();
             this.lblDireccion = new System.Windows.Forms.Label();
-            this.lblCUILCUIT = new System.Windows.Forms.Label();
+            this.lblCUIL = new System.Windows.Forms.Label();
             this.pbMinimizar = new System.Windows.Forms.PictureBox();
             this.lblFechaNac = new System.Windows.Forms.Label();
             this.dtpFechaNac = new System.Windows.Forms.DateTimePicker();
@@ -50,7 +50,6 @@
             this.lblTipoPersona = new System.Windows.Forms.Label();
             this.chbFisica = new System.Windows.Forms.CheckBox();
             this.chbJuridica = new System.Windows.Forms.CheckBox();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.lblTelefono = new System.Windows.Forms.Label();
             this.cmbTipoTel = new System.Windows.Forms.ComboBox();
             this.lblTipoTel = new System.Windows.Forms.Label();
@@ -58,22 +57,21 @@
             this.rdbFemenino = new System.Windows.Forms.RadioButton();
             this.rdbOtro = new System.Windows.Forms.RadioButton();
             this.gpbGenero = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.txtLocalidad = new System.Windows.Forms.TextBox();
             this.lblLocalidad = new System.Windows.Forms.Label();
             this.txtCP = new System.Windows.Forms.TextBox();
             this.lblCP = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtEmailAlt = new System.Windows.Forms.TextBox();
-            this.btbAgregarTel = new System.Windows.Forms.Button();
-            this.txtPais = new System.Windows.Forms.TextBox();
-            this.lblPais = new System.Windows.Forms.Label();
             this.txtProvincia = new System.Windows.Forms.TextBox();
             this.lblProvincia = new System.Windows.Forms.Label();
             this.txtRazonS = new System.Windows.Forms.TextBox();
             this.lblRazonS = new System.Windows.Forms.Label();
+            this.lblCiudad = new System.Windows.Forms.Label();
+            this.txtCiudad = new System.Windows.Forms.TextBox();
+            this.txtCUIT = new System.Windows.Forms.TextBox();
+            this.lblCUIT = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).BeginInit();
             this.gpbGenero.SuspendLayout();
@@ -81,20 +79,20 @@
             // 
             // btnCargar
             // 
-            this.btnCargar.Location = new System.Drawing.Point(392, 403);
+            this.btnCargar.Location = new System.Drawing.Point(366, 430);
             this.btnCargar.Name = "btnCargar";
             this.btnCargar.Size = new System.Drawing.Size(90, 35);
-            this.btnCargar.TabIndex = 0;
+            this.btnCargar.TabIndex = 23;
             this.btnCargar.Text = "Cargar";
             this.btnCargar.UseVisualStyleBackColor = true;
             this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(502, 403);
+            this.btnSalir.Location = new System.Drawing.Point(476, 430);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(90, 35);
-            this.btnSalir.TabIndex = 1;
+            this.btnSalir.TabIndex = 24;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -104,7 +102,7 @@
             this.txtDNI.Location = new System.Drawing.Point(99, 32);
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Size = new System.Drawing.Size(237, 20);
-            this.txtDNI.TabIndex = 2;
+            this.txtDNI.TabIndex = 1;
             this.txtDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDNI_KeyPress_1);
             // 
             // txtApellido
@@ -119,7 +117,7 @@
             this.txtNombre.Location = new System.Drawing.Point(99, 68);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(237, 20);
-            this.txtNombre.TabIndex = 4;
+            this.txtNombre.TabIndex = 2;
             // 
             // lblDNI
             // 
@@ -162,7 +160,7 @@
             this.pbCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pbCerrar.BackColor = System.Drawing.Color.Transparent;
             this.pbCerrar.Image = ((System.Drawing.Image)(resources.GetObject("pbCerrar.Image")));
-            this.pbCerrar.Location = new System.Drawing.Point(763, 12);
+            this.pbCerrar.Location = new System.Drawing.Point(864, 12);
             this.pbCerrar.Name = "pbCerrar";
             this.pbCerrar.Size = new System.Drawing.Size(25, 25);
             this.pbCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -172,18 +170,18 @@
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(99, 153);
+            this.txtDireccion.Location = new System.Drawing.Point(99, 139);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(237, 20);
-            this.txtDireccion.TabIndex = 9;
+            this.txtDireccion.TabIndex = 4;
             // 
-            // txtCUILCUIT
+            // txtCUIL
             // 
-            this.txtCUILCUIT.Location = new System.Drawing.Point(99, 318);
-            this.txtCUILCUIT.Name = "txtCUILCUIT";
-            this.txtCUILCUIT.Size = new System.Drawing.Size(237, 20);
-            this.txtCUILCUIT.TabIndex = 10;
-            this.txtCUILCUIT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCUIL_KeyPress);
+            this.txtCUIL.Location = new System.Drawing.Point(99, 344);
+            this.txtCUIL.Name = "txtCUIL";
+            this.txtCUIL.Size = new System.Drawing.Size(237, 20);
+            this.txtCUIL.TabIndex = 10;
+            this.txtCUIL.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCUIL_KeyPress);
             // 
             // lblDireccion
             // 
@@ -191,29 +189,29 @@
             this.lblDireccion.BackColor = System.Drawing.Color.Transparent;
             this.lblDireccion.Font = new System.Drawing.Font("Maiandra GD", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDireccion.ForeColor = System.Drawing.Color.Silver;
-            this.lblDireccion.Location = new System.Drawing.Point(27, 153);
+            this.lblDireccion.Location = new System.Drawing.Point(27, 143);
             this.lblDireccion.Name = "lblDireccion";
             this.lblDireccion.Size = new System.Drawing.Size(61, 16);
             this.lblDireccion.TabIndex = 11;
             this.lblDireccion.Text = "Direccion";
             // 
-            // lblCUILCUIT
+            // lblCUIL
             // 
-            this.lblCUILCUIT.AutoSize = true;
-            this.lblCUILCUIT.BackColor = System.Drawing.Color.Transparent;
-            this.lblCUILCUIT.Font = new System.Drawing.Font("Maiandra GD", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCUILCUIT.ForeColor = System.Drawing.Color.Silver;
-            this.lblCUILCUIT.Location = new System.Drawing.Point(22, 322);
-            this.lblCUILCUIT.Name = "lblCUILCUIT";
-            this.lblCUILCUIT.Size = new System.Drawing.Size(73, 16);
-            this.lblCUILCUIT.TabIndex = 12;
-            this.lblCUILCUIT.Text = "CUIL/CUIT";
+            this.lblCUIL.AutoSize = true;
+            this.lblCUIL.BackColor = System.Drawing.Color.Transparent;
+            this.lblCUIL.Font = new System.Drawing.Font("Maiandra GD", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCUIL.ForeColor = System.Drawing.Color.Silver;
+            this.lblCUIL.Location = new System.Drawing.Point(48, 348);
+            this.lblCUIL.Name = "lblCUIL";
+            this.lblCUIL.Size = new System.Drawing.Size(37, 16);
+            this.lblCUIL.TabIndex = 12;
+            this.lblCUIL.Text = "CUIL";
             // 
             // pbMinimizar
             // 
             this.pbMinimizar.BackColor = System.Drawing.Color.Transparent;
             this.pbMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("pbMinimizar.Image")));
-            this.pbMinimizar.Location = new System.Drawing.Point(732, 12);
+            this.pbMinimizar.Location = new System.Drawing.Point(833, 12);
             this.pbMinimizar.Name = "pbMinimizar";
             this.pbMinimizar.Size = new System.Drawing.Size(25, 25);
             this.pbMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -227,7 +225,7 @@
             this.lblFechaNac.BackColor = System.Drawing.Color.Transparent;
             this.lblFechaNac.Font = new System.Drawing.Font("Maiandra GD", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFechaNac.ForeColor = System.Drawing.Color.Silver;
-            this.lblFechaNac.Location = new System.Drawing.Point(18, 364);
+            this.lblFechaNac.Location = new System.Drawing.Point(18, 407);
             this.lblFechaNac.Name = "lblFechaNac";
             this.lblFechaNac.Size = new System.Drawing.Size(70, 16);
             this.lblFechaNac.TabIndex = 14;
@@ -235,10 +233,10 @@
             // 
             // dtpFechaNac
             // 
-            this.dtpFechaNac.Location = new System.Drawing.Point(99, 360);
+            this.dtpFechaNac.Location = new System.Drawing.Point(99, 403);
             this.dtpFechaNac.Name = "dtpFechaNac";
             this.dtpFechaNac.Size = new System.Drawing.Size(200, 20);
-            this.dtpFechaNac.TabIndex = 17;
+            this.dtpFechaNac.TabIndex = 12;
             this.dtpFechaNac.ValueChanged += new System.EventHandler(this.dtpFechaNac_ValueChanged);
             // 
             // lblEdad
@@ -247,7 +245,7 @@
             this.lblEdad.BackColor = System.Drawing.Color.Transparent;
             this.lblEdad.Font = new System.Drawing.Font("Maiandra GD", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEdad.ForeColor = System.Drawing.Color.Silver;
-            this.lblEdad.Location = new System.Drawing.Point(47, 392);
+            this.lblEdad.Location = new System.Drawing.Point(47, 434);
             this.lblEdad.Name = "lblEdad";
             this.lblEdad.Size = new System.Drawing.Size(41, 16);
             this.lblEdad.TabIndex = 18;
@@ -260,7 +258,7 @@
             this.lblEdadNum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblEdadNum.Font = new System.Drawing.Font("Maiandra GD", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEdadNum.ForeColor = System.Drawing.Color.Silver;
-            this.lblEdadNum.Location = new System.Drawing.Point(96, 392);
+            this.lblEdadNum.Location = new System.Drawing.Point(96, 434);
             this.lblEdadNum.Name = "lblEdadNum";
             this.lblEdadNum.Size = new System.Drawing.Size(0, 16);
             this.lblEdadNum.TabIndex = 19;
@@ -271,7 +269,7 @@
             this.lblTipoPersona.BackColor = System.Drawing.Color.Transparent;
             this.lblTipoPersona.Font = new System.Drawing.Font("Maiandra GD", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTipoPersona.ForeColor = System.Drawing.Color.Silver;
-            this.lblTipoPersona.Location = new System.Drawing.Point(366, 129);
+            this.lblTipoPersona.Location = new System.Drawing.Point(363, 178);
             this.lblTipoPersona.Name = "lblTipoPersona";
             this.lblTipoPersona.Size = new System.Drawing.Size(82, 16);
             this.lblTipoPersona.TabIndex = 20;
@@ -281,13 +279,15 @@
             // 
             this.chbFisica.AutoSize = true;
             this.chbFisica.BackColor = System.Drawing.Color.Transparent;
+            this.chbFisica.Checked = true;
+            this.chbFisica.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chbFisica.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chbFisica.Font = new System.Drawing.Font("Maiandra GD", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chbFisica.ForeColor = System.Drawing.Color.Silver;
-            this.chbFisica.Location = new System.Drawing.Point(481, 125);
+            this.chbFisica.Location = new System.Drawing.Point(455, 178);
             this.chbFisica.Name = "chbFisica";
             this.chbFisica.Size = new System.Drawing.Size(56, 20);
-            this.chbFisica.TabIndex = 21;
+            this.chbFisica.TabIndex = 17;
             this.chbFisica.Text = "Fisica";
             this.chbFisica.UseVisualStyleBackColor = false;
             this.chbFisica.Click += new System.EventHandler(this.chbFisica_Click);
@@ -299,21 +299,13 @@
             this.chbJuridica.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chbJuridica.Font = new System.Drawing.Font("Maiandra GD", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chbJuridica.ForeColor = System.Drawing.Color.Silver;
-            this.chbJuridica.Location = new System.Drawing.Point(543, 125);
+            this.chbJuridica.Location = new System.Drawing.Point(539, 178);
             this.chbJuridica.Name = "chbJuridica";
             this.chbJuridica.Size = new System.Drawing.Size(70, 20);
-            this.chbJuridica.TabIndex = 22;
+            this.chbJuridica.TabIndex = 18;
             this.chbJuridica.Text = "Juridica";
             this.chbJuridica.UseVisualStyleBackColor = false;
             this.chbJuridica.Click += new System.EventHandler(this.chbJuridica_Click);
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTelefono.Location = new System.Drawing.Point(-250, 116);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(237, 20);
-            this.txtTelefono.TabIndex = 23;
             // 
             // lblTelefono
             // 
@@ -321,7 +313,7 @@
             this.lblTelefono.BackColor = System.Drawing.Color.Transparent;
             this.lblTelefono.Font = new System.Drawing.Font("Maiandra GD", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTelefono.ForeColor = System.Drawing.Color.Silver;
-            this.lblTelefono.Location = new System.Drawing.Point(366, 256);
+            this.lblTelefono.Location = new System.Drawing.Point(380, 250);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(58, 16);
             this.lblTelefono.TabIndex = 24;
@@ -330,10 +322,10 @@
             // cmbTipoTel
             // 
             this.cmbTipoTel.FormattingEnabled = true;
-            this.cmbTipoTel.Location = new System.Drawing.Point(434, 285);
+            this.cmbTipoTel.Location = new System.Drawing.Point(444, 280);
             this.cmbTipoTel.Name = "cmbTipoTel";
             this.cmbTipoTel.Size = new System.Drawing.Size(121, 21);
-            this.cmbTipoTel.TabIndex = 25;
+            this.cmbTipoTel.TabIndex = 21;
             // 
             // lblTipoTel
             // 
@@ -341,7 +333,7 @@
             this.lblTipoTel.BackColor = System.Drawing.Color.Transparent;
             this.lblTipoTel.Font = new System.Drawing.Font("Maiandra GD", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTipoTel.ForeColor = System.Drawing.Color.Silver;
-            this.lblTipoTel.Location = new System.Drawing.Point(389, 286);
+            this.lblTipoTel.Location = new System.Drawing.Point(400, 281);
             this.lblTipoTel.Name = "lblTipoTel";
             this.lblTipoTel.Size = new System.Drawing.Size(35, 16);
             this.lblTipoTel.TabIndex = 26;
@@ -357,7 +349,7 @@
             this.rdbMasculino.Location = new System.Drawing.Point(14, 20);
             this.rdbMasculino.Name = "rdbMasculino";
             this.rdbMasculino.Size = new System.Drawing.Size(82, 20);
-            this.rdbMasculino.TabIndex = 27;
+            this.rdbMasculino.TabIndex = 14;
             this.rdbMasculino.TabStop = true;
             this.rdbMasculino.Text = "Masculino";
             this.rdbMasculino.UseVisualStyleBackColor = false;
@@ -372,7 +364,7 @@
             this.rdbFemenino.Location = new System.Drawing.Point(102, 19);
             this.rdbFemenino.Name = "rdbFemenino";
             this.rdbFemenino.Size = new System.Drawing.Size(81, 20);
-            this.rdbFemenino.TabIndex = 28;
+            this.rdbFemenino.TabIndex = 15;
             this.rdbFemenino.TabStop = true;
             this.rdbFemenino.Text = "Femenino";
             this.rdbFemenino.UseVisualStyleBackColor = false;
@@ -387,7 +379,7 @@
             this.rdbOtro.Location = new System.Drawing.Point(189, 19);
             this.rdbOtro.Name = "rdbOtro";
             this.rdbOtro.Size = new System.Drawing.Size(54, 20);
-            this.rdbOtro.TabIndex = 29;
+            this.rdbOtro.TabIndex = 16;
             this.rdbOtro.TabStop = true;
             this.rdbOtro.Text = "Otro";
             this.rdbOtro.UseVisualStyleBackColor = false;
@@ -400,27 +392,28 @@
             this.gpbGenero.Controls.Add(this.rdbMasculino);
             this.gpbGenero.Font = new System.Drawing.Font("Maiandra GD", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbGenero.ForeColor = System.Drawing.Color.Silver;
-            this.gpbGenero.Location = new System.Drawing.Point(392, 318);
+            this.gpbGenero.Location = new System.Drawing.Point(415, 99);
             this.gpbGenero.Name = "gpbGenero";
             this.gpbGenero.Size = new System.Drawing.Size(273, 60);
-            this.gpbGenero.TabIndex = 30;
+            this.gpbGenero.TabIndex = 15;
             this.gpbGenero.TabStop = false;
-            this.gpbGenero.Text = "Genero";
+            this.gpbGenero.Text = "Género";
             // 
-            // textBox1
+            // txtTelefono
             // 
-            this.textBox1.AccessibleName = "txtTelefono";
-            this.textBox1.Location = new System.Drawing.Point(430, 252);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(237, 20);
-            this.textBox1.TabIndex = 31;
+            this.txtTelefono.AccessibleName = "txtTelefono";
+            this.txtTelefono.Location = new System.Drawing.Point(444, 249);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(237, 20);
+            this.txtTelefono.TabIndex = 20;
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtTelefono_KeyPress);
             // 
             // txtLocalidad
             // 
-            this.txtLocalidad.Location = new System.Drawing.Point(99, 189);
+            this.txtLocalidad.Location = new System.Drawing.Point(99, 173);
             this.txtLocalidad.Name = "txtLocalidad";
             this.txtLocalidad.Size = new System.Drawing.Size(237, 20);
-            this.txtLocalidad.TabIndex = 32;
+            this.txtLocalidad.TabIndex = 5;
             // 
             // lblLocalidad
             // 
@@ -428,7 +421,7 @@
             this.lblLocalidad.BackColor = System.Drawing.Color.Transparent;
             this.lblLocalidad.Font = new System.Drawing.Font("Maiandra GD", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLocalidad.ForeColor = System.Drawing.Color.Silver;
-            this.lblLocalidad.Location = new System.Drawing.Point(31, 193);
+            this.lblLocalidad.Location = new System.Drawing.Point(31, 174);
             this.lblLocalidad.Name = "lblLocalidad";
             this.lblLocalidad.Size = new System.Drawing.Size(62, 16);
             this.lblLocalidad.TabIndex = 33;
@@ -436,10 +429,10 @@
             // 
             // txtCP
             // 
-            this.txtCP.Location = new System.Drawing.Point(99, 286);
+            this.txtCP.Location = new System.Drawing.Point(99, 209);
             this.txtCP.Name = "txtCP";
             this.txtCP.Size = new System.Drawing.Size(237, 20);
-            this.txtCP.TabIndex = 34;
+            this.txtCP.TabIndex = 6;
             this.txtCP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCP_KeyPress);
             // 
             // lblCP
@@ -448,7 +441,7 @@
             this.lblCP.BackColor = System.Drawing.Color.Transparent;
             this.lblCP.Font = new System.Drawing.Font("Maiandra GD", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCP.ForeColor = System.Drawing.Color.Silver;
-            this.lblCP.Location = new System.Drawing.Point(64, 290);
+            this.lblCP.Location = new System.Drawing.Point(61, 213);
             this.lblCP.Name = "lblCP";
             this.lblCP.Size = new System.Drawing.Size(24, 16);
             this.lblCP.TabIndex = 35;
@@ -456,10 +449,10 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(430, 28);
+            this.txtEmail.Location = new System.Drawing.Point(444, 32);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(237, 20);
-            this.txtEmail.TabIndex = 36;
+            this.txtEmail.TabIndex = 13;
             // 
             // label1
             // 
@@ -467,66 +460,18 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Maiandra GD", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Silver;
-            this.label1.Location = new System.Drawing.Point(366, 32);
+            this.label1.Location = new System.Drawing.Point(400, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 16);
             this.label1.TabIndex = 37;
             this.label1.Text = "Email";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Maiandra GD", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Silver;
-            this.label2.Location = new System.Drawing.Point(366, 72);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 16);
-            this.label2.TabIndex = 38;
-            this.label2.Text = "Email Alt.";
-            // 
-            // txtEmailAlt
-            // 
-            this.txtEmailAlt.Location = new System.Drawing.Point(434, 65);
-            this.txtEmailAlt.Name = "txtEmailAlt";
-            this.txtEmailAlt.Size = new System.Drawing.Size(237, 20);
-            this.txtEmailAlt.TabIndex = 39;
-            // 
-            // btbAgregarTel
-            // 
-            this.btbAgregarTel.Location = new System.Drawing.Point(673, 251);
-            this.btbAgregarTel.Name = "btbAgregarTel";
-            this.btbAgregarTel.Size = new System.Drawing.Size(90, 35);
-            this.btbAgregarTel.TabIndex = 42;
-            this.btbAgregarTel.Text = "Agregar Tel";
-            this.btbAgregarTel.UseVisualStyleBackColor = true;
-            this.btbAgregarTel.Click += new System.EventHandler(this.btbAgregarTel_Click);
-            // 
-            // txtPais
-            // 
-            this.txtPais.Location = new System.Drawing.Point(99, 229);
-            this.txtPais.Name = "txtPais";
-            this.txtPais.Size = new System.Drawing.Size(237, 20);
-            this.txtPais.TabIndex = 43;
-            // 
-            // lblPais
-            // 
-            this.lblPais.AutoSize = true;
-            this.lblPais.BackColor = System.Drawing.Color.Transparent;
-            this.lblPais.Font = new System.Drawing.Font("Maiandra GD", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPais.ForeColor = System.Drawing.Color.Silver;
-            this.lblPais.Location = new System.Drawing.Point(57, 233);
-            this.lblPais.Name = "lblPais";
-            this.lblPais.Size = new System.Drawing.Size(28, 16);
-            this.lblPais.TabIndex = 44;
-            this.lblPais.Text = "País";
-            // 
             // txtProvincia
             // 
-            this.txtProvincia.Location = new System.Drawing.Point(99, 255);
+            this.txtProvincia.Location = new System.Drawing.Point(99, 281);
             this.txtProvincia.Name = "txtProvincia";
             this.txtProvincia.Size = new System.Drawing.Size(237, 20);
-            this.txtProvincia.TabIndex = 45;
+            this.txtProvincia.TabIndex = 8;
             // 
             // lblProvincia
             // 
@@ -534,7 +479,7 @@
             this.lblProvincia.BackColor = System.Drawing.Color.Transparent;
             this.lblProvincia.Font = new System.Drawing.Font("Maiandra GD", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProvincia.ForeColor = System.Drawing.Color.Silver;
-            this.lblProvincia.Location = new System.Drawing.Point(28, 260);
+            this.lblProvincia.Location = new System.Drawing.Point(27, 285);
             this.lblProvincia.Name = "lblProvincia";
             this.lblProvincia.Size = new System.Drawing.Size(60, 16);
             this.lblProvincia.TabIndex = 46;
@@ -543,11 +488,10 @@
             // txtRazonS
             // 
             this.txtRazonS.Enabled = false;
-            this.txtRazonS.Location = new System.Drawing.Point(430, 175);
+            this.txtRazonS.Location = new System.Drawing.Point(444, 213);
             this.txtRazonS.Name = "txtRazonS";
             this.txtRazonS.Size = new System.Drawing.Size(237, 20);
-            this.txtRazonS.TabIndex = 47;
-            this.txtRazonS.TextChanged += new System.EventHandler(this.txtRazonS_TextChanged);
+            this.txtRazonS.TabIndex = 19;
             // 
             // lblRazonS
             // 
@@ -555,11 +499,50 @@
             this.lblRazonS.BackColor = System.Drawing.Color.Transparent;
             this.lblRazonS.Font = new System.Drawing.Font("Maiandra GD", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRazonS.ForeColor = System.Drawing.Color.Silver;
-            this.lblRazonS.Location = new System.Drawing.Point(342, 178);
+            this.lblRazonS.Location = new System.Drawing.Point(359, 214);
             this.lblRazonS.Name = "lblRazonS";
             this.lblRazonS.Size = new System.Drawing.Size(79, 16);
             this.lblRazonS.TabIndex = 48;
             this.lblRazonS.Text = "Razon Social";
+            // 
+            // lblCiudad
+            // 
+            this.lblCiudad.AutoSize = true;
+            this.lblCiudad.BackColor = System.Drawing.Color.Transparent;
+            this.lblCiudad.Font = new System.Drawing.Font("Maiandra GD", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCiudad.ForeColor = System.Drawing.Color.Silver;
+            this.lblCiudad.Location = new System.Drawing.Point(39, 249);
+            this.lblCiudad.Name = "lblCiudad";
+            this.lblCiudad.Size = new System.Drawing.Size(49, 16);
+            this.lblCiudad.TabIndex = 49;
+            this.lblCiudad.Text = "Ciudad";
+            // 
+            // txtCiudad
+            // 
+            this.txtCiudad.Location = new System.Drawing.Point(99, 248);
+            this.txtCiudad.Name = "txtCiudad";
+            this.txtCiudad.Size = new System.Drawing.Size(237, 20);
+            this.txtCiudad.TabIndex = 7;
+            // 
+            // txtCUIT
+            // 
+            this.txtCUIT.Enabled = false;
+            this.txtCUIT.Location = new System.Drawing.Point(99, 374);
+            this.txtCUIT.Name = "txtCUIT";
+            this.txtCUIT.Size = new System.Drawing.Size(237, 20);
+            this.txtCUIT.TabIndex = 11;
+            // 
+            // lblCUIT
+            // 
+            this.lblCUIT.AutoSize = true;
+            this.lblCUIT.BackColor = System.Drawing.Color.Transparent;
+            this.lblCUIT.Font = new System.Drawing.Font("Maiandra GD", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCUIT.ForeColor = System.Drawing.Color.Silver;
+            this.lblCUIT.Location = new System.Drawing.Point(46, 378);
+            this.lblCUIT.Name = "lblCUIT";
+            this.lblCUIT.Size = new System.Drawing.Size(39, 16);
+            this.lblCUIT.TabIndex = 52;
+            this.lblCUIT.Text = "CUIT";
             // 
             // frmCargarCliente
             // 
@@ -568,28 +551,26 @@
             this.AutoScroll = true;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(901, 477);
+            this.Controls.Add(this.lblCUIT);
+            this.Controls.Add(this.txtCUIT);
+            this.Controls.Add(this.txtCiudad);
+            this.Controls.Add(this.lblCiudad);
             this.Controls.Add(this.lblRazonS);
             this.Controls.Add(this.txtRazonS);
             this.Controls.Add(this.lblProvincia);
             this.Controls.Add(this.txtProvincia);
-            this.Controls.Add(this.lblPais);
-            this.Controls.Add(this.txtPais);
-            this.Controls.Add(this.btbAgregarTel);
-            this.Controls.Add(this.txtEmailAlt);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lblCP);
             this.Controls.Add(this.txtCP);
             this.Controls.Add(this.lblLocalidad);
             this.Controls.Add(this.txtLocalidad);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.gpbGenero);
             this.Controls.Add(this.lblTipoTel);
             this.Controls.Add(this.cmbTipoTel);
             this.Controls.Add(this.lblTelefono);
-            this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.chbJuridica);
             this.Controls.Add(this.chbFisica);
             this.Controls.Add(this.lblTipoPersona);
@@ -598,9 +579,9 @@
             this.Controls.Add(this.dtpFechaNac);
             this.Controls.Add(this.lblFechaNac);
             this.Controls.Add(this.pbMinimizar);
-            this.Controls.Add(this.lblCUILCUIT);
+            this.Controls.Add(this.lblCUIL);
             this.Controls.Add(this.lblDireccion);
-            this.Controls.Add(this.txtCUILCUIT);
+            this.Controls.Add(this.txtCUIL);
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.pbCerrar);
             this.Controls.Add(this.lblNombre);
@@ -635,9 +616,9 @@
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.PictureBox pbCerrar;
         private System.Windows.Forms.TextBox txtDireccion;
-        private System.Windows.Forms.TextBox txtCUILCUIT;
+        private System.Windows.Forms.TextBox txtCUIL;
         private System.Windows.Forms.Label lblDireccion;
-        private System.Windows.Forms.Label lblCUILCUIT;
+        private System.Windows.Forms.Label lblCUIL;
         private System.Windows.Forms.PictureBox pbMinimizar;
         private System.Windows.Forms.Label lblFechaNac;
         private System.Windows.Forms.DateTimePicker dtpFechaNac;
@@ -646,7 +627,6 @@
         private System.Windows.Forms.Label lblTipoPersona;
         private System.Windows.Forms.CheckBox chbFisica;
         private System.Windows.Forms.CheckBox chbJuridica;
-        private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label lblTelefono;
         private System.Windows.Forms.ComboBox cmbTipoTel;
         private System.Windows.Forms.Label lblTipoTel;
@@ -654,21 +634,20 @@
         private System.Windows.Forms.RadioButton rdbFemenino;
         private System.Windows.Forms.RadioButton rdbOtro;
         private System.Windows.Forms.GroupBox gpbGenero;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.TextBox txtLocalidad;
         private System.Windows.Forms.Label lblLocalidad;
         private System.Windows.Forms.TextBox txtCP;
         private System.Windows.Forms.Label lblCP;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtEmailAlt;
-        private System.Windows.Forms.Button btbAgregarTel;
-        private System.Windows.Forms.TextBox txtPais;
-        private System.Windows.Forms.Label lblPais;
         private System.Windows.Forms.TextBox txtProvincia;
         private System.Windows.Forms.Label lblProvincia;
         private System.Windows.Forms.TextBox txtRazonS;
         private System.Windows.Forms.Label lblRazonS;
+        private System.Windows.Forms.Label lblCiudad;
+        private System.Windows.Forms.TextBox txtCiudad;
+        private System.Windows.Forms.TextBox txtCUIT;
+        private System.Windows.Forms.Label lblCUIT;
     }
 }

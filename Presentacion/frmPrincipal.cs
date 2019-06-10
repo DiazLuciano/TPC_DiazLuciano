@@ -34,6 +34,7 @@ namespace Presentacion
 
         private void pbCerrar_Click(object sender, EventArgs e)
         {
+            this.Close();
             Application.Exit();
                 
         }

@@ -30,7 +30,7 @@ namespace Negocio
                 conexion.ejecutarConsulta();
                 if (conexion.Lector.Read())
                 {
-                    usuario.ID = (int)conexion.Lector["ID"];
+                    usuario.ID = (long)conexion.Lector["ID"];
                     usuario.nombre = (string)conexion.Lector["Nombre"];
                     usuario.contraseña = (string)conexion.Lector["Contraseña"];
                     return true;

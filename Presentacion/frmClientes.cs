@@ -18,7 +18,7 @@ namespace Presentacion
         public List<Cliente> ListaC;
         public frmClientes()
         {
-            InitializeComponent();           
+            InitializeComponent();
         }
 
         private void CargarGrillaClientes()
@@ -30,22 +30,27 @@ namespace Presentacion
                 dgvClientes.DataSource = cliN.ListarClientes();
 
                 //para ordenar las columnas de la grilla
-                //dgvContactos.Columns[4].DisplayIndex = 0;
+                //dgvClientes.Columns[0].DisplayIndex = 12;
+                //dgvClientes.Columns[1].Visible = true;
+                //dgvClientes.Columns[5].Visible = false;
+                //dgvClientes.Columns[6].Visible = false;
+                //dgvClientes.Columns[8].Visible = false;
                 //dgvClientes.Columns[10].Visible = false;
-                
-                
-                //para ocultar
-
-
-
+                //dgvClientes.Columns[11].Visible = false;
+                //dgvClientes.Columns[12].Visible = false;
+                //dgvClientes.Columns[13].Visible = false;
+                //dgvClientes.Columns[14].Visible = false;
+                //dgvClientes.Columns[15].Visible = false;
+                //dgvClientes.Columns[17].Visible = false;
+                //dgvClientes.Columns[18].Visible = false;
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("FALLO" + ex.ToString());
+                MessageBox.Show("FALLO " + ex.ToString());
             }
 
-      
+
         }
 
         /* private void btnCargar_Click(object sender, EventArgs e)
@@ -73,7 +78,7 @@ namespace Presentacion
         private void VerClientes_FormClosing(object sender, FormClosingEventArgs e)
         {
             frmPrincipal principal = new frmPrincipal();
-            principal.Show();    
+            principal.Show();
         }
 
         private void VerClientes_Load(object sender, EventArgs e)
@@ -82,7 +87,7 @@ namespace Presentacion
             //dgvClientes.DataSource = Cargargrilla("Clientes").Tables[0]; //data source necesita que le asigne un dataset para que me llene el DGV (Mi metodo llenar)
             cmbBuscarPor.Items.Add("DNI");
             cmbBuscarPor.Items.Add("Nombre/Apellido");
-            cmbBuscarPor.SelectedIndex =0;
+            cmbBuscarPor.SelectedIndex = 0;
         }
 
         private void pbAgregarCliente_Click(object sender, EventArgs e)
@@ -151,7 +156,7 @@ namespace Presentacion
             }
         }
 
-        
+
 
         private void txtDescripcion_TextChanged(object sender, EventArgs e)
         {
@@ -165,7 +170,7 @@ namespace Presentacion
             {
 
                 throw ex;
-             
+
             }
             /*if (txtDescripcion.Text == "")
             {
@@ -184,5 +189,18 @@ namespace Presentacion
 
             }*/
         }
+
+        private void PbTelefonos_Click(object sender, EventArgs e)
+        {
+            Cliente cli = new Cliente();
+            //guardo el item seleccionado, lo casteo a Cliente, porque sé que es uno...
+            cli = (Cliente)dgvClientes.CurrentRow.DataBoundItem;
+            //creo una instancia de la ventana de telefonos y le paso los telefonos del Cliente seleccionado
+            //por el constructor nuevo que agregamos.
+            frmTelefonos ventanaTelefonos = new frmTelefonos(cli.telefonos);
+            ventanaTelefonos.Show();
+        }
+
+     
     }
 }

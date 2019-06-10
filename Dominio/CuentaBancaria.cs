@@ -8,8 +8,8 @@ namespace Dominio
 {
     public class CuentaBancaria
     {
-        public int ID { get; set; }
+        public long ID { get; set; }
         public string banco { get; set; }
-        public int CBU { get; set; }
+        public long CBU { get; set; }
     }
 }

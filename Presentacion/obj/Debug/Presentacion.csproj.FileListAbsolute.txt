@@ -74,3 +74,4 @@ C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\
 C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\Debug\Presentacion.csproj.CopyComplete
 C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\Debug\Presentacion.exe
 C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\Debug\Presentacion.pdb
+C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\Debug\Presentacion.frmTelefonos.resources
