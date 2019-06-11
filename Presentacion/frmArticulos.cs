@@ -13,9 +13,9 @@ using Negocio;
 
 namespace Presentacion
 {
-    public partial class VerArticulos : Form
+    public partial class frmArticulos : Form
     {
-        public VerArticulos()
+        public frmArticulos()
         {
             InitializeComponent();
         }

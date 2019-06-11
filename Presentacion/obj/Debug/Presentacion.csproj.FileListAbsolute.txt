@@ -67,7 +67,6 @@ C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\
 C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\Debug\Presentacion.frmLogin.resources
 C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\Debug\Presentacion.frmPrincipal.resources
 C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\Debug\Presentacion.Properties.Resources.resources
-C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\Debug\Presentacion.VerArticulos.resources
 C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\Debug\Presentacion.frmClientes.resources
 C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.cache
 C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
@@ -75,3 +74,5 @@ C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\
 C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\Debug\Presentacion.exe
 C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\Debug\Presentacion.pdb
 C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\Debug\Presentacion.frmTelefonos.resources
+C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\Debug\Presentacion.frmArticulos.resources
+C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\Debug\Presentacion.frmAgregarTelefono.resources

@@ -65,6 +65,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAgregarTelefono.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgregarTelefono.Designer.cs">
+      <DependentUpon>frmAgregarTelefono.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCargarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,11 +102,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="VerArticulos.cs">
+    <Compile Include="frmArticulos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VerArticulos.Designer.cs">
-      <DependentUpon>VerArticulos.cs</DependentUpon>
+    <Compile Include="frmArticulos.Designer.cs">
+      <DependentUpon>frmArticulos.cs</DependentUpon>
     </Compile>
     <Compile Include="frmClientes.cs">
       <SubType>Form</SubType>
@@ -108,6 +114,9 @@
     <Compile Include="frmClientes.Designer.cs">
       <DependentUpon>frmClientes.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmAgregarTelefono.resx">
+      <DependentUpon>frmAgregarTelefono.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCargarCliente.resx">
       <DependentUpon>frmCargarCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -125,8 +134,8 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="VerArticulos.resx">
-      <DependentUpon>VerArticulos.cs</DependentUpon>
+    <EmbeddedResource Include="frmArticulos.resx">
+      <DependentUpon>frmArticulos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmClientes.resx">
       <DependentUpon>frmClientes.cs</DependentUpon>

@@ -20,21 +20,20 @@ namespace Presentacion
 
         private void pbCliente_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             frmClientes clientes = new frmClientes();
             clientes.Show();
         }
 
         private void pbProducto_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            VerArticulos articulos = new VerArticulos();
+            this.Close();
+            frmArticulos articulos = new frmArticulos();
             articulos.Show();
         }
 
         private void pbCerrar_Click(object sender, EventArgs e)
         {
-            this.Close();
             Application.Exit();
                 
         }
@@ -57,5 +56,6 @@ namespace Presentacion
             pbRestaurar.Visible = false;
             pbMaximizar.Visible = true;
         }
+
     }
 }

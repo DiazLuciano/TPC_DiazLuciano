@@ -69,12 +69,22 @@ namespace Negocio
             }
         }
 
+        public long BuscarId()
+        {
+            long id;
+            AccesoDatos AD = new AccesoDatos();
+            AD.setearConsulta("SELECT MAX(ID) FROM CLIENTES");
+            AD.abrirConexion();
+            AD.ejecutarConsulta();
+            id = (long)AD.Lector["ID"];
+            return id;
+        }
         public void AgregarCliente(Cliente cli)
         {
             AccesoDatos AD = new AccesoDatos();
             TelefonoNegocio TN = new TelefonoNegocio();
 
-            AD.setearConsulta("Exec SP_InsertarClientes " + cli.DNI + ",'" + cli.nombre + "','" + cli.apellido + "','" + cli.genero + "','" + cli.fnac + "' ," + cli.edad + ",'" + cli.Email + "','" + cli.direccion + "'," + cli.CP + ",'" + cli.Localidad + "' ,'" + cli.Ciudad + "' ,'" + cli.Provincia + "' ,'" + cli.tipo + "' ," + cli.CUIL + "," +cli.CUIT + ",'" + cli.razonsocial + "'");
+            AD.setearConsulta("Exec SP_InsertarClientes " + cli.DNI + ",'" + cli.nombre + "','" + cli.apellido + "','" + cli.genero + "','" + cli.fnac + "'," + cli.edad + ",'" + cli.Email + "','" + cli.direccion + "'," + cli.CP + ",'" + cli.Localidad + "' ,'" + cli.Ciudad + "' ,'" + cli.Provincia + "' ,'" + cli.tipo + "' ," + cli.CUIL + "," +cli.CUIT + ",'" + cli.razonsocial + "'");
 
             //SqlConnection conexion = new SqlConnection();
             //conexion.ConnectionString = AccesoDatos.cadenaConexion;
@@ -144,7 +154,7 @@ namespace Negocio
             try
             {
 
-                acceso.setearComandoText("Update Clientes  Where ID = " + cli.IDCliente);//me falta poner despues de contactos set Estado=0
+                acceso.setearComandoText("Update Clientes set Estado = 0 Where ID = " + cli.IDCliente);//me falta poner despues de contactos set Estado=0
                 acceso.abrirConexion();
                 acceso.ejecutarNonQuery();
 
@@ -163,39 +173,61 @@ namespace Negocio
         {
 
             IList<Cliente> lista = new List<Cliente>();
-            TelefonoNegocio serviceTel = new TelefonoNegocio();
-            String consulta = "Select Nombre, Apellido, Direccion From DIAZ_DB C inner join LOCALIDADES L On C.CP = L.CP Where C.Estado = 1 and ";
-            DataAccessLayer conexion = new DataAccessLayer();
+            TelefonoNegocio telN = new TelefonoNegocio();
+            String consulta = "Select * From Clientes  Where Estado = 1 and ";
+            AccesoDatos AD = new AccesoDatos();
 
             try
             {
                 switch (campo)
                 {
                     case "Nombre/Apellido":
-                        consulta = consulta + "AND NOMBRE " + " Like '%" + clave + "%'" + "OR APELLIDO " + " LIKE '%" + clave + "%'";
+                        consulta = consulta + "NOMBRE " + " Like '%" + clave + "%'" + "OR APELLIDO " + " LIKE '%" + clave + "%'";
                         break;
                     case "DNI":
                         consulta = consulta + campo + " Like '%" + clave + "%'";
                         break;
                 }
 
-                conexion.setearComandoText(consulta);
-                conexion.abrirConexion();
-                conexion.ejecutarQuery();
+                AD.setearConsulta(consulta);
+                AD.abrirConexion();
+                AD.ejecutarConsulta();
 
-                while (conexion.Lector.Read())
+                while (AD.Lector.Read())
                 {
                     Cliente cli = new Cliente();
-                    cli.nombre = conexion.Lector.GetString(0);
-                    cli.apellido = conexion.Lector.GetString(1);
-                    cli.direccion = conexion.Lector.GetString(2);
-                  
+                    cli.IDCliente = (long)AD.Lector["ID"];
+                    cli.DNI = (long)AD.Lector["DNI"];
+                    cli.nombre = (string)AD.Lector["Nombre"];
+                    cli.apellido = (string)AD.Lector["Apellido"];
+                    cli.genero = Convert.ToChar(AD.Lector["Genero"]);
+                    cli.fnac = (DateTime)AD.Lector["Fnac"];
+                    cli.fecha_alta = (DateTime)AD.Lector["FechaAlta"];
+                    cli.edad = (int)AD.Lector["Edad"];
+                    cli.Email = (string)AD.Lector["Email"];
+                    cli.direccion = (string)AD.Lector["Direccion"];
+                    cli.CP = (int)AD.Lector["CP"];
+                    cli.Localidad = (string)AD.Lector["Localidad"];
+                    cli.Ciudad = (string)AD.Lector["Ciudad"];
+                    cli.Provincia = (string)AD.Lector["Provincia"];
+                    cli.tipo = Convert.ToChar(AD.Lector["Tipo"]);
+                    if (!Convert.IsDBNull(AD.Lector["CUIL"]))
+                        cli.CUIL = (long)AD.Lector["CUIL"];
+                    //if (!(AD.Lector.IsDBNull(AD.Lector.GetOrdinal("fechaNacimiento"))))
+                    //{
+                    //    con.FechaNacimiento = lector.GetDateTime(9);
+                    //}
 
-                   /* //esto para validar si viene nulo de la base de datos...
-                    if (!(conexion.Lector.IsDBNull(conexion.Lector.GetOrdinal("fechaNacimiento"))))
-                    {
-                        cli.fnac = conexion.Lector.GetDateTime(9);
-                    }*/
+                    cli.CUIT = (long)AD.Lector["CUIT"];
+                    cli.razonsocial = (string)AD.Lector["RazonSocial"];
+                    cli.telefonos = telN.traerTelefonos(cli.IDCliente);
+
+
+                    /* //esto para validar si viene nulo de la base de datos...
+                     if (!(conexion.Lector.IsDBNull(conexion.Lector.GetOrdinal("fechaNacimiento"))))
+                     {
+                         cli.fnac = conexion.Lector.GetDateTime(9);
+                     }*/
 
 
                     lista.Add(cli);
@@ -207,6 +239,10 @@ namespace Negocio
             {
 
                 throw ex;
+            }
+            finally
+            {
+                AD.cerrarConexion();
             }
 
         }

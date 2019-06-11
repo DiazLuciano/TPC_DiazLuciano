@@ -39,6 +39,7 @@
             this.pbRestaurar = new System.Windows.Forms.PictureBox();
             this.pbCentro = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).BeginInit();
@@ -47,6 +48,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCentro)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // pbCliente
@@ -159,6 +161,10 @@
             this.panel1.Size = new System.Drawing.Size(1000, 51);
             this.panel1.TabIndex = 8;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -176,6 +182,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+
             ((System.ComponentModel.ISupportInitialize)(this.pbCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProducto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).EndInit();
@@ -184,6 +191,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbRestaurar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCentro)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -198,6 +206,6 @@
         private System.Windows.Forms.PictureBox pbMaximizar;
         private System.Windows.Forms.PictureBox pbRestaurar;
         private System.Windows.Forms.Panel panel1;
-
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

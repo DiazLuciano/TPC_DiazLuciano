@@ -50,33 +50,11 @@ namespace Presentacion
                 MessageBox.Show("FALLO " + ex.ToString());
             }
 
-
         }
-
-        /* private void btnCargar_Click(object sender, EventArgs e)
-         {
-             Cliente cli = new Cliente();
-             ClientesNegocio cliN = new ClientesNegocio();
-             try
-             {
-                 DateTime fecha = DateTime.Today;
-
-                 cli.DNI = Convert.ToInt32(txtDNI.Text);
-                 cli.nombre = txtNombre.Text;
-                 cli.apellido = txtApellido.Text;
-                 cliN.AgregarCliente(cli);
-                 MessageBox.Show("Cargado");
-                 BorrarRegistros();
-
-             }
-             catch (Exception ex)
-             {
-                 MessageBox.Show(ex.ToString());
-             }
-         }*/
 
         private void VerClientes_FormClosing(object sender, FormClosingEventArgs e)
         {
+            
             frmPrincipal principal = new frmPrincipal();
             principal.Show();
         }
@@ -84,7 +62,6 @@ namespace Presentacion
         private void VerClientes_Load(object sender, EventArgs e)
         {
             CargarGrillaClientes();
-            //dgvClientes.DataSource = Cargargrilla("Clientes").Tables[0]; //data source necesita que le asigne un dataset para que me llene el DGV (Mi metodo llenar)
             cmbBuscarPor.Items.Add("DNI");
             cmbBuscarPor.Items.Add("Nombre/Apellido");
             cmbBuscarPor.SelectedIndex = 0;
@@ -92,7 +69,7 @@ namespace Presentacion
 
         private void pbAgregarCliente_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            
             frmCargarCliente VentanaCargarCliente = new frmCargarCliente();
             VentanaCargarCliente.Show();
         }
@@ -142,7 +119,7 @@ namespace Presentacion
             ClientesNegocio serv = new ClientesNegocio();
             try
             {
-                if (MessageBox.Show("Está seguro de elimnar lógicamente al contaco?", "Eliminar", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.No)
+                if (MessageBox.Show("Está seguro de elimnar lógicamente al Cliente?", "Eliminar", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.No)
                 {
                     return;
                 }
@@ -156,38 +133,20 @@ namespace Presentacion
             }
         }
 
-
-
         private void txtDescripcion_TextChanged(object sender, EventArgs e)
         {
             ClientesNegocio CN = new ClientesNegocio();
-            //ListaC = CN.ListarClientes();
+
             try
             {
                 dgvClientes.DataSource = CN.Buscar(cmbBuscarPor.SelectedItem.ToString(), txtDescripcion.Text.Trim());
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show("No buscó nada,rompio");
                 throw ex;
 
             }
-            /*if (txtDescripcion.Text == "")
-            {
-                dgvClientes.DataSource = ListaC;
-
-            }
-            else
-            {
-                if (txtDescripcion.Text.Length >= 2)
-                {
-                    List<Cliente> lista;
-                    lista = ListaC.FindAll(X => X.nombre.ToUpper().Contains(txtDescripcion.Text.ToUpper()));
-                    
-                    dgvClientes.DataSource = lista;
-                }
-
-            }*/
         }
 
         private void PbTelefonos_Click(object sender, EventArgs e)
@@ -197,10 +156,11 @@ namespace Presentacion
             cli = (Cliente)dgvClientes.CurrentRow.DataBoundItem;
             //creo una instancia de la ventana de telefonos y le paso los telefonos del Cliente seleccionado
             //por el constructor nuevo que agregamos.
-            frmTelefonos ventanaTelefonos = new frmTelefonos(cli.telefonos);
+            frmTelefonos ventanaTelefonos = new frmTelefonos(cli.telefonos,cli);
             ventanaTelefonos.Show();
         }
 
-     
+
+
     }
 }

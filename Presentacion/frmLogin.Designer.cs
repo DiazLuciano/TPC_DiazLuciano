@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
-            this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.txtContraseña = new System.Windows.Forms.TextBox();
             this.pbCerrar = new System.Windows.Forms.PictureBox();
             this.pbMinimizar = new System.Windows.Forms.PictureBox();
             this.pbImagenUsuario = new System.Windows.Forms.PictureBox();
@@ -43,6 +41,9 @@
             this.pbTick2 = new System.Windows.Forms.PictureBox();
             this.pbCruz1 = new System.Windows.Forms.PictureBox();
             this.pbCruz2 = new System.Windows.Forms.PictureBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txtContraseña = new Negocio.ErrorTxtBox();
+            this.txtUsuario = new Negocio.ErrorTxtBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagenUsuario)).BeginInit();
@@ -53,37 +54,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbTick2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCruz1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCruz2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtUsuario
-            // 
-            this.txtUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtUsuario.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtUsuario.Font = new System.Drawing.Font("Maiandra GD", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtUsuario.Location = new System.Drawing.Point(107, 215);
-            this.txtUsuario.Multiline = true;
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(177, 20);
-            this.txtUsuario.TabIndex = 2;
-            this.toolTip1.SetToolTip(this.txtUsuario, "Ingrese Usuario");
-            this.txtUsuario.Validating += new System.ComponentModel.CancelEventHandler(this.txtUsuario_Validating);
-            // 
-            // txtContraseña
-            // 
-            this.txtContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.txtContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtContraseña.Font = new System.Drawing.Font("Maiandra GD", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContraseña.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtContraseña.Location = new System.Drawing.Point(107, 252);
-            this.txtContraseña.Multiline = true;
-            this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.PasswordChar = '*';
-            this.txtContraseña.Size = new System.Drawing.Size(177, 20);
-            this.txtContraseña.TabIndex = 3;
-            this.toolTip1.SetToolTip(this.txtContraseña, "Ingrese Contraseña");
-            this.txtContraseña.Validating += new System.ComponentModel.CancelEventHandler(this.txtContraseña_Validating);
             // 
             // pbCerrar
             // 
@@ -213,6 +185,32 @@
             this.pbCruz2.TabStop = false;
             this.pbCruz2.Visible = false;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // txtContraseña
+            // 
+            this.txtContraseña.Location = new System.Drawing.Point(107, 252);
+            this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.PasswordChar = '*';
+            this.txtContraseña.ShortcutsEnabled = false;
+            this.txtContraseña.Size = new System.Drawing.Size(177, 20);
+            this.txtContraseña.TabIndex = 18;
+            this.toolTip1.SetToolTip(this.txtContraseña, "Contraseña");
+            this.txtContraseña.Validar = true;
+            this.txtContraseña.TextChanged += new System.EventHandler(this.TxtContraseña_TextChanged);
+            // 
+            // txtUsuario
+            // 
+            this.txtUsuario.Location = new System.Drawing.Point(107, 215);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.ShortcutsEnabled = false;
+            this.txtUsuario.Size = new System.Drawing.Size(177, 20);
+            this.txtUsuario.TabIndex = 17;
+            this.txtUsuario.Validar = true;
+            this.txtUsuario.TextChanged += new System.EventHandler(this.TxtUsuario_TextChanged);
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -222,6 +220,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(400, 351);
+            this.Controls.Add(this.txtContraseña);
+            this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.pbCruz2);
             this.Controls.Add(this.pbCruz1);
             this.Controls.Add(this.pbTick2);
@@ -232,15 +232,13 @@
             this.Controls.Add(this.pbImagenUsuario);
             this.Controls.Add(this.pbMinimizar);
             this.Controls.Add(this.pbCerrar);
-            this.Controls.Add(this.txtContraseña);
-            this.Controls.Add(this.txtUsuario);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Iniciar Sesión";
-            this.Load += new System.EventHandler(this.frmLogin_Load);
+         
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagenUsuario)).EndInit();
@@ -251,14 +249,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbTick2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCruz1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCruz2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.TextBox txtUsuario;
-        private System.Windows.Forms.TextBox txtContraseña;
         private System.Windows.Forms.PictureBox pbCerrar;
         private System.Windows.Forms.PictureBox pbMinimizar;
         private System.Windows.Forms.PictureBox pbImagenUsuario;
@@ -270,6 +267,9 @@
         private System.Windows.Forms.PictureBox pbTick2;
         private System.Windows.Forms.PictureBox pbCruz1;
         private System.Windows.Forms.PictureBox pbCruz2;
+        private Negocio.ErrorTxtBox txtUsuario;
+        private Negocio.ErrorTxtBox txtContraseña;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
 

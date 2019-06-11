@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dominio;
 using Negocio;
-using System.IO;
+
 
 namespace Presentacion
 {
@@ -17,6 +17,7 @@ namespace Presentacion
     {
         private Cliente cli;
         private Telefono tel;
+        private AccesoDatos AD;
         private IList<Telefono> listaTelefonosNuevos = new List<Telefono>();
   
 
@@ -42,108 +43,10 @@ namespace Presentacion
 
         }
 
-        private void btnCargar_Click(object sender, EventArgs e)
-        {
-
-            ClientesNegocio serv = new ClientesNegocio();
-            TelefonoNegocio TN = new TelefonoNegocio();
-            tel = new Telefono();
-            try
-            {
-                cli.DNI = Convert.ToInt32(txtDNI.Text.ToString().Trim());
-                cli.nombre = txtNombre.Text.ToString().Trim();
-                cli.apellido = txtApellido.Text.ToString().Trim();
-                cli.genero = Convert.ToChar(rdbMasculino.Checked == true ? "M" : rdbFemenino.Checked == true ? "F" : "O");
-                cli.fnac= dtpFechaNac.Value;
-                cli.fecha_alta = DateTime.Today;
-                cli.edad = Convert.ToInt32(lblEdadNum.Text.ToString().Trim());
-                cli.Email = txtEmail.Text.ToString().Trim();
-                cli.direccion = txtDireccion.Text.ToString().Trim();
-                cli.CP = int.Parse(txtCP.Text);
-                cli.Localidad = txtLocalidad.Text.ToString().Trim();
-                cli.Ciudad = txtCiudad.Text.ToString().Trim();
-                cli.Provincia = txtProvincia.Text.ToString().Trim();
-                cli.tipo = Convert.ToChar(chbFisica.Checked == true ? "F" : "J");
-                if(chbFisica.Checked == true)
-                { cli.CUIL = Convert.ToInt64(txtCUIL.Text.ToString().Trim()); }
-                else
-                {
-                    cli.CUIT = Convert.ToInt64(txtCUIT.Text.ToString().Trim());
-                    cli.razonsocial = txtRazonS.Text.ToString().Trim();
-                }
-                tel.IDCliente = cli.IDCliente;
-                tel.telefono = txtTelefono.Text.ToString();
-                tel.tipotelefono = cmbTipoTel.Text.ToString();
-                
-
-                //cliente.localidad.CP = 
-                //cliente.localidad.nombre = txtLocalidad.Text.ToString().Trim();
-                //cliente.localidad.Pais = txtPais.Text.ToString().Trim();
-                //cliente.localidad.Provincia = txtProvincia.Text.ToString().Trim();
-                //cliente.localidad.Ciudad = txtProvincia.Text.ToString().Trim();
-                //cliente.CUILCUIT = Convert.ToInt64(txtCUILCUIT.Text.ToString().Trim());
-                //cliente.fnac = 
-                //
-                //
-                //cliente.EmailAlt = txtEmailAlt.Text.ToString().Trim();
-                //cliente.tipo = chbFisica.Checked == true ? "F" : "J";
-                //cliente.razonsocial = chbJuridica.Checked == true ? txtRazonS.Text.ToString().Trim() : "NADA";
-
-
-
-
-                if (this.Text != "Modificando")
-                {
-                    serv.AgregarCliente(cli);
-                    TN.agregar(tel);
-                    MessageBox.Show("Agregado correctamente!");
-                }
-                else
-                {
-                    serv.ModificarCliente(cli);
-   
-                    TN.agregar(tel);
-                    MessageBox.Show("Modificado correctamente!");
-                }
-
-                this.Dispose();
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error FATAL. " + ex.ToString(), "", MessageBoxButtons.OK);
-            }
-
-            this.Close();
-            frmClientes verClientes = new frmClientes();
-            verClientes.Show();
-        }
-
-
-
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            frmPrincipal principal = new frmPrincipal();
-            principal.Show();
-        }
-
-        private void pbCerrar_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            frmPrincipal principal = new frmPrincipal();
-            principal.Show();
-        }
-
-        private void pbMinimizar_Click(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Minimized;
-        }
-
         private void frmCargarCliente_Load(object sender, EventArgs e)
         {
 
-            
+
             if (Text == "Modificando")
             {
                 txtDNI.Text = Convert.ToString(cli.DNI);
@@ -158,7 +61,7 @@ namespace Presentacion
                 txtCUIT.Text = Convert.ToString(cli.CUIT);
                 dtpFechaNac.Value = cli.fnac;
                 txtEmail.Text = cli.Email;
-                
+
 
                 switch (cli.genero)
                 {
@@ -180,25 +83,112 @@ namespace Presentacion
                 else
                 {
                     chbJuridica.Checked = true;
-                   // chbFisica.Checked = false;
+                    // chbFisica.Checked = false;
                 }
                 // txtTelefono.Text = Convert.ToString(cli.telefonos);
             }
             else
             {
                 listaTelefonosNuevos = new List<Telefono>();
-
+                AD = new AccesoDatos();
             }
 
-                //combo de tipo de telefono, le agrego las opciones a mano. Estas deberían ser de la base de datos en realidad.
-                //pero nuestro teléfono debería a su vez tener un atributo clase TIPO para poder asignarlo.
-                cmbTipoTel.Items.Add("Trabajo");
-                cmbTipoTel.Items.Add("Casa");
-                cmbTipoTel.Items.Add("Celular");
-                //seteo el primero por default
-                cmbTipoTel.SelectedIndex = 0;
-                //Tipo de Persona por default
+            //combo de tipo de telefono, le agrego las opciones a mano. Estas deberían ser de la base de datos en realidad.
+            //pero nuestro teléfono debería a su vez tener un atributo clase TIPO para poder asignarlo.
+            cmbTipoTel.Items.Add("Trabajo");
+            cmbTipoTel.Items.Add("Casa");
+            cmbTipoTel.Items.Add("Celular");
+            //seteo el primero por default
+            cmbTipoTel.SelectedIndex = 0;
+            //Tipo de Persona por default
 
+        }
+
+        private void btnCargar_Click(object sender, EventArgs e)
+        {
+            if(AccesoDatos.ValidarFormulario(this,errorProvider1)==false)
+            {
+                ClientesNegocio serv = new ClientesNegocio();
+                TelefonoNegocio TN = new TelefonoNegocio();
+                tel = new Telefono();
+                try
+                {
+                    cli.DNI = Convert.ToInt32(txtDNI.Text.ToString().Trim());
+                    cli.nombre = txtNombre.Text.ToString().Trim();
+                    cli.apellido = txtApellido.Text.ToString().Trim();
+                    cli.genero = Convert.ToChar(rdbMasculino.Checked == true ? "M" : rdbFemenino.Checked == true ? "F" : "O");
+                    cli.fnac = dtpFechaNac.Value;
+                    cli.fecha_alta = DateTime.Today;
+                    cli.edad = Convert.ToInt32(lblEdadNum.Text.ToString().Trim());
+                    cli.Email = txtEmail.Text.ToString().Trim();
+                    cli.direccion = txtDireccion.Text.ToString().Trim();
+                    cli.CP = int.Parse(txtCP.Text);
+                    cli.Localidad = txtLocalidad.Text.ToString().Trim();
+                    cli.Ciudad = txtCiudad.Text.ToString().Trim();
+                    cli.Provincia = txtProvincia.Text.ToString().Trim();
+                    cli.tipo = Convert.ToChar(chbFisica.Checked == true ? "F" : "J");
+                    if (chbFisica.Checked == true)
+                    { cli.CUIL = Convert.ToInt64(txtCUIL.Text.ToString().Trim()); }
+                    else
+                    {
+                        cli.CUIT = Convert.ToInt64(txtCUIT.Text.ToString().Trim());
+                        cli.razonsocial = txtRazonS.Text.ToString().Trim();
+                    }
+
+                    if (this.Text != "Modificando")
+                    {
+
+                        serv.AgregarCliente(cli);
+                        long idcli = serv.BuscarId();
+                        tel.telefono = txtTelefono.Text.ToString().Trim();
+                        tel.tipotelefono = cmbTipoTel.Text.ToString().Trim();
+                        listaTelefonosNuevos.Add(tel);
+                        TN.agregar(tel, idcli);
+                        MessageBox.Show("Agregado correctamente!");
+                    }
+                    else
+                    {
+                        serv.ModificarCliente(cli);
+                        tel.IDCliente = cli.IDCliente;
+                        tel.telefono = txtTelefono.Text.ToString().Trim();
+                        tel.tipotelefono = cmbTipoTel.Text.ToString().Trim();
+                        listaTelefonosNuevos.Add(tel);
+                        TN.agregar(tel, cli.IDCliente);
+                        MessageBox.Show("Modificado correctamente!");
+                    }
+
+                    this.Dispose();
+                }
+
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error FATAL. " + ex.ToString(), "", MessageBoxButtons.OK);
+                }
+            }
+            this.Close();
+            frmClientes verClientes = new frmClientes();
+            verClientes.Show();
+        }
+
+
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            frmPrincipal principal = new frmPrincipal();
+            principal.Show();
+        }
+
+        private void pbCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            frmPrincipal principal = new frmPrincipal();
+            principal.Show();
+        }
+
+        private void pbMinimizar_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
         }
 
         private void dtpFechaNac_ValueChanged(object sender, EventArgs e)

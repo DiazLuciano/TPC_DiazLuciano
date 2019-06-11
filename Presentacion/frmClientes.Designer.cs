@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmClientes));
             this.dgvClientes = new System.Windows.Forms.DataGridView();
-            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.pbAgregarCliente = new System.Windows.Forms.PictureBox();
             this.pbModificarCliente = new System.Windows.Forms.PictureBox();
             this.pbEliminarCliente = new System.Windows.Forms.PictureBox();
@@ -43,6 +42,8 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pbTelefonos = new System.Windows.Forms.PictureBox();
             this.cmbBuscarPor = new System.Windows.Forms.ComboBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txtDescripcion = new Negocio.ErrorTxtBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAgregarCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbModificarCliente)).BeginInit();
@@ -53,6 +54,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTelefonos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvClientes
@@ -70,14 +72,6 @@
             this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvClientes.Size = new System.Drawing.Size(951, 139);
             this.dgvClientes.TabIndex = 0;
-            // 
-            // txtDescripcion
-            // 
-            this.txtDescripcion.Location = new System.Drawing.Point(140, 66);
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(268, 20);
-            this.txtDescripcion.TabIndex = 5;
-            this.txtDescripcion.TextChanged += new System.EventHandler(this.txtDescripcion_TextChanged);
             // 
             // pbAgregarCliente
             // 
@@ -129,6 +123,7 @@
             this.pbBuscarCliente.TabIndex = 9;
             this.pbBuscarCliente.TabStop = false;
             this.toolTip1.SetToolTip(this.pbBuscarCliente, "Buscar");
+    
             // 
             // pbCerrar
             // 
@@ -210,6 +205,20 @@
             this.cmbBuscarPor.Size = new System.Drawing.Size(121, 21);
             this.cmbBuscarPor.TabIndex = 14;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Location = new System.Drawing.Point(139, 65);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(278, 20);
+            this.txtDescripcion.SoloNumeros = false;
+            this.txtDescripcion.TabIndex = 16;
+            this.txtDescripcion.Validar = true;
+            this.txtDescripcion.TextChanged += new System.EventHandler(this.txtDescripcion_TextChanged);
+            // 
             // frmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -218,6 +227,7 @@
             this.AutoSize = true;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(975, 391);
+            this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.pbTelefonos);
             this.Controls.Add(this.cmbBuscarPor);
             this.Controls.Add(this.pbMaximizar);
@@ -228,7 +238,6 @@
             this.Controls.Add(this.pbEliminarCliente);
             this.Controls.Add(this.pbModificarCliente);
             this.Controls.Add(this.pbAgregarCliente);
-            this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.dgvClientes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -245,6 +254,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTelefonos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -252,7 +262,6 @@
 
         #endregion
         public System.Windows.Forms.DataGridView dgvClientes;
-        private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.PictureBox pbAgregarCliente;
         private System.Windows.Forms.PictureBox pbModificarCliente;
         private System.Windows.Forms.PictureBox pbEliminarCliente;
@@ -264,5 +273,7 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.ComboBox cmbBuscarPor;
         private System.Windows.Forms.PictureBox pbTelefonos;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private Negocio.ErrorTxtBox txtDescripcion;
     }
 }

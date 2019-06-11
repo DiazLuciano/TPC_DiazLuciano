@@ -81,14 +81,14 @@ namespace Negocio
         }
 
         //el metodo agregar lo llamo desde el que agrega una lista de telefonos o bien lo podría usar para agregar un telefono solo.
-        public void agregar(Telefono telNuevo)
+        public void agregar(Telefono telNuevo,long id)
         {
             AccesoDatos AD = new AccesoDatos();
             //DataAccessLayer conexion = new DataAccessLayer();
-            string consulta = "Exec SP_AgregarTelefono " + telNuevo.IDCliente + ", " + telNuevo.telefono + ", ";
+            string consulta = "Exec SP_AgregarTelefono " + id + ", " + telNuevo.telefono + ", ";
             try
             {
-               
+
                 //seteo insert y ejecuto
                 if (telNuevo.tipotelefono.ToString().Trim() == "Casa")
                 {
@@ -111,9 +111,6 @@ namespace Negocio
                 AD.setearConsulta(consulta);
                 AD.abrirConexion();
                 AD.ejecutarAccion();
-                //conexion.setearComandoText(consulta);
-                //conexion.abrirConexion();
-                //conexion.ejecutarNonQuery();
             }
             catch (Exception)
             {

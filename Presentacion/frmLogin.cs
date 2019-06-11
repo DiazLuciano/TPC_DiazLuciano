@@ -28,51 +28,6 @@ namespace Presentacion
             InitializeComponent();
             MessageBox.Show("contra y usuario : admin");
         }
-
-        private void frmLogin_Load(object sender, EventArgs e)
-        {
-            //btnIniciar.Enabled = false;
-
-        }
-
-        private void txtUsuario_Validating(object sender, CancelEventArgs e)
-        {
-            TextBox tb = (TextBox)sender;
-            if (tb.Text.Length != 0)
-            {
-                pbCruz1.Visible = false;
-                pbTick1.Visible = true;
-            }
-            else
-            {
-                pbCruz1.Visible = true;
-                pbTick1.Visible = false;
-            }
-            //tb.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            Validar();
-        }
-
-        private void txtContraseña_Validating(object sender, CancelEventArgs e)
-        {
-            TextBox tb = (TextBox)sender;
-            if (tb.Text.Length != 0)
-            {
-                pbTick2.Visible = true;
-                pbCruz2.Visible = false;
-            }
-            else
-            {
-                pbCruz2.Visible = true;
-                pbTick2.Visible = false;
-            }
-            Validar();
-        }
-
-        private void Validar()
-        {
-            //btnIniciar.Enabled = ((txtUsuario.BackColor != Color.Red) && (txtContraseña.BackColor != Color.Red) );
-        }
-
        
         private void pbCerrar_Click(object sender, EventArgs e)
         {
@@ -86,32 +41,49 @@ namespace Presentacion
 
         private void pbIniciar_Click(object sender, EventArgs e)
         {
-            Usuario usuarioCargado = new Usuario();
-            UsuarioNegocio usuarioNegocio = new UsuarioNegocio();
-            try
+           if (AccesoDatos.ValidarFormulario(this,errorProvider1) == false) // si en este metodo que le pasamos la ventana y el errorprovider, si es igual a false, que haga lo sgte
             {
-                usuarioCargado.nombre = txtUsuario.Text.Trim();
-                usuarioCargado.contraseña = txtContraseña.Text.Trim();
-                if (usuarioNegocio.ValidarUsuario(usuarioCargado))
+                Usuario usuarioCargado = new Usuario();
+                UsuarioNegocio usuarioNegocio = new UsuarioNegocio();
+                try
                 {
+                    usuarioCargado.nombre = txtUsuario.Text.Trim();
+                    usuarioCargado.contraseña = txtContraseña.Text.Trim();
+                    if (usuarioNegocio.ValidarUsuario(usuarioCargado))
+                    {
 
-                    setusuario(usuarioCargado);
-                    this.Hide();
-                    frmPrincipal principal = new frmPrincipal();
-                    principal.Show();
+                        setusuario(usuarioCargado);
+                        this.Hide();
+                        frmPrincipal principal = new frmPrincipal();
+                        principal.Show();
 
 
+                    }
+                    else
+                    {
+                        MessageBox.Show("usuario o pass incorrectos.");
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("usuario o pass incorrectos.");
+                    MessageBox.Show(ex.ToString());
                 }
             }
-            catch (Exception ex)
+           else
             {
-                MessageBox.Show(ex.ToString());
+
             }
+           
         }
 
+        private void TxtUsuario_TextChanged(object sender, EventArgs e)
+        {
+            errorProvider1.Clear();
+        }
+
+        private void TxtContraseña_TextChanged(object sender, EventArgs e)
+        {
+            errorProvider1.Clear();
+        }
     }
 }
