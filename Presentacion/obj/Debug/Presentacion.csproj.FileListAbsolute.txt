@@ -76,3 +76,5 @@ C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\
 C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\Debug\Presentacion.frmTelefonos.resources
 C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\Debug\Presentacion.frmArticulos.resources
 C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\Debug\Presentacion.frmAgregarTelefono.resources
+C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\Debug\Presentacion.frmAgregarArticulo.resources
+C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Presentacion\obj\Debug\Presentacion.frmFacturacion.resources

@@ -40,6 +40,7 @@
             this.pbCentro = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.pbCompra = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).BeginInit();
@@ -49,6 +50,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbCentro)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCompra)).BeginInit();
             this.SuspendLayout();
             // 
             // pbCliente
@@ -165,6 +167,20 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // pbCompra
+            // 
+            this.pbCompra.BackColor = System.Drawing.Color.Transparent;
+            this.pbCompra.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbCompra.Image = ((System.Drawing.Image)(resources.GetObject("pbCompra.Image")));
+            this.pbCompra.Location = new System.Drawing.Point(492, 234);
+            this.pbCompra.Name = "pbCompra";
+            this.pbCompra.Size = new System.Drawing.Size(60, 60);
+            this.pbCompra.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCompra.TabIndex = 9;
+            this.pbCompra.TabStop = false;
+            this.toolTip1.SetToolTip(this.pbCompra, "Compra");
+            this.pbCompra.Click += new System.EventHandler(this.PbCompra_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -174,6 +190,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1000, 600);
+            this.Controls.Add(this.pbCompra);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pbProducto);
             this.Controls.Add(this.pbCentro);
@@ -182,7 +199,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-
             ((System.ComponentModel.ISupportInitialize)(this.pbCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProducto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).EndInit();
@@ -192,6 +208,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbCentro)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCompra)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -207,5 +224,6 @@
         private System.Windows.Forms.PictureBox pbRestaurar;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.PictureBox pbCompra;
     }
 }

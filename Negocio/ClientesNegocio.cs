@@ -86,13 +86,6 @@ namespace Negocio
 
             AD.setearConsulta("Exec SP_InsertarClientes " + cli.DNI + ",'" + cli.nombre + "','" + cli.apellido + "','" + cli.genero + "','" + cli.fnac + "'," + cli.edad + ",'" + cli.Email + "','" + cli.direccion + "'," + cli.CP + ",'" + cli.Localidad + "' ,'" + cli.Ciudad + "' ,'" + cli.Provincia + "' ,'" + cli.tipo + "' ," + cli.CUIL + "," +cli.CUIT + ",'" + cli.razonsocial + "'");
 
-            //SqlConnection conexion = new SqlConnection();
-            //conexion.ConnectionString = AccesoDatos.cadenaConexion;
-            //SqlCommand comando = new SqlCommand();
-            //comando.CommandType = System.Data.CommandType.Text;
-            //comando.Connection = conexion;
-            //comando.CommandText = "insert into Clientes (DNI,Nombre,Apellido) values ('" + cli.DNI + "','" + cli.nombre + "','" + cli.apellido + "')";
-
             try
             {
                 AD.abrirConexion();

@@ -57,5 +57,10 @@ namespace Presentacion
             pbMaximizar.Visible = true;
         }
 
+        private void PbCompra_Click(object sender, EventArgs e)
+        {
+            frmFacturacion factura = new frmFacturacion();
+            factura.Show();
+        }
     }
 }

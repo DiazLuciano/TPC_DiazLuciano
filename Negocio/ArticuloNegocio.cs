@@ -12,30 +12,26 @@ namespace Negocio
     {
         public List<Articulo> ListarArticulos()
         {
-            SqlConnection conexion = new SqlConnection();
-            SqlCommand comando = new SqlCommand();
-            SqlDataReader Lector;
+            AccesoDatos AD = new AccesoDatos();
             List<Articulo> listado = new List<Articulo>();
-            Articulo art = new Articulo();
+            Articulo art;
 
             try
             {
-                conexion.ConnectionString = AccesoDatos.cadenaConexion;
-                comando.CommandType = System.Data.CommandType.Text;
-                //accesoDatos.setearConsulta( 
-                comando.CommandText = ("select * From Articulos");
-                comando.Connection = conexion;
-                conexion.Open();
-                Lector = comando.ExecuteReader();
-                //accesoDatos.abrirConexion();
-                // accesoDatos.ejecutarConsulta();
-                while (Lector.Read())
+                AD.setearConsulta("Select *from Articulos");
+                AD.abrirConexion();
+                AD.ejecutarConsulta();
+              
+                while (AD.Lector.Read())
                 {
                     art = new Articulo();
-                    art.ID = (int)Lector["ID"];
-                    /*art.marca = (int)Lector["DNI"];
-                    art.tipoarticulo = Lector["Nombre"].ToString();
-                    art.precioventa = Lector["Apellido"].ToString();*/
+                    art.ID = (long)AD.Lector["ID"];
+                    art.Descripcion = (string)AD.Lector["Descripcion"];
+                    art.Marca = (string)AD.Lector["Marca"];
+                    art.tipoarticulo = (string)AD.Lector["TipoArticulo"];
+                    art.Preciocompra = (decimal)AD.Lector["Preciocompra"];
+                    art.Precioventa = (decimal)AD.Lector["Precioventa"];
+                    art.Estado = (bool)AD.Lector["estado"];
                     listado.Add(art);
                 }
 
@@ -49,8 +45,29 @@ namespace Negocio
             }
             finally
             {
-                conexion.Close();
-                //accesoDatos.cerrarConexion();
+                AD.cerrarConexion();
+                
+            }
+
+
+        }
+
+        public void AgregarArticulo(Articulo art)
+        {
+            AccesoDatos AD = new AccesoDatos();
+            AD.setearConsulta("Exec SP_InsertarArticulo" + art.Descripcion + ",'" + art.Marca + "'," + art.Preciocompra + "," + art.Precioventa + ",'" + art.tipoarticulo + "'");
+            try
+            {
+                AD.abrirConexion();
+                AD.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                AD.cerrarConexion();
             }
         }
     }

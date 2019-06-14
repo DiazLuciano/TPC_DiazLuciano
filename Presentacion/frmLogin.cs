@@ -23,6 +23,8 @@ namespace Presentacion
             this.usuarioCargado = usuario;
         }
 
+        
+
         public frmLogin()
         {
             InitializeComponent();

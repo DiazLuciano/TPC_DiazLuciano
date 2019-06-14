@@ -31,6 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmArticulos));
             this.dgvArticulos = new System.Windows.Forms.DataGridView();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,7 +60,35 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click_1);
             // 
-            // VerArticulos
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(701, 71);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 2;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Location = new System.Drawing.Point(606, 71);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.TabIndex = 3;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Location = new System.Drawing.Point(509, 71);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(75, 23);
+            this.btnModificar.TabIndex = 4;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            // 
+            // frmArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -65,10 +96,13 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnModificar);
+            this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.dgvArticulos);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "VerArticulos";
+            this.Name = "frmArticulos";
             this.Text = "VerArticulos";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.VerArticulos_FormClosing_1);
             this.Load += new System.EventHandler(this.VerArticulos_Load);
@@ -81,5 +115,8 @@
 
         private System.Windows.Forms.DataGridView dgvArticulos;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnModificar;
     }
 }

@@ -12,20 +12,12 @@ create table Usuarios(
 	Contraseña varchar(50) not null
 )
 go
+
 INSERT INTO Usuarios (Nombre,Contraseña) values ('admin', 'admin')
 GO
+use DIAZ_DB
+go
 
---LOCALIDAD
---create table Localidades(
---	CPLoc int null primary key,
---	NombreLoc varchar (100) not null,
---	Pais varchar (50) null,
---	Provincia varchar (50) null,
---	Ciudad varchar (50) null	
---)
---go
---INSERT INTO Localidades (CPLoc,NombreLoc,Pais,Provincia,Ciudad)
---VALUES (1617,'El Talar','Argentina','Buenos Aires','Tigre')
 
 --TELEFONOS
 
@@ -111,17 +103,34 @@ create table Articulos(
 	Marca varchar (50) not null,
 	PrecioCompra decimal not null check(PrecioCompra>0),
 	PrecioVenta decimal not null check(PrecioVenta>0),
-	PrecioVentaMayorista decimal not null check(PrecioVentaMayorista>0),
-	TipoArticulo varchar (50) not null
+	--PrecioVentaMayorista decimal not null check(PrecioVentaMayorista>0),
+	TipoArticulo varchar (50) not null,
+	Fecha_alta date not null,
+	Estado bit not null
 )
 GO
 
 INSERT INTO Articulos (Descripcion,Marca,PrecioCompra,PrecioVenta,PrecioVentaMayorista,TipoArticulo) values ('Leche','Serenisima',35,45,40,'Comida')
-INSERT INTO Articulos (Descripcion,Marca,PrecioCompra,PrecioVenta,PrecioVentaMayorista,TipoArticulo) values ('Fideos','Knor',20,35,30,'Comida')
-INSERT INTO Articulos (Descripcion,Marca,PrecioCompra,PrecioVenta,PrecioVentaMayorista,TipoArticulo) values ('Televisor','Samsung',12000,15000,13000,'Electronica')
+INSERT INTO Articulos (Descripcion,Marca,PrecioCompra,PrecioVenta,PrecioVentaMayorista,TipoArticulo) values ()
+INSERT INTO Articulos (Descripcion,Marca,PrecioCompra,PrecioVenta,PrecioVentaMayorista,TipoArticulo) values ()
 GO
 
+create procedure SP_InsertarArticulo(@des varchar(50),@mar varchar(50),@tipoA varchar (50),@prec decimal,@prev decimal)as
+begin
+	Insert into Articulos (Descripcion,Marca,TipoArticulo,PrecioCompra,PrecioVenta,Fecha_alta,Estado) values (@des,@mar,@tipoA,@prec,@prev,getdate(),1)
+end
+go
+Exec SP_InsertarArticulo 'Leche','Serenisima','lacteo',35,45
+Exec SP_InsertarArticulo 'Fideos','Knor','Pastas',20,35
+Exec SP_InsertarArticulo 'Televisor','Samsung','Electronica',12000,15000
+go
+create procedure SP_ModificarArticulo(@id bigint,@des varchar(50),@mar varchar(50),@tipoA varchar (50),@prec decimal,@prev decimal)as
+begin
+	update Articulos set Descripcion=@des,Marca=@mar, TipoArticulo=@tipoA,PrecioCompra=@prec,PrecioVenta=@prev where ID=@id
+end
+go
 --PROVEEDORES
+
 create table Proveedores(
 	ID bigint not null primary key identity(1,1),
 	IDArticulo bigint not null foreign key references Articulos(ID)

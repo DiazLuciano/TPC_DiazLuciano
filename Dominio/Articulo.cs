@@ -8,11 +8,11 @@ namespace Dominio
 {
     public class Articulo
     {
-        public int ID { get; set; }
-        public string marca { get; set; }
-        public decimal preciocompra { get; set; }
-        public decimal precioventa { get; set; }
-        public decimal precioventamayorista { get; set; }
+        public long ID { get; set; }
+        public string Descripcion { get; set; }
+        public string Marca { get; set; }
+        public decimal Preciocompra { get; set; }
+        public decimal Precioventa { get; set; }
         public string tipoarticulo { get; set; }
         public Boolean Estado { get; set; }
 

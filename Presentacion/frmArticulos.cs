@@ -61,8 +61,15 @@ namespace Presentacion
 
         private void VerArticulos_FormClosing_1(object sender, FormClosingEventArgs e)
         {
+            
             frmPrincipal principal = new frmPrincipal();
             principal.Show();
+        }
+
+        private void BtnAgregar_Click(object sender, EventArgs e)
+        {
+            frmAgregarArticulo agregarA = new frmAgregarArticulo();
+            agregarA.Show();
         }
     }
 }

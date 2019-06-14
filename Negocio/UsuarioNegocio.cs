@@ -14,8 +14,9 @@ namespace Negocio
         public void setusuario(Usuario usuario)
         {
             this.us = usuario;
-        }
 
+        }
+        public static String Codigo = "";
         public bool ValidarUsuario(Usuario usuario)
         {
             
@@ -32,10 +33,13 @@ namespace Negocio
                     conexion.ejecutarConsulta();
                     if (conexion.Lector.Read())
                     {
+                        
                         usuario.ID = (long)conexion.Lector["ID"];
                         usuario.nombre = (string)conexion.Lector["Nombre"];
                         usuario.contraseña = (string)conexion.Lector["Contraseña"];
-                        return true;
+                    Codigo = Convert.ToString(usuario.ID);
+
+                    return true;
                     }
                     else
                     {
