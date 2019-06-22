@@ -65,7 +65,6 @@ namespace Presentacion
                 long idcli = tel.IDCliente;
                 TN.eliminarFisico(tel);
                 CargarGrillaTelefonos(idcli);
-                
 
             }
             catch (Exception ex)

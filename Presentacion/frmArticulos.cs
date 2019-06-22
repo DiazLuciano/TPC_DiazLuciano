@@ -71,5 +71,21 @@ namespace Presentacion
             frmAgregarArticulo agregarA = new frmAgregarArticulo();
             agregarA.Show();
         }
+
+        private void BtnModificar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Articulo art = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                frmAgregarArticulo modificar = new frmAgregarArticulo(art);
+                modificar.Text = "Modificando";
+                modificar.ShowDialog();
+                CargarGrillaArticulos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
     }
 }

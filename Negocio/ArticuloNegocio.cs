@@ -70,5 +70,25 @@ namespace Negocio
                 AD.cerrarConexion();
             }
         }
+
+        public void ModificarArticulo (Articulo art)
+        {
+            AccesoDatos AN = new AccesoDatos();
+            try
+            {
+                AN.setearConsulta("update articulos set descripcion = '" + art.Descripcion + "',marca = '" + art.Marca + "',preciocompra=" + art.Preciocompra + ",precioventa= " + art.Precioventa + ",tipoarticulo='" + art.tipoarticulo + "' where ID = " + art.ID);
+                AN.abrirConexion();
+                AN.ejecutarAccion();
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                AN.cerrarConexion();
+            }
+        }
     }
 }

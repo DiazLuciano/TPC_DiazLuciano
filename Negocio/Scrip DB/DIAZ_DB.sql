@@ -103,17 +103,13 @@ create table Articulos(
 	Marca varchar (50) not null,
 	PrecioCompra decimal not null check(PrecioCompra>0),
 	PrecioVenta decimal not null check(PrecioVenta>0),
-	--PrecioVentaMayorista decimal not null check(PrecioVentaMayorista>0),
 	TipoArticulo varchar (50) not null,
 	Fecha_alta date not null,
+	Imagen varchar(800)  NULL,
 	Estado bit not null
 )
 GO
 
-INSERT INTO Articulos (Descripcion,Marca,PrecioCompra,PrecioVenta,PrecioVentaMayorista,TipoArticulo) values ('Leche','Serenisima',35,45,40,'Comida')
-INSERT INTO Articulos (Descripcion,Marca,PrecioCompra,PrecioVenta,PrecioVentaMayorista,TipoArticulo) values ()
-INSERT INTO Articulos (Descripcion,Marca,PrecioCompra,PrecioVenta,PrecioVentaMayorista,TipoArticulo) values ()
-GO
 
 create procedure SP_InsertarArticulo(@des varchar(50),@mar varchar(50),@tipoA varchar (50),@prec decimal,@prev decimal)as
 begin
@@ -129,6 +125,7 @@ begin
 	update Articulos set Descripcion=@des,Marca=@mar, TipoArticulo=@tipoA,PrecioCompra=@prec,PrecioVenta=@prev where ID=@id
 end
 go
+
 --PROVEEDORES
 
 create table Proveedores(
@@ -164,4 +161,43 @@ exec SP_InsertarClientes 39105320,'Luciano','Diaz','M','10-09-1995',23,'luchodia
 go
 
 
+create table Detalles(
+	NumFac bigint not null,
+	CodPro bigint not null,
+	PrecioV decimal not null,
+	CantVend int not null
+	)
+go
+create table Facturas(
+	ID bigint not null primary key identity(1,1),
+	Fecha_fac date not null,
+	IDCliente bigint not null
+	)
+go
 
+create procedure SP_ActualizarDetalles (@numF bigint,@codPro bigint,@preV decimal,@cantV int) AS
+begin
+	insert into Detalles (NumFac,CodPro,PrecioV,CantVend) values (@numF,@codPro,@preV,@cantV)
+end
+go
+
+create procedure SP_ActualizarFacturas (@codCli bigint) as 
+begin
+	declare @numFac bigint
+	select @numFac=max(ID)from Facturas
+	if @numFac is null set @numFac = 0
+	set @numFac = @numFac+1
+	insert into Facturas (ID,Fecha_fac,IDCliente)values (@numFac,GETDATE(), @codCli)
+	select *from Facturas where ID=@numFac
+end
+
+go
+--ESTE PROCEDIMIENTO ME SIRVE PARA RECOLECTAR DATOS DE LA VENTANA FACTURACION
+create procedure SP_DatosFactura (@numfac bigint )as
+begin
+	select f.*,d.PrecioV,d.CantVend,c.Nombre,a.Descripcion,d.PrecioV*d.CantVend as Importe
+	from Facturas as f inner join detalles as d on f.ID=d.NumFac
+	inner join Articulos as A on A.ID=d.CodPro
+	inner join Clientes as c on c.ID=f.IDCliente
+	where f.ID=@numfac
+end

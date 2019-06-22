@@ -37,20 +37,20 @@
             this.pbMinimizar = new System.Windows.Forms.PictureBox();
             this.pbMaximizar = new System.Windows.Forms.PictureBox();
             this.pbRestaurar = new System.Windows.Forms.PictureBox();
+            this.pbCompra = new System.Windows.Forms.PictureBox();
             this.pbCentro = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.pbCompra = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRestaurar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCompra)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCentro)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCompra)).BeginInit();
             this.SuspendLayout();
             // 
             // pbCliente
@@ -138,6 +138,20 @@
             this.pbRestaurar.Visible = false;
             this.pbRestaurar.Click += new System.EventHandler(this.pbRestaurar_Click);
             // 
+            // pbCompra
+            // 
+            this.pbCompra.BackColor = System.Drawing.Color.Transparent;
+            this.pbCompra.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbCompra.Image = ((System.Drawing.Image)(resources.GetObject("pbCompra.Image")));
+            this.pbCompra.Location = new System.Drawing.Point(492, 234);
+            this.pbCompra.Name = "pbCompra";
+            this.pbCompra.Size = new System.Drawing.Size(60, 60);
+            this.pbCompra.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCompra.TabIndex = 9;
+            this.pbCompra.TabStop = false;
+            this.toolTip1.SetToolTip(this.pbCompra, "Compra");
+            this.pbCompra.Click += new System.EventHandler(this.PbCompra_Click);
+            // 
             // pbCentro
             // 
             this.pbCentro.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -167,20 +181,6 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // pbCompra
-            // 
-            this.pbCompra.BackColor = System.Drawing.Color.Transparent;
-            this.pbCompra.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbCompra.Image = ((System.Drawing.Image)(resources.GetObject("pbCompra.Image")));
-            this.pbCompra.Location = new System.Drawing.Point(492, 234);
-            this.pbCompra.Name = "pbCompra";
-            this.pbCompra.Size = new System.Drawing.Size(60, 60);
-            this.pbCompra.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbCompra.TabIndex = 9;
-            this.pbCompra.TabStop = false;
-            this.toolTip1.SetToolTip(this.pbCompra, "Compra");
-            this.pbCompra.Click += new System.EventHandler(this.PbCompra_Click);
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -205,10 +205,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRestaurar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCompra)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCentro)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCompra)).EndInit();
             this.ResumeLayout(false);
 
         }
