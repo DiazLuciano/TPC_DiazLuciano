@@ -1,10 +1,9 @@
-
 create database DIAZ_DB
 go
 use DIAZ_DB
 go
 SET DATEFORMAT DMY
-
+go
 --USUARIOS
 
 create table Usuarios(
@@ -118,7 +117,7 @@ begin
 end
 go
 
-exec SP_InsertarClientes 12323412,'Alejandra','More','F','12-1-1999',20,'ale@gmail.com','thomas 333',1324,'Munro','Vicente Lopez','Buenos Aires','F',12123234122,''
+exec SP_InsertarClientes 12323412,'Alejandra','More','F','31-1-1999',20,'ale@gmail.com','thomas 333',1324,'Munro','Vicente Lopez','Buenos Aires','F',12123234122,''
 exec SP_InsertarClientes 39105320,'Luciano','Diaz','M','10-09-1995',23,'luchodiaz1995@gmail.com','Groussac 2038',1617,'El Talar','Tigre','Buenos Aires','F',20391053201,''
 go
 

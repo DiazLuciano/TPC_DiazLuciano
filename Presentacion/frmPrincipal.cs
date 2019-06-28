@@ -38,24 +38,24 @@ namespace Presentacion
                 
         }
 
-        private void pbMaximizar_Click(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Maximized;
-            pbMaximizar.Visible = false;
-            pbRestaurar.Visible = true;
-        }
+        //private void pbMaximizar_Click(object sender, EventArgs e)
+        //{
+        //    WindowState = FormWindowState.Maximized;
+        //    pbMaximizar.Visible = false;
+        //    pbRestaurar.Visible = true;
+        //}
 
         private void pbMinimizar_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;         
         }
 
-        private void pbRestaurar_Click(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Normal;
-            pbRestaurar.Visible = false;
-            pbMaximizar.Visible = true;
-        }
+        //private void pbRestaurar_Click(object sender, EventArgs e)
+        //{
+        //    WindowState = FormWindowState.Normal;
+        //    pbRestaurar.Visible = false;
+        //    pbMaximizar.Visible = true;
+        //}
 
         private void PbCompra_Click(object sender, EventArgs e)
         {
