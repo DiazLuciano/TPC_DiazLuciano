@@ -55,7 +55,7 @@ namespace Negocio
         public void AgregarArticulo(Articulo art)
         {
             AccesoDatos AD = new AccesoDatos();
-            AD.setearConsulta("Exec SP_InsertarArticulo" + art.Descripcion + ",'" + art.Marca + "'," + art.Preciocompra + "," + art.Precioventa + ",'" + art.tipoarticulo + "'");
+            AD.setearConsulta("Exec SP_InsertarArticulo '" + art.Descripcion + "','" + art.Marca + "'," + art.Preciocompra + "," + art.Precioventa + ",'" + art.tipoarticulo + "'");
             try
             {
                 AD.abrirConexion();
@@ -69,6 +69,7 @@ namespace Negocio
             {
                 AD.cerrarConexion();
             }
+            
         }
 
         public void ModificarArticulo (Articulo art)
@@ -76,7 +77,7 @@ namespace Negocio
             AccesoDatos AN = new AccesoDatos();
             try
             {
-                AN.setearConsulta("update articulos set descripcion = '" + art.Descripcion + "',marca = '" + art.Marca + "',preciocompra=" + art.Preciocompra + ",precioventa= " + art.Precioventa + ",tipoarticulo='" + art.tipoarticulo + "' where ID = " + art.ID);
+                AN.setearConsulta("Exec SP_ModificarArticulo "+ art.ID+",'" + art.Descripcion + "', '" + art.Marca + "','" + art.tipoarticulo + "'," + art.Preciocompra + "," + art.Precioventa + "");
                 AN.abrirConexion();
                 AN.ejecutarAccion();
             }
@@ -89,6 +90,92 @@ namespace Negocio
             {
                 AN.cerrarConexion();
             }
+        }
+
+        public void eliminarLogico(Articulo art)
+        {
+
+            AccesoDatos AD = new AccesoDatos();
+            try
+            {
+
+                AD.setearConsulta("Update Articulos Set Estado = 0 Where ID = " + art.ID);
+                AD.abrirConexion();
+                AD.ejecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                AD.cerrarConexion();
+            }
+        }
+
+        public void eliminarFisico(Articulo art)
+        {
+
+            AccesoDatos AD = new AccesoDatos();
+            try
+            {
+
+                AD.setearConsulta("Delete from articulos Where ID = " + art.ID);
+                AD.abrirConexion();
+                AD.ejecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                AD.cerrarConexion();
+            }
+        }
+        public IList<Articulo> BuscarPro(string clave)
+        {
+
+            IList<Articulo> lista = new List<Articulo>();
+            ArticuloNegocio AN = new ArticuloNegocio();
+            String consulta = "Select * From articulos  Where ";
+            AccesoDatos AD = new AccesoDatos();
+
+            try
+            {
+               
+                consulta = consulta + "id " + " Like '%" + clave + "%'";
+                AD.setearConsulta(consulta);
+                AD.abrirConexion();
+                AD.ejecutarConsulta();
+
+                while (AD.Lector.Read())
+                {
+                    Articulo art = new Articulo();
+                    art.ID = (long)AD.Lector["ID"];
+                    art.Descripcion = (string)AD.Lector["descripcion"];
+                    art.Marca = (string)AD.Lector["marca"];
+                    art.Preciocompra = (decimal)AD.Lector["preciocompra"];
+                    art.Precioventa = (decimal)AD.Lector["precioventa"];
+                    art.tipoarticulo = (string)AD.Lector["tipoarticulo"];
+                    art.Estado = (bool)AD.Lector["Estado"];
+                    lista.Add(art);
+                }
+                return lista;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                AD.cerrarConexion();
+            }
+
         }
     }
 }

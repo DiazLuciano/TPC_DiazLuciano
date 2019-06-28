@@ -7,6 +7,7 @@ using Dominio;
 using System.Data;
 using System.Data.SqlClient;
 using Negocio;
+using System.Windows.Forms;
 
 namespace Negocio
 {
@@ -20,7 +21,7 @@ namespace Negocio
 
             try
             {
-                AD.setearConsulta("Exec SP_VerClientes");
+                AD.setearConsulta("Select * from Clientes");
                 AD.abrirConexion();
                 AD.ejecutarConsulta();
 
@@ -42,18 +43,11 @@ namespace Negocio
                     cli.Ciudad = (string)AD.Lector["Ciudad"];
                     cli.Provincia = (string)AD.Lector["Provincia"];
                     cli.tipo = Convert.ToChar(AD.Lector["Tipo"]);
-                    if (!Convert.IsDBNull(AD.Lector["CUIL"]))
-                        cli.CUIL = (long)AD.Lector["CUIL"];
-                    //if (!(AD.Lector.IsDBNull(AD.Lector.GetOrdinal("fechaNacimiento"))))
-                    //{
-                    //    con.FechaNacimiento = lector.GetDateTime(9);
-                    //}
-                
-                    cli.CUIT = (long)AD.Lector["CUIT"];
+                    if (!Convert.IsDBNull(AD.Lector["CUILCUIT"]))
+                        cli.CUILCUIT = (long)AD.Lector["CUILCUIT"];              
                     cli.razonsocial = (string)AD.Lector["RazonSocial"];
-                    cli.telefonos = telN.traerTelefonos(cli.IDCliente);
-                    //cli.localidad = new Localidad() { CP = (int)AD.Lector["CP"],Loc = (string)AD.Lector["NombreLoc"] };
-                    //cli.localidad.CP = (int)AD.Lector["CP"];
+                    cli.telefonos = telN.traerTelefonos(cli.DNI);
+                    cli.Estado = (bool)AD.Lector["Estado"];
                     listado.Add(cli);
                 }
                 return listado;
@@ -69,6 +63,7 @@ namespace Negocio
             }
         }
 
+        
         public long BuscarId()
         {
             long id;
@@ -84,7 +79,7 @@ namespace Negocio
             AccesoDatos AD = new AccesoDatos();
             TelefonoNegocio TN = new TelefonoNegocio();
 
-            AD.setearConsulta("Exec SP_InsertarClientes " + cli.DNI + ",'" + cli.nombre + "','" + cli.apellido + "','" + cli.genero + "','" + cli.fnac + "'," + cli.edad + ",'" + cli.Email + "','" + cli.direccion + "'," + cli.CP + ",'" + cli.Localidad + "' ,'" + cli.Ciudad + "' ,'" + cli.Provincia + "' ,'" + cli.tipo + "' ," + cli.CUIL + "," +cli.CUIT + ",'" + cli.razonsocial + "'");
+            AD.setearConsulta("Exec SP_InsertarClientes " + cli.DNI + ",'" + cli.nombre + "','" + cli.apellido + "','" + cli.genero + "','" + cli.fnac + "'," + cli.edad + ",'" + cli.Email + "','" + cli.direccion + "'," + cli.CP + ",'" + cli.Localidad + "' ,'" + cli.Ciudad + "' ,'" + cli.Provincia + "' ,'" + cli.tipo + "' ," + cli.CUILCUIT + ",'" + cli.razonsocial + "'");
 
             try
             {
@@ -107,7 +102,7 @@ namespace Negocio
             
             try
             {
-                dato.setearComandoText("Update Clientes Set  DNI = " + cli.DNI + ",Nombre = '" + cli.nombre + "', Apellido = '" + cli.apellido + "',Genero ='" + cli.genero + "',Fnac='" + cli.fnac + "' ,Edad=" + cli.edad + ",Email='" + cli.Email + "',Direccion='" + cli.direccion + "',CP=" + cli.CP + ",Localidad='" + cli.Localidad + "' ,Ciudad='" + cli.Ciudad + "' ,Provincia='" + cli.Provincia + "' ,Tipo='" + cli.tipo + "' ,CUIL=" + cli.CUIL + ",CUIT=" +cli.CUIT + ",RazonSocial='" + cli.razonsocial + "' Where ID = " + cli.IDCliente);
+                dato.setearComandoText("Update Clientes Set  DNI = " + cli.DNI + ",Nombre = '" + cli.nombre + "', Apellido = '" + cli.apellido + "',Genero ='" + cli.genero + "',Fnac='" + cli.fnac + "' ,Edad=" + cli.edad + ",Email='" + cli.Email + "',Direccion='" + cli.direccion + "',CP=" + cli.CP + ",Localidad='" + cli.Localidad + "' ,Ciudad='" + cli.Ciudad + "' ,Provincia='" + cli.Provincia + "' ,Tipo='" + cli.tipo + "' ,CUILCUIT=" + cli.CUILCUIT + ",RazonSocial='" + cli.razonsocial + "' Where ID = " + cli.IDCliente);
                 dato.abrirConexion();
                 dato.ejecutarNonQuery();
                 dato.cerrarConexion();
@@ -204,14 +199,13 @@ namespace Negocio
                     cli.Ciudad = (string)AD.Lector["Ciudad"];
                     cli.Provincia = (string)AD.Lector["Provincia"];
                     cli.tipo = Convert.ToChar(AD.Lector["Tipo"]);
-                    if (!Convert.IsDBNull(AD.Lector["CUIL"]))
-                        cli.CUIL = (long)AD.Lector["CUIL"];
+                    if (!Convert.IsDBNull(AD.Lector["CUILCUIT"]))
+                        cli.CUILCUIT = (long)AD.Lector["CUILCUIT"];
                     //if (!(AD.Lector.IsDBNull(AD.Lector.GetOrdinal("fechaNacimiento"))))
                     //{
                     //    con.FechaNacimiento = lector.GetDateTime(9);
                     //}
 
-                    cli.CUIT = (long)AD.Lector["CUIT"];
                     cli.razonsocial = (string)AD.Lector["RazonSocial"];
                     cli.telefonos = telN.traerTelefonos(cli.IDCliente);
 

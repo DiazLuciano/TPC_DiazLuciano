@@ -11,6 +11,11 @@ namespace WEB
 {
     public partial class Login : System.Web.UI.Page
     {
+        public Usuario usuarioCargado;
+        public void setusuario(Usuario usuario)
+        {
+            this.usuarioCargado = usuario;
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -26,11 +31,12 @@ namespace WEB
                 usuarioCargado.contraseña = txtContraseña.Text.Trim();
                 if (usuarioNegocio.ValidarUsuario(usuarioCargado))
                 {
+                    setusuario(usuarioCargado);
                     Response.Redirect("PanelGeneral.aspx");
                 }
                 else
                 {
-                    Response.Write("Usuario Invalido");
+                    Response.Write("<script>alert('USUARIO INCORRECTO.'</script>");
                 }
             }
             catch (Exception ex)

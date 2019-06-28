@@ -13,21 +13,21 @@ namespace Negocio
     
     public class TelefonoNegocio
     {
-        public IList<Telefono> traerTelefonos (long idCli)
+        public IList<Telefono> traerTelefonos (long dni)
         {
             AccesoDatos AD = new AccesoDatos();
             IList<Telefono> lista = new List<Telefono>();
             
             try
             {
-                AD.setearConsulta("exec SP_TraerTelefonos "+ idCli);
+                AD.setearConsulta("exec SP_TraerTelefonos "+ dni);
                 AD.abrirConexion();
                 AD.ejecutarConsulta();
                 while(AD.Lector.Read())
                 {
                     Telefono tel = new Telefono();
                     tel.ID = (long)AD.Lector["ID"];
-                    tel.IDCliente = (long)AD.Lector["IDCliente"];
+                    tel.DNICliente = (long)AD.Lector["DNICliente"];
                     tel.telefono = (string)AD.Lector["Telefono"];
                     tel.tipotelefono = (string)AD.Lector["Tipo"];
                     lista.Add(tel);
@@ -81,15 +81,14 @@ namespace Negocio
         }
 
         //el metodo agregar lo llamo desde el que agrega una lista de telefonos o bien lo podría usar para agregar un telefono solo.
-        public void agregar(Telefono telNuevo,long id)
+        public void agregar(Telefono telNuevo,long dni)
         {
             AccesoDatos AD = new AccesoDatos();
-            //DataAccessLayer conexion = new DataAccessLayer();
-            string consulta = "Exec SP_AgregarTelefono " + id + ", " + telNuevo.telefono + ", ";
+            string consulta = "Exec SP_AgregarTelefono " + dni + ", " + telNuevo.telefono + ", ";
+
             try
             {
 
-                //seteo insert y ejecuto
                 if (telNuevo.tipotelefono.ToString().Trim() == "Casa")
                 {
                     consulta = consulta + "Casa";
@@ -111,6 +110,7 @@ namespace Negocio
                 AD.setearConsulta(consulta);
                 AD.abrirConexion();
                 AD.ejecutarAccion();
+                
             }
             catch (Exception)
             {

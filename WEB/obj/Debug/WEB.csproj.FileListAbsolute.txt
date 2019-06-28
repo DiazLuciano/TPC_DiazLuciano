@@ -75,3 +75,10 @@ C:\Users\HP\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\WEB\obj\Debug\WEB.csproj.C
 C:\Users\HP\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\WEB\obj\Debug\WEB.csproj.CopyComplete
 C:\Users\HP\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\WEB\obj\Debug\WEB.dll
 C:\Users\HP\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\WEB\obj\Debug\WEB.pdb
+C:\Users\HP\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\WEB\bin\SqlServerTypes\x64\msvcr120.dll
+C:\Users\HP\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\WEB\bin\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Users\HP\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\WEB\bin\SqlServerTypes\x86\msvcr120.dll
+C:\Users\HP\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\WEB\bin\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\HP\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\WEB\bin\Microsoft.SqlServer.Types.dll
+C:\Users\HP\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\WEB\bin\Dominio.dll.config
+C:\Users\HP\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\WEB\bin\Negocio.dll.config

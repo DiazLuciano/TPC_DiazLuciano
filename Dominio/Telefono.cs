@@ -9,7 +9,7 @@ namespace Dominio
     public class Telefono
     {
         public long ID { get; set; }
-        public long IDCliente { get; set; }
+        public long DNICliente { get; set; }
         public string telefono { get; set; }
         public string tipotelefono { get; set; }
         

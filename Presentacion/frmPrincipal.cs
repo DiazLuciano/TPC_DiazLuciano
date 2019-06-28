@@ -20,7 +20,7 @@ namespace Presentacion
 
         private void pbCliente_Click(object sender, EventArgs e)
         {
-            this.Close();
+            
             frmClientes clientes = new frmClientes();
             clientes.Show();
         }
@@ -61,6 +61,12 @@ namespace Presentacion
         {
             frmFacturacion factura = new frmFacturacion();
             factura.Show();
+        }
+
+        private void PbReporteFac_Click(object sender, EventArgs e)
+        {
+            frmReporteFactura reporteF = new frmReporteFactura();
+            reporteF.Show();
         }
     }
 }

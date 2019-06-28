@@ -41,7 +41,7 @@ namespace Presentacion
                 try
                 {
                     art = new Articulo();
-                    art.ID = art.ID;
+                    
                     art.Descripcion = txtDescripcion.Text;
                     art.Marca = txtMarca.Text;
                     art.Preciocompra = Convert.ToDecimal(txtCompra.Text);
@@ -56,6 +56,7 @@ namespace Presentacion
                     }
                     else
                     {
+                        art.ID = Convert.ToInt64(txtIDPro.Text);
                         AN.ModificarArticulo(art);
                         MessageBox.Show("Modificado correctamente!");
                     }
@@ -68,25 +69,25 @@ namespace Presentacion
                     MessageBox.Show("Error FATAL. " + ex.ToString(), "", MessageBoxButtons.OK);
                 }
             }
-            this.Close();
-            frmClientes verClientes = new frmClientes();
-            verClientes.Show();
+      
+      
         }
 
         private void FrmAgregarArticulo_Load(object sender, EventArgs e)
         {
             if (Text == "Modificando")
             {
-                textBox1.Text = art.ID.ToString();
+                txtIDPro.Text = art.ID.ToString();
                 txtDescripcion.Text = art.Descripcion;
                 txtMarca.Text = art.Marca;
                 txtCompra.Text = art.Preciocompra.ToString();
                 txtVenta.Text = art.Precioventa.ToString();
+                cmbTipoArt.SelectedItem = art.tipoarticulo;
 
             }
             else
             {
-      
+                //cmbTipoArt.SelectedIndex = 0;
             }
             cmbTipoArt.Items.Add("Inmuebles");
             cmbTipoArt.Items.Add("Tecnologia");
@@ -96,7 +97,8 @@ namespace Presentacion
             cmbTipoArt.Items.Add("Belleza");
             cmbTipoArt.Items.Add("Higiene");
             cmbTipoArt.Items.Add("Ropa y accesorios");
-            cmbTipoArt.SelectedIndex = 0;
+            cmbTipoArt.Items.Add("Comida");
+            
         }
     }
 }

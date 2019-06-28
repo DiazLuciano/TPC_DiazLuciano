@@ -57,10 +57,10 @@ namespace Presentacion
                 txtCP.Text = Convert.ToString(cli.CP);
                 txtCiudad.Text = cli.Ciudad;
                 txtProvincia.Text = cli.Provincia;
-                txtCUIL.Text = Convert.ToString(cli.CUIL);
-                txtCUIT.Text = Convert.ToString(cli.CUIT);
+                txtCUILCUIT.Text = Convert.ToString(cli.CUILCUIT);
                 dtpFechaNac.Value = cli.fnac;
                 txtEmail.Text = cli.Email;
+                txtRazonS.Text = cli.razonsocial;
 
 
                 switch (cli.genero)
@@ -85,12 +85,13 @@ namespace Presentacion
                     chbJuridica.Checked = true;
                     // chbFisica.Checked = false;
                 }
-                // txtTelefono.Text = Convert.ToString(cli.telefonos);
+
             }
             else
             {
                 listaTelefonosNuevos = new List<Telefono>();
                 AD = new AccesoDatos();
+                chbFisica.Checked = true;
             }
 
             //combo de tipo de telefono, le agrego las opciones a mano. Estas deberían ser de la base de datos en realidad.
@@ -100,6 +101,7 @@ namespace Presentacion
             cmbTipoTel.Items.Add("Celular");
             //seteo el primero por default
             cmbTipoTel.SelectedIndex = 0;
+            
             //Tipo de Persona por default
 
         }
@@ -111,79 +113,85 @@ namespace Presentacion
                 ClientesNegocio serv = new ClientesNegocio();
                 TelefonoNegocio TN = new TelefonoNegocio();
                 tel = new Telefono();
-                try
-                {
-                    cli.DNI = Convert.ToInt32(txtDNI.Text.ToString().Trim());
-                    cli.nombre = txtNombre.Text.ToString().Trim();
-                    cli.apellido = txtApellido.Text.ToString().Trim();
-                    cli.genero = Convert.ToChar(rdbMasculino.Checked == true ? "M" : rdbFemenino.Checked == true ? "F" : "O");
-                    cli.fnac = dtpFechaNac.Value;
-                    cli.fecha_alta = DateTime.Today;
-                    cli.edad = Convert.ToInt32(lblEdadNum.Text.ToString().Trim());
-                    cli.Email = txtEmail.Text.ToString().Trim();
-                    cli.direccion = txtDireccion.Text.ToString().Trim();
-                    cli.CP = int.Parse(txtCP.Text);
-                    cli.Localidad = txtLocalidad.Text.ToString().Trim();
-                    cli.Ciudad = txtCiudad.Text.ToString().Trim();
-                    cli.Provincia = txtProvincia.Text.ToString().Trim();
-                    cli.tipo = Convert.ToChar(chbFisica.Checked == true ? "F" : "J");
-                    if (chbFisica.Checked == true)
-                    { cli.CUIL = Convert.ToInt64(txtCUIL.Text.ToString().Trim()); }
-                    else
-                    {
-                        cli.CUIT = Convert.ToInt64(txtCUIT.Text.ToString().Trim());
-                        cli.razonsocial = txtRazonS.Text.ToString().Trim();
-                    }
-
-                    if (this.Text != "Modificando")
+               
+                    try
                     {
 
-                        serv.AgregarCliente(cli);
-                        long idcli = serv.BuscarId();
-                        tel.telefono = txtTelefono.Text.ToString().Trim();
-                        tel.tipotelefono = cmbTipoTel.Text.ToString().Trim();
-                        listaTelefonosNuevos.Add(tel);
-                        TN.agregar(tel, idcli);
-                        MessageBox.Show("Agregado correctamente!");
+                        cli.DNI = Convert.ToInt32(txtDNI.Text.ToString().Trim());
+                        cli.nombre = txtNombre.Text.ToString().Trim();
+                        cli.apellido = txtApellido.Text.ToString().Trim();
+                        cli.genero = Convert.ToChar(rdbMasculino.Checked == true ? "M" : rdbFemenino.Checked == true ? "F" : "O");
+                        cli.fnac = dtpFechaNac.Value;
+                        cli.fecha_alta = DateTime.Today;
+                        cli.edad = Convert.ToInt32(lblEdadNum.Text.ToString().Trim());
+                        cli.Email = txtEmail.Text.ToString().Trim();
+                        cli.direccion = txtDireccion.Text.ToString().Trim();
+                        cli.CP = int.Parse(txtCP.Text);
+                        cli.Localidad = txtLocalidad.Text.ToString().Trim();
+                        cli.Ciudad = txtCiudad.Text.ToString().Trim();
+                        cli.Provincia = txtProvincia.Text.ToString().Trim();
+                        cli.tipo = Convert.ToChar(chbFisica.Checked == true ? "F" : "J");
+
+                        cli.CUILCUIT = Convert.ToInt64(txtCUILCUIT.Text.ToString().Trim());
+                        if (chbJuridica.Checked == true)
+                        { cli.razonsocial = txtRazonS.Text.ToString().Trim(); }
+                        else
+                        {
+                            cli.razonsocial = "";
+                        }
+
+                        if (this.Text != "Modificando")
+                        {
+
+                            serv.AgregarCliente(cli);
+
+                            tel.telefono = txtTelefono.Text.ToString().Trim();
+                            tel.tipotelefono = cmbTipoTel.Text.ToString().Trim();
+                            listaTelefonosNuevos.Add(tel);
+                            TN.agregar(tel, cli.DNI);
+                            MessageBox.Show("Agregado correctamente!");
+                        }
+                        else
+                        {
+                            serv.ModificarCliente(cli);
+                            tel.DNICliente = cli.DNI;
+                            tel.telefono = txtTelefono.Text.ToString().Trim();
+                            tel.tipotelefono = cmbTipoTel.Text.ToString().Trim();
+                            listaTelefonosNuevos.Add(tel);
+                            TN.agregar(tel, cli.DNI);
+                            MessageBox.Show("Modificado correctamente!");
+                        }
+
+                        this.Dispose();
                     }
-                    else
+
+                    catch (Exception ex)
                     {
-                        serv.ModificarCliente(cli);
-                        tel.IDCliente = cli.IDCliente;
-                        tel.telefono = txtTelefono.Text.ToString().Trim();
-                        tel.tipotelefono = cmbTipoTel.Text.ToString().Trim();
-                        listaTelefonosNuevos.Add(tel);
-                        TN.agregar(tel, cli.IDCliente);
-                        MessageBox.Show("Modificado correctamente!");
+                        MessageBox.Show("ERROR, DNI YA EXISTENTE. " + ex.ToString(), "", MessageBoxButtons.OK);
                     }
-
-                    this.Dispose();
-                }
-
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error FATAL. " + ex.ToString(), "", MessageBoxButtons.OK);
-                }
+                    finally
+                    {
+                        Close();
+                        //this.Close();
+                        //frmClientes verClientes = new frmClientes();
+                        //verClientes.Show();
+                    }
             }
-            this.Close();
-            frmClientes verClientes = new frmClientes();
-            verClientes.Show();
+            
         }
-
-
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            this.Close();
-            frmPrincipal principal = new frmPrincipal();
-            principal.Show();
+            this.Dispose();
+            //frmPrincipal principal = new frmPrincipal();
+            //principal.Show();
         }
 
         private void pbCerrar_Click(object sender, EventArgs e)
         {
-            this.Close();
-            frmPrincipal principal = new frmPrincipal();
-            principal.Show();
+            this.Dispose();
+            //frmPrincipal principal = new frmPrincipal();
+            //principal.Show();
         }
 
         private void pbMinimizar_Click(object sender, EventArgs e)
@@ -196,45 +204,20 @@ namespace Presentacion
             lblEdadNum.Text = (DateTime.Today.AddTicks(-dtpFechaNac.Value.Ticks).Year - 1).ToString();
         }
 
-        private void txtDNI_KeyPress_1(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar < 48 || e.KeyChar > 59) && (e.KeyChar != 8))
-                e.Handled = true;
-        }
-
-        private void txtCUIL_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            //if ((e.KeyChar < 48 || e.KeyChar > 59) && e.KeyChar != 8)
-            //    e.Handled = true;
-        }
-
-        private void txtCUIT_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            //if ((e.KeyChar < 48 || e.KeyChar > 59) && e.KeyChar != 8)
-            //    e.Handled = true;
-        }
-
         private void chbFisica_Click(object sender, EventArgs e)
         {
             chbJuridica.Checked = false;
             txtRazonS.Enabled = false;
-            txtCUIT.Enabled = false;
-            txtCUIL.Enabled = true;
+   
         }
 
         private void chbJuridica_Click(object sender, EventArgs e)
         {
             chbFisica.Checked = false;
             txtRazonS.Enabled = true;
-            txtCUIT.Enabled = true;
-            txtCUIL.Enabled = false;
+
         }
 
-        private void txtCP_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar < 48 || e.KeyChar > 59) && e.KeyChar != 8)
-                e.Handled = true;
-        }
 
         private void btbAgregarTel_Click(object sender, EventArgs e)
         {
@@ -253,12 +236,6 @@ namespace Presentacion
 
         }
 
-       
-
-        private void TxtTelefono_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar < 48 || e.KeyChar > 59) && e.KeyChar != 8)
-                e.Handled = true;
-        }
+    
     }
 }

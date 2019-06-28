@@ -29,20 +29,20 @@ namespace Presentacion
                 ClientesNegocio cliN = new ClientesNegocio();
                 dgvClientes.DataSource = cliN.ListarClientes();
 
-                //para ordenar las columnas de la grilla
-                //dgvClientes.Columns[0].DisplayIndex = 12;
-                //dgvClientes.Columns[1].Visible = true;
-                //dgvClientes.Columns[5].Visible = false;
-                //dgvClientes.Columns[6].Visible = false;
-                //dgvClientes.Columns[8].Visible = false;
-                //dgvClientes.Columns[10].Visible = false;
-                //dgvClientes.Columns[11].Visible = false;
-                //dgvClientes.Columns[12].Visible = false;
-                //dgvClientes.Columns[13].Visible = false;
-                //dgvClientes.Columns[14].Visible = false;
-                //dgvClientes.Columns[15].Visible = false;
-                //dgvClientes.Columns[17].Visible = false;
-                //dgvClientes.Columns[18].Visible = false;
+                dgvClientes.Columns[4].Visible = false;
+                dgvClientes.Columns[6].Visible = false;
+                dgvClientes.Columns[7].Visible = false;
+                dgvClientes.Columns[10].Visible = false;
+                dgvClientes.Columns[12].Visible = false;
+                dgvClientes.Columns[13].Visible = false;
+                dgvClientes.Columns[14].Visible = false;
+                dgvClientes.Columns[13].Visible = false;
+                dgvClientes.Columns[14].Visible = false;
+                dgvClientes.Columns[15].Visible = false;
+                dgvClientes.Columns[16].Visible = false;
+                dgvClientes.Columns[17].Visible = false;
+                dgvClientes.Columns[18].Visible = false;
+                dgvClientes.Columns[19].Visible = true;
 
             }
             catch (Exception ex)
@@ -76,6 +76,7 @@ namespace Presentacion
 
         private void pbCerrar_Click(object sender, EventArgs e)
         {
+            this.Dispose();
             this.Close();
         }
 
@@ -100,6 +101,7 @@ namespace Presentacion
 
         private void pbModificarCliente_Click(object sender, EventArgs e)
         {
+            this.Close();
             try
             {
                 Cliente cli = (Cliente)dgvClientes.CurrentRow.DataBoundItem;
@@ -158,9 +160,46 @@ namespace Presentacion
             //por el constructor nuevo que agregamos.
             frmTelefonos ventanaTelefonos = new frmTelefonos(cli.telefonos,cli);
             ventanaTelefonos.Show();
+            
+            
         }
 
+        private void BtnCliente_Click(object sender, EventArgs e)
+        {
+            frmDetalleCliente detalle = new frmDetalleCliente((Cliente)dgvClientes.CurrentRow.DataBoundItem);
+            detalle.ShowDialog();
+        }
 
+        private void BtnEliminarLog_Click(object sender, EventArgs e)
+        {
+            ClientesNegocio serv = new ClientesNegocio();
+            try
+            {
+                if (MessageBox.Show("Está seguro de elimnar fisicamente al Cliente?", "Eliminar", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.No)
+                {
+                    return;
+                }
+                Cliente cli = (Cliente)dgvClientes.CurrentRow.DataBoundItem;
+                serv.eliminarLogico(cli);
+                CargarGrillaClientes();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
 
+        private void BtnSeleccionar_Click(object sender, EventArgs e)
+        {
+            if(dgvClientes.Rows.Count == 0)
+            {
+                return;
+            }
+            else
+            {
+                DialogResult = DialogResult.OK;
+                Close();
+            }
+        }
     }
 }

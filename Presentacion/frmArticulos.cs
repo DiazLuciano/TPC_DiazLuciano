@@ -87,5 +87,59 @@ namespace Presentacion
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private void BtnEliminarF_Click(object sender, EventArgs e)
+        {
+            ArticuloNegocio AN = new ArticuloNegocio();
+            try
+            {
+                if (MessageBox.Show("Está seguro de elimnar fisicamente al articulo?", "Eliminar", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.No)
+                {
+                    return;
+                }
+                Articulo art = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                AN.eliminarFisico(art);
+                CargarGrillaArticulos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void BtnEliminarL_Click(object sender, EventArgs e)
+        {
+            ArticuloNegocio AN = new ArticuloNegocio();
+            try
+            {
+                if (MessageBox.Show("Está seguro de elimnar logicamente al articulo?", "Eliminar", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.No)
+                {
+                    return;
+                }
+                Articulo art = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                AN.eliminarLogico(art);
+                CargarGrillaArticulos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void TxtDescripcion_TextChanged_1(object sender, EventArgs e)
+        {
+            ArticuloNegocio AN = new ArticuloNegocio();
+
+            try
+            {
+                dgvArticulos.DataSource = AN.BuscarPro(txtDescripcion.Text.Trim());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No buscó nada,rompio");
+                throw ex;
+
+            }
+        }
     }
 }

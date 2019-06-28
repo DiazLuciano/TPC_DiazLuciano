@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dominio;
 using Negocio;
+using System.Data.SqlClient;
 
 namespace Presentacion
 {
@@ -154,39 +155,61 @@ namespace Presentacion
             }
         }
 
+        public void Nuevo()
+        {
+            txtDNI.Text = "";
+            txtCliente.Text = "";
+            txtCodigoPro.Text = "";
+            txtDescripcion.Text = "";
+            txtPrecio.Text = "";
+            txtCantidad.Text = "";
+            txtTotal.Text = "";
+            dgvProductos.Rows.Clear();
+            cont_fila = 0;
+            total = 0;
+            txtDNI.Focus();
+        }
+
         private void BtnFacturar_Click(object sender, EventArgs e)
         {
             AccesoDatos AD = new AccesoDatos();
+            
             if(cont_fila!=0)
             {
                 try
                 {
-                    AD.setearConsulta("Exec SP_ActualizarFacturas '"+txtDNI.Text.Trim()+"'");
-                    AD.abrirConexion();
-                    AD.ejecutarConsulta();
-                    AD.Lector.Read();
-                    string NumFac = AD.Lector["ID"].ToString().Trim();
-                    AD.cerrarConexion();
+                    string cmd = string.Format("Exec SP_ActualizarFacturas '{0}'",txtDNI.Text.Trim());
+                    DataSet ds = AD.dataSet(cmd);
+                    string numFac = ds.Tables[0].Rows[0]["NumFac"].ToString().Trim();
+
                     foreach (DataGridViewRow Fila in dgvProductos.Rows)
                     {
-                        AD.setearConsulta("Exec SP_ActualizarDetalles '"+NumFac+"','"+Fila.Cells[0].Value.ToString()+"','"+Fila.Cells[2].Value.ToString()+"','"+Fila.Cells[3].Value.ToString()+"'");
-                        AD.abrirConexion();
-                        AD.ejecutarAccion();
+                        cmd = string.Format("Exec SP_ActualizarDetalles '{0}','{1}','{2}','{3}'", numFac , Fila.Cells[0].Value.ToString() , Fila.Cells[2].Value.ToString() , Fila.Cells[3].Value.ToString());
+                        ds = AD.dataSet(cmd);
                     }
 
-                    AD.setearConsulta("Exec sp_datosfactura" + NumFac);
-                    AD.ejecutarAccion();
-                    AD.cerrarConexion();
+                    cmd = "Exec SP_DATOSFACTURA " + numFac;
+                    ds = AD.dataSet(cmd);
+
                     Reporte rp = new Reporte();
-                    rp.
-                    
+                    rp.reportViewer1.LocalReport.DataSources[0].Value = ds.Tables[0];
+
+                    rp.ShowDialog();
+                    Nuevo();
+
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error:" + ex.Message);
        
                 }
+                finally
+                {
+                    AD.cerrarConexion();
+                }
             }
         }
+
+   
     }  
 }

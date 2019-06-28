@@ -14,75 +14,79 @@ namespace Presentacion
 {
     public partial class frmAgregarTelefono : Form
     {
-        public frmAgregarTelefono(string id)
+        public frmAgregarTelefono(string dni)
         {
             InitializeComponent();
-            txtIDCli.Text = id;
+            txtDNI.Text = dni.Trim();
         }
 
         private void FrmAgregarTelefono_Load(object sender, EventArgs e)
         {
-            
-            //combo de tipo de telefono, le agrego las opciones a mano. Estas deberían ser de la base de datos en realidad.
-            //pero nuestro teléfono debería a su vez tener un atributo clase TIPO para poder asignarlo.
             cmbTipoTel.Items.Add("Trabajo");
             cmbTipoTel.Items.Add("Casa");
             cmbTipoTel.Items.Add("Celular");
-            //seteo el primero por default
             cmbTipoTel.SelectedIndex = 0;
-            //Tipo de Persona por default
+            
 
         }
-
-        private void BtnSalir_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
-            AccesoDatos AD = new AccesoDatos();
-            Telefono tel = new Telefono();
-
-            tel.telefono = txtTelefono.Text;
-            tel.tipotelefono = cmbTipoTel.Text;
-
-            string consulta = "Exec SP_AgregarTelefono " +long.Parse(txtIDCli.Text)+ ", " + tel.telefono + ", ";
-            try
+            if (AccesoDatos.ValidarFormulario(this, errorProvider1) == false)
             {
+                AccesoDatos AD = new AccesoDatos();
+                Telefono tel = new Telefono();
 
-                //seteo insert y ejecuto
-                if (tel.tipotelefono.ToString().Trim() == "Casa")
+                tel.telefono = txtTelefono.Text;
+                tel.tipotelefono = cmbTipoTel.Text;
+
+                string consulta = "Exec SP_AgregarTelefono " + long.Parse(txtDNI.Text) + ", " + tel.telefono + ", ";
+                try
                 {
-                    consulta = consulta + "Casa";
-                }
-                else
-                {
-                    if (tel.tipotelefono.ToString().Trim() == "Celular")
+
+                    if (tel.tipotelefono.ToString().Trim() == "Casa")
                     {
-                        consulta = consulta + "Celular";
+                        consulta = consulta + "Casa";
                     }
                     else
                     {
-                        if (tel.tipotelefono.ToString().Trim() == "Trabajo")
+                        if (tel.tipotelefono.ToString().Trim() == "Celular")
                         {
-                            consulta = consulta + "Trabajo";
+                            consulta = consulta + "Celular";
+                        }
+                        else
+                        {
+                            if (tel.tipotelefono.ToString().Trim() == "Trabajo")
+                            {
+                                consulta = consulta + "Trabajo";
+                            }
                         }
                     }
+                    AD.setearConsulta(consulta);
+                    AD.abrirConexion();
+                    AD.ejecutarAccion();
+
                 }
-                AD.setearConsulta(consulta);
-                AD.abrirConexion();
-                AD.ejecutarAccion();
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+
+                    MessageBox.Show("AGREGADO CORRECTAMENTE");
+                    AD.cerrarConexion();
+                    this.Dispose();
+
+                }
             }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                AD.cerrarConexion();
-                this.Close();
-            }
+               
+
         }
+        private void BtnSalir_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+ 
     }
 }

@@ -42,11 +42,11 @@ namespace Negocio
             }
 
         //esto para luego...
-        public void setearSP(string sp)
+            public void setearSP(string sp)
             {
-                comando = new SqlCommand();
-                comando.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.CommandText = sp;
+                 comando = new SqlCommand();
+                 comando.CommandType = System.Data.CommandType.StoredProcedure;
+                 comando.CommandText = sp;
             }
 
             public void abrirConexion()
@@ -97,6 +97,20 @@ namespace Negocio
                     throw ex;
                 }
             }
+        public DataSet dataSet(string cmd)
+        {
+            AccesoDatos ad = new AccesoDatos();
+            ad.abrirConexion();
+
+            DataSet ds = new DataSet();
+            SqlDataAdapter dp = new SqlDataAdapter(cmd, cadenaConexion);
+
+            dp.Fill(ds);
+            ad.cerrarConexion();
+
+            return ds;
+
+        }
 
         public void ejecutarConsulta()
         {
@@ -162,6 +176,7 @@ namespace Negocio
             return HayErrores;
         }
 
+       
     }
          
 }

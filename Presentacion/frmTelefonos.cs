@@ -20,30 +20,24 @@ namespace Presentacion
             InitializeComponent();
         }
 
-        //agregamos este constructor que recibe una lista te telefonos por parámetro
         public frmTelefonos(IList<Telefono> telefonos,Cliente cli)
         {
             InitializeComponent();
-            //se la damos como origen de datos a la grilla y nada mas. Cuando este form nace, 
-            //carga automaticamente los telefonos que le manden del otro form.
             dgvTelefonos.DataSource = telefonos;
-            dgvTelefonos.Columns[0].Visible = false;
-            dgvTelefonos.Columns[1].Visible = false;
-            txtIDCli.Text = cli.IDCliente.ToString();
+            txtDNI.Text = cli.DNI.ToString();
 
         }
-        public void CargarGrillaTelefonos(long id)
+        public void CargarGrillaTelefonos(long dni)
         {
             TelefonoNegocio TN = new TelefonoNegocio();
             try
             {
                  Telefono tel = (Telefono)dgvTelefonos.CurrentRow.DataBoundItem;
-                 dgvTelefonos.DataSource = TN.traerTelefonos(id);
+                 dgvTelefonos.DataSource = TN.traerTelefonos(dni);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                MessageBox.Show("ERROR, RETORNO NULL PORQUE NO HAY REGISTROS CARGADOS " + ex.ToString(), "", MessageBoxButtons.OK);
             }
         }
 
@@ -62,40 +56,49 @@ namespace Presentacion
                     return;
                 }
                 Telefono tel = (Telefono)dgvTelefonos.CurrentRow.DataBoundItem;
-                long idcli = tel.IDCliente;
+                long dni = tel.DNICliente;
                 TN.eliminarFisico(tel);
-                CargarGrillaTelefonos(idcli);
+                
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
+            finally
+            {
+                this.Dispose();
+            }
         }
 
 
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
-
+            
             //guardo el item seleccionado, lo casteo a Cliente, porque sé que es uno...
-            frmAgregarTelefono agregarTel = new frmAgregarTelefono(txtIDCli.Text);
+            frmAgregarTelefono agregarTel = new frmAgregarTelefono(txtDNI.Text);
             try
             {
                 //cuando se ejecuta esto, el form "agregar" toma el control
                 agregarTel.ShowDialog();
                 //cuando termina, devuelve el control al form AGENDA y se ejecuta el siguiente evento
-                FrmTelefonos_Load(sender, e);
+                //FrmTelefonos_Load(sender, e);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                throw ex;
+            }
+            finally
+            {
+                this.Close();
             }
         }
 
         private void FrmTelefonos_Load(object sender, EventArgs e)
         {
-
+            
+            CargarGrillaTelefonos(long.Parse(txtDNI.Text));
         }
     }
 }

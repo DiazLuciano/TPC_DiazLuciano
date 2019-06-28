@@ -44,6 +44,9 @@
             this.cmbBuscarPor = new System.Windows.Forms.ComboBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.txtDescripcion = new Negocio.ErrorTxtBox();
+            this.btnCliente = new System.Windows.Forms.Button();
+            this.btnEliminarLog = new System.Windows.Forms.Button();
+            this.btnSeleccionar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAgregarCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbModificarCliente)).BeginInit();
@@ -77,7 +80,7 @@
             // 
             this.pbAgregarCliente.BackColor = System.Drawing.Color.Transparent;
             this.pbAgregarCliente.Image = ((System.Drawing.Image)(resources.GetObject("pbAgregarCliente.Image")));
-            this.pbAgregarCliente.Location = new System.Drawing.Point(723, 65);
+            this.pbAgregarCliente.Location = new System.Drawing.Point(747, 65);
             this.pbAgregarCliente.Name = "pbAgregarCliente";
             this.pbAgregarCliente.Size = new System.Drawing.Size(60, 60);
             this.pbAgregarCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -90,7 +93,7 @@
             // 
             this.pbModificarCliente.BackColor = System.Drawing.Color.Transparent;
             this.pbModificarCliente.Image = ((System.Drawing.Image)(resources.GetObject("pbModificarCliente.Image")));
-            this.pbModificarCliente.Location = new System.Drawing.Point(798, 65);
+            this.pbModificarCliente.Location = new System.Drawing.Point(822, 65);
             this.pbModificarCliente.Name = "pbModificarCliente";
             this.pbModificarCliente.Size = new System.Drawing.Size(60, 60);
             this.pbModificarCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -103,7 +106,7 @@
             // 
             this.pbEliminarCliente.BackColor = System.Drawing.Color.Transparent;
             this.pbEliminarCliente.Image = ((System.Drawing.Image)(resources.GetObject("pbEliminarCliente.Image")));
-            this.pbEliminarCliente.Location = new System.Drawing.Point(874, 65);
+            this.pbEliminarCliente.Location = new System.Drawing.Point(898, 65);
             this.pbEliminarCliente.Name = "pbEliminarCliente";
             this.pbEliminarCliente.Size = new System.Drawing.Size(60, 60);
             this.pbEliminarCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -123,12 +126,12 @@
             this.pbBuscarCliente.TabIndex = 9;
             this.pbBuscarCliente.TabStop = false;
             this.toolTip1.SetToolTip(this.pbBuscarCliente, "Buscar");
-    
             // 
             // pbCerrar
             // 
             this.pbCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pbCerrar.BackColor = System.Drawing.Color.Transparent;
+            this.pbCerrar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbCerrar.Image = ((System.Drawing.Image)(resources.GetObject("pbCerrar.Image")));
             this.pbCerrar.Location = new System.Drawing.Point(941, 11);
             this.pbCerrar.Name = "pbCerrar";
@@ -188,7 +191,7 @@
             this.pbTelefonos.BackColor = System.Drawing.Color.Transparent;
             this.pbTelefonos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbTelefonos.Image = ((System.Drawing.Image)(resources.GetObject("pbTelefonos.Image")));
-            this.pbTelefonos.Location = new System.Drawing.Point(646, 127);
+            this.pbTelefonos.Location = new System.Drawing.Point(668, 65);
             this.pbTelefonos.Name = "pbTelefonos";
             this.pbTelefonos.Size = new System.Drawing.Size(60, 61);
             this.pbTelefonos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -219,14 +222,48 @@
             this.txtDescripcion.Validar = true;
             this.txtDescripcion.TextChanged += new System.EventHandler(this.txtDescripcion_TextChanged);
             // 
+            // btnCliente
+            // 
+            this.btnCliente.Location = new System.Drawing.Point(761, 153);
+            this.btnCliente.Name = "btnCliente";
+            this.btnCliente.Size = new System.Drawing.Size(106, 23);
+            this.btnCliente.TabIndex = 17;
+            this.btnCliente.Text = "Ver Completo";
+            this.btnCliente.UseVisualStyleBackColor = true;
+            this.btnCliente.Click += new System.EventHandler(this.BtnCliente_Click);
+            // 
+            // btnEliminarLog
+            // 
+            this.btnEliminarLog.Location = new System.Drawing.Point(888, 153);
+            this.btnEliminarLog.Name = "btnEliminarLog";
+            this.btnEliminarLog.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminarLog.TabIndex = 18;
+            this.btnEliminarLog.Text = "Baja Fisica";
+            this.btnEliminarLog.UseVisualStyleBackColor = true;
+            this.btnEliminarLog.Click += new System.EventHandler(this.BtnEliminarLog_Click);
+            // 
+            // btnSeleccionar
+            // 
+            this.btnSeleccionar.Location = new System.Drawing.Point(15, 153);
+            this.btnSeleccionar.Name = "btnSeleccionar";
+            this.btnSeleccionar.Size = new System.Drawing.Size(106, 23);
+            this.btnSeleccionar.TabIndex = 19;
+            this.btnSeleccionar.Text = "Seleccionar";
+            this.btnSeleccionar.UseVisualStyleBackColor = true;
+            this.btnSeleccionar.Click += new System.EventHandler(this.BtnSeleccionar_Click);
+            // 
             // frmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(975, 391);
+            this.Controls.Add(this.btnSeleccionar);
+            this.Controls.Add(this.btnEliminarLog);
+            this.Controls.Add(this.btnCliente);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.pbTelefonos);
             this.Controls.Add(this.cmbBuscarPor);
@@ -242,6 +279,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmClientes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.VerClientes_FormClosing);
             this.Load += new System.EventHandler(this.VerClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
@@ -275,5 +313,8 @@
         private System.Windows.Forms.PictureBox pbTelefonos;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private Negocio.ErrorTxtBox txtDescripcion;
+        private System.Windows.Forms.Button btnCliente;
+        private System.Windows.Forms.Button btnEliminarLog;
+        private System.Windows.Forms.Button btnSeleccionar;
     }
 }

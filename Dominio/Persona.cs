@@ -22,13 +22,11 @@ namespace Dominio
         public string Ciudad { get; set; }
         public string Provincia { get; set; }
         public char tipo { get; set; }
-        public long CUIL { get; set; }
-        public long CUIT { get; set; }
+        public long CUILCUIT { get; set; }
         public string razonsocial { get; set; }
-        public CuentaBancaria cuentabancaria { get; set; }
         public Usuario usuario { get; set; }
         public IList<Telefono> telefonos { get; set; }
-        public Boolean Estado { get; set; }
+        public bool Estado { get; set; }
 
     }
 }

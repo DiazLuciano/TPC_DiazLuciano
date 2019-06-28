@@ -279,7 +279,7 @@ namespace Presentacion {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class SP_DatosFacturaDataTable : global::System.Data.TypedTableBase<SP_DatosFacturaRow> {
             
-            private global::System.Data.DataColumn columnID;
+            private global::System.Data.DataColumn columnNumFac;
             
             private global::System.Data.DataColumn columnFecha_fac;
             
@@ -330,9 +330,9 @@ namespace Presentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn IDColumn {
+            public global::System.Data.DataColumn NumFacColumn {
                 get {
-                    return this.columnID;
+                    return this.columnNumFac;
                 }
             }
             
@@ -429,10 +429,10 @@ namespace Presentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_DatosFacturaRow AddSP_DatosFacturaRow(System.DateTime Fecha_fac, long IDCliente, decimal PrecioV, int CantVend, string Nombre, string Descripcion, decimal Importe) {
+            public SP_DatosFacturaRow AddSP_DatosFacturaRow(long NumFac, System.DateTime Fecha_fac, long IDCliente, decimal PrecioV, int CantVend, string Nombre, string Descripcion, decimal Importe) {
                 SP_DatosFacturaRow rowSP_DatosFacturaRow = ((SP_DatosFacturaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
+                        NumFac,
                         Fecha_fac,
                         IDCliente,
                         PrecioV,
@@ -447,9 +447,9 @@ namespace Presentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_DatosFacturaRow FindByID(long ID) {
+            public SP_DatosFacturaRow FindByNumFac(long NumFac) {
                 return ((SP_DatosFacturaRow)(this.Rows.Find(new object[] {
-                            ID})));
+                            NumFac})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -469,7 +469,7 @@ namespace Presentacion {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnID = base.Columns["ID"];
+                this.columnNumFac = base.Columns["NumFac"];
                 this.columnFecha_fac = base.Columns["Fecha_fac"];
                 this.columnIDCliente = base.Columns["IDCliente"];
                 this.columnPrecioV = base.Columns["PrecioV"];
@@ -482,8 +482,8 @@ namespace Presentacion {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnID = new global::System.Data.DataColumn("ID", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID);
+                this.columnNumFac = new global::System.Data.DataColumn("NumFac", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNumFac);
                 this.columnFecha_fac = new global::System.Data.DataColumn("Fecha_fac", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFecha_fac);
                 this.columnIDCliente = new global::System.Data.DataColumn("IDCliente", typeof(long), null, global::System.Data.MappingType.Element);
@@ -499,13 +499,9 @@ namespace Presentacion {
                 this.columnImporte = new global::System.Data.DataColumn("Importe", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnImporte);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnID}, true));
-                this.columnID.AutoIncrement = true;
-                this.columnID.AutoIncrementSeed = -1;
-                this.columnID.AutoIncrementStep = -1;
-                this.columnID.AllowDBNull = false;
-                this.columnID.ReadOnly = true;
-                this.columnID.Unique = true;
+                                this.columnNumFac}, true));
+                this.columnNumFac.AllowDBNull = false;
+                this.columnNumFac.Unique = true;
                 this.columnFecha_fac.AllowDBNull = false;
                 this.columnIDCliente.AllowDBNull = false;
                 this.columnPrecioV.AllowDBNull = false;
@@ -657,12 +653,12 @@ namespace Presentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public long ID {
+            public long NumFac {
                 get {
-                    return ((long)(this[this.tableSP_DatosFactura.IDColumn]));
+                    return ((long)(this[this.tableSP_DatosFactura.NumFacColumn]));
                 }
                 set {
-                    this[this.tableSP_DatosFactura.IDColumn] = value;
+                    this[this.tableSP_DatosFactura.NumFacColumn] = value;
                 }
             }
             
@@ -920,7 +916,7 @@ namespace Presentacion.DataSet1TableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "SP_DatosFactura";
-            tableMapping.ColumnMappings.Add("ID", "ID");
+            tableMapping.ColumnMappings.Add("NumFac", "NumFac");
             tableMapping.ColumnMappings.Add("Fecha_fac", "Fecha_fac");
             tableMapping.ColumnMappings.Add("IDCliente", "IDCliente");
             tableMapping.ColumnMappings.Add("PrecioV", "PrecioV");

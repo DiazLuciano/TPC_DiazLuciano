@@ -22,7 +22,7 @@
               </DbSource>
             </MainSource>
             <Mappings>
-              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="NumFac" DataSetColumn="NumFac" />
               <Mapping SourceColumn="Fecha_fac" DataSetColumn="Fecha_fac" />
               <Mapping SourceColumn="IDCliente" DataSetColumn="IDCliente" />
               <Mapping SourceColumn="PrecioV" DataSetColumn="PrecioV" />
@@ -44,7 +44,7 @@
         <xs:element name="SP_DatosFactura" msprop:Generator_TableClassName="SP_DatosFacturaDataTable" msprop:Generator_TableVarName="tableSP_DatosFactura" msprop:Generator_TablePropName="SP_DatosFactura" msprop:Generator_RowDeletingName="SP_DatosFacturaRowDeleting" msprop:Generator_RowChangingName="SP_DatosFacturaRowChanging" msprop:Generator_RowEvHandlerName="SP_DatosFacturaRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_DatosFacturaRowDeleted" msprop:Generator_UserTableName="SP_DatosFactura" msprop:Generator_RowChangedName="SP_DatosFacturaRowChanged" msprop:Generator_RowEvArgName="SP_DatosFacturaRowChangeEvent" msprop:Generator_RowClassName="SP_DatosFacturaRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:long" />
+              <xs:element name="NumFac" msprop:Generator_ColumnVarNameInTable="columnNumFac" msprop:Generator_ColumnPropNameInRow="NumFac" msprop:Generator_ColumnPropNameInTable="NumFacColumn" msprop:Generator_UserColumnName="NumFac" type="xs:long" />
               <xs:element name="Fecha_fac" msprop:Generator_ColumnVarNameInTable="columnFecha_fac" msprop:Generator_ColumnPropNameInRow="Fecha_fac" msprop:Generator_ColumnPropNameInTable="Fecha_facColumn" msprop:Generator_UserColumnName="Fecha_fac" type="xs:dateTime" />
               <xs:element name="IDCliente" msprop:Generator_ColumnVarNameInTable="columnIDCliente" msprop:Generator_ColumnPropNameInRow="IDCliente" msprop:Generator_ColumnPropNameInTable="IDClienteColumn" msprop:Generator_UserColumnName="IDCliente" type="xs:long" />
               <xs:element name="PrecioV" msprop:Generator_ColumnVarNameInTable="columnPrecioV" msprop:Generator_ColumnPropNameInRow="PrecioV" msprop:Generator_ColumnPropNameInTable="PrecioVColumn" msprop:Generator_UserColumnName="PrecioV" type="xs:decimal" />
@@ -71,7 +71,7 @@
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:SP_DatosFactura" />
-      <xs:field xpath="mstns:ID" />
+      <xs:field xpath="mstns:NumFac" />
     </xs:unique>
   </xs:element>
 </xs:schema>

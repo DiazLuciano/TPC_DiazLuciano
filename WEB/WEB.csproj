@@ -45,12 +45,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1357.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1357.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
@@ -276,6 +270,10 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="frmClientes.aspx" />
+    <Content Include="frmCompras.aspx" />
+    <Content Include="frmEditarArticulo.aspx" />
+    <Content Include="frmListaArticulos.aspx" />
+    <Content Include="frmListaClientes.aspx" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -305,6 +303,7 @@
     <Content Include="img\bootstrap-colorpicker\hue.png" />
     <Content Include="img\bootstrap-colorpicker\saturation.png" />
     <Content Include="img\Centro.jpg" />
+    <Content Include="img\Centro1.png" />
     <Content Include="img\credit\american-express.png" />
     <Content Include="img\credit\cirrus.png" />
     <Content Include="img\credit\mastercard.png" />
@@ -318,6 +317,7 @@
     <Content Include="img\user-bg.png" />
     <Content Include="img\user.jpg" />
     <Content Include="img\user2.jpg" />
+    <Content Include="js\Facturar.js" />
     <Content Include="js\plugins\input-mask\phone-codes\phone-be.json" />
     <Content Include="js\plugins\input-mask\phone-codes\phone-codes.json" />
     <Content Include="js\plugins\slimScroll\slimScroll.jquery.json" />
@@ -529,6 +529,34 @@
     </Compile>
     <Compile Include="frmClientes.aspx.designer.cs">
       <DependentUpon>frmClientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmCompras.aspx.cs">
+      <DependentUpon>frmCompras.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmCompras.aspx.designer.cs">
+      <DependentUpon>frmCompras.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditarArticulo.aspx.cs">
+      <DependentUpon>frmEditarArticulo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmEditarArticulo.aspx.designer.cs">
+      <DependentUpon>frmEditarArticulo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmListaArticulos.aspx.cs">
+      <DependentUpon>frmListaArticulos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmListaArticulos.aspx.designer.cs">
+      <DependentUpon>frmListaArticulos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmListaClientes.aspx.cs">
+      <DependentUpon>frmListaClientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmListaClientes.aspx.designer.cs">
+      <DependentUpon>frmListaClientes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
