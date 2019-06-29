@@ -82,7 +82,7 @@
                 <table>
                     <tr>
                         <td>
-                            <asp:Button ID="btnComprar" runat="server" CssClass="btn btn-primary" Width="200px" Text="COMPRAR" OnClick="btnComprar_Click" />  
+                            <asp:Button ID="btnComprar" runat="server" CssClass="btn btn-primary" Width="200px" Text="COMPRAR" OnClick="btnComprar_Click" /> 
                         </td>
                         <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
                         <td>

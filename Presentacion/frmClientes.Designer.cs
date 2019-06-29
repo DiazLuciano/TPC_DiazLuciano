@@ -35,10 +35,6 @@
             this.pbModificarCliente = new System.Windows.Forms.PictureBox();
             this.pbEliminarCliente = new System.Windows.Forms.PictureBox();
             this.pbBuscarCliente = new System.Windows.Forms.PictureBox();
-            this.pbCerrar = new System.Windows.Forms.PictureBox();
-            this.pbRestaurar = new System.Windows.Forms.PictureBox();
-            this.pbMinimizar = new System.Windows.Forms.PictureBox();
-            this.pbMaximizar = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pbTelefonos = new System.Windows.Forms.PictureBox();
             this.cmbBuscarPor = new System.Windows.Forms.ComboBox();
@@ -52,10 +48,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbModificarCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEliminarCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBuscarCliente)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbRestaurar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTelefonos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -126,64 +118,6 @@
             this.pbBuscarCliente.TabIndex = 9;
             this.pbBuscarCliente.TabStop = false;
             this.toolTip1.SetToolTip(this.pbBuscarCliente, "Buscar");
-            // 
-            // pbCerrar
-            // 
-            this.pbCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbCerrar.BackColor = System.Drawing.Color.Transparent;
-            this.pbCerrar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbCerrar.Image = ((System.Drawing.Image)(resources.GetObject("pbCerrar.Image")));
-            this.pbCerrar.Location = new System.Drawing.Point(941, 11);
-            this.pbCerrar.Name = "pbCerrar";
-            this.pbCerrar.Size = new System.Drawing.Size(25, 25);
-            this.pbCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbCerrar.TabIndex = 10;
-            this.pbCerrar.TabStop = false;
-            this.toolTip1.SetToolTip(this.pbCerrar, "Cerrar");
-            this.pbCerrar.Click += new System.EventHandler(this.pbCerrar_Click);
-            // 
-            // pbRestaurar
-            // 
-            this.pbRestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbRestaurar.BackColor = System.Drawing.Color.Transparent;
-            this.pbRestaurar.Image = ((System.Drawing.Image)(resources.GetObject("pbRestaurar.Image")));
-            this.pbRestaurar.Location = new System.Drawing.Point(910, 12);
-            this.pbRestaurar.Name = "pbRestaurar";
-            this.pbRestaurar.Size = new System.Drawing.Size(25, 25);
-            this.pbRestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbRestaurar.TabIndex = 11;
-            this.pbRestaurar.TabStop = false;
-            this.toolTip1.SetToolTip(this.pbRestaurar, "Restaurar");
-            this.pbRestaurar.Visible = false;
-            this.pbRestaurar.Click += new System.EventHandler(this.pbRestaurar_Click);
-            // 
-            // pbMinimizar
-            // 
-            this.pbMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbMinimizar.BackColor = System.Drawing.Color.Transparent;
-            this.pbMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("pbMinimizar.Image")));
-            this.pbMinimizar.Location = new System.Drawing.Point(879, 11);
-            this.pbMinimizar.Name = "pbMinimizar";
-            this.pbMinimizar.Size = new System.Drawing.Size(25, 25);
-            this.pbMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbMinimizar.TabIndex = 12;
-            this.pbMinimizar.TabStop = false;
-            this.toolTip1.SetToolTip(this.pbMinimizar, "Minimizar");
-            this.pbMinimizar.Click += new System.EventHandler(this.pbMinimizar_Click);
-            // 
-            // pbMaximizar
-            // 
-            this.pbMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbMaximizar.BackColor = System.Drawing.Color.Transparent;
-            this.pbMaximizar.Image = ((System.Drawing.Image)(resources.GetObject("pbMaximizar.Image")));
-            this.pbMaximizar.Location = new System.Drawing.Point(910, 11);
-            this.pbMaximizar.Name = "pbMaximizar";
-            this.pbMaximizar.Size = new System.Drawing.Size(25, 25);
-            this.pbMaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbMaximizar.TabIndex = 13;
-            this.pbMaximizar.TabStop = false;
-            this.toolTip1.SetToolTip(this.pbMaximizar, "Maximizar");
-            this.pbMaximizar.Click += new System.EventHandler(this.pbMaximizar_Click);
             // 
             // pbTelefonos
             // 
@@ -267,16 +201,12 @@
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.pbTelefonos);
             this.Controls.Add(this.cmbBuscarPor);
-            this.Controls.Add(this.pbMaximizar);
-            this.Controls.Add(this.pbMinimizar);
-            this.Controls.Add(this.pbRestaurar);
-            this.Controls.Add(this.pbCerrar);
             this.Controls.Add(this.pbBuscarCliente);
             this.Controls.Add(this.pbEliminarCliente);
             this.Controls.Add(this.pbModificarCliente);
             this.Controls.Add(this.pbAgregarCliente);
             this.Controls.Add(this.dgvClientes);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -287,10 +217,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbModificarCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEliminarCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBuscarCliente)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbRestaurar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTelefonos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
@@ -304,10 +230,6 @@
         private System.Windows.Forms.PictureBox pbModificarCliente;
         private System.Windows.Forms.PictureBox pbEliminarCliente;
         private System.Windows.Forms.PictureBox pbBuscarCliente;
-        private System.Windows.Forms.PictureBox pbCerrar;
-        private System.Windows.Forms.PictureBox pbRestaurar;
-        private System.Windows.Forms.PictureBox pbMinimizar;
-        private System.Windows.Forms.PictureBox pbMaximizar;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.ComboBox cmbBuscarPor;
         private System.Windows.Forms.PictureBox pbTelefonos;

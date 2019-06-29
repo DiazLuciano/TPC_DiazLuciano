@@ -70,6 +70,12 @@
                             <span>Compras</span>
                         </a>
                     </li>
+                    <li class="active">
+                        <a href="frmVerCompras.aspx">
+                            <i class ="fa fa-dashboard"></i>
+                            <span>Ver Compras</span>
+                        </a>
+                    </li>
                 </ul>
             </section>
         </aside>

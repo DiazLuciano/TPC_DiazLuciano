@@ -150,7 +150,7 @@ namespace Presentacion
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Cliente no encontrado");
+                    MessageBox.Show("Producto no encontrado");
                 }
             }
         }

@@ -5,7 +5,7 @@
      <section class ="content-header">
         <h1 style="text-align:center">ARTICULOS</h1>
     </section>
-    
+
     <asp:GridView ID="dgvArticulos" runat="server" CssClass="table table-active " EmptyDataText="No Existen Registros"
         GridLines="Horizontal" AutoGenerateColumns ="false" OnRowCommand="dgvArticulos_RowCommand">
         <HeaderStyle CssClass ="" Font-Size="12px" />

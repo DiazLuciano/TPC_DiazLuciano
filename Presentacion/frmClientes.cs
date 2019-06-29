@@ -80,31 +80,16 @@ namespace Presentacion
             this.Close();
         }
 
-        private void pbRestaurar_Click(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Normal;
-            pbRestaurar.Visible = false;
-            pbMaximizar.Visible = true;
-        }
+       
 
-        private void pbMinimizar_Click(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Minimized;
-        }
-
-        private void pbMaximizar_Click(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Maximized;
-            pbRestaurar.Visible = true;
-            pbMaximizar.Visible = false;
-        }
 
         private void pbModificarCliente_Click(object sender, EventArgs e)
         {
-            this.Close();
+            
             try
             {
-                Cliente cli = (Cliente)dgvClientes.CurrentRow.DataBoundItem;
+                Cliente cli = new Cliente();
+                cli = (Cliente)dgvClientes.CurrentRow.DataBoundItem;
                 frmCargarCliente modificar = new frmCargarCliente(cli);
                 modificar.Text = "Modificando";
                 modificar.ShowDialog();

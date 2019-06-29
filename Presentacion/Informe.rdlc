@@ -93,7 +93,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>ID Cliente:</Value>
+                <Value>DNI:</Value>
                 <Style>
                   <FontSize>12pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -196,7 +196,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Sum(Fields!IDCliente.Value)</Value>
+                <Value>=First(Fields!IDCliente.Value, "DataSet1")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -611,7 +611,7 @@
     <Height>3.79166in</Height>
     <Style />
   </Body>
-  <Width>7.375in</Width>
+  <Width>6in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>

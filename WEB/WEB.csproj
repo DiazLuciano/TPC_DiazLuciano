@@ -274,6 +274,7 @@
     <Content Include="frmEditarArticulo.aspx" />
     <Content Include="frmListaArticulos.aspx" />
     <Content Include="frmListaClientes.aspx" />
+    <Content Include="frmVerCompras.aspx" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -557,6 +558,13 @@
     </Compile>
     <Compile Include="frmListaClientes.aspx.designer.cs">
       <DependentUpon>frmListaClientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmVerCompras.aspx.cs">
+      <DependentUpon>frmVerCompras.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmVerCompras.aspx.designer.cs">
+      <DependentUpon>frmVerCompras.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
