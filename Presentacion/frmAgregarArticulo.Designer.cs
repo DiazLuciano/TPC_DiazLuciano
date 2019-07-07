@@ -45,6 +45,8 @@
             this.txtDescripcion = new Negocio.ErrorTxtBox();
             this.txtIDPro = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnFoto = new System.Windows.Forms.Button();
+            this.txtFoto = new Negocio.ErrorTxtBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -196,13 +198,35 @@
             this.label6.TabIndex = 13;
             this.label6.Text = "ID PRODUCTO";
             // 
+            // btnFoto
+            // 
+            this.btnFoto.Location = new System.Drawing.Point(452, 141);
+            this.btnFoto.Name = "btnFoto";
+            this.btnFoto.Size = new System.Drawing.Size(75, 23);
+            this.btnFoto.TabIndex = 14;
+            this.btnFoto.Text = "...";
+            this.btnFoto.UseVisualStyleBackColor = true;
+            this.btnFoto.Click += new System.EventHandler(this.BtnFoto_Click);
+            // 
+            // txtFoto
+            // 
+            this.txtFoto.Enabled = false;
+            this.txtFoto.Location = new System.Drawing.Point(406, 115);
+            this.txtFoto.Name = "txtFoto";
+            this.txtFoto.Size = new System.Drawing.Size(121, 20);
+            this.txtFoto.SoloNumeros = true;
+            this.txtFoto.TabIndex = 15;
+            this.txtFoto.Validar = true;
+            // 
             // frmAgregarArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(376, 343);
+            this.ClientSize = new System.Drawing.Size(680, 343);
+            this.Controls.Add(this.txtFoto);
+            this.Controls.Add(this.btnFoto);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtIDPro);
             this.Controls.Add(this.cmbTipoArt);
@@ -245,5 +269,7 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.TextBox txtIDPro;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnFoto;
+        private Negocio.ErrorTxtBox txtFoto;
     }
 }

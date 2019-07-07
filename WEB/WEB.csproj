@@ -109,12 +109,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="PaginaAdmin\Articulos.aspx" />
+    <Content Include="PaginaUser\Catalogo.aspx" />
+    <Content Include="PaginaAdmin\Clientes.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\Style.css" />
     <Content Include="css\AdminLTE.css" />
     <Content Include="css\bootstrap-slider\slider.css" />
     <Content Include="css\bootstrap-wysihtml5\bootstrap3-wysihtml5.css" />
@@ -287,46 +291,29 @@
     <Content Include="css\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="css\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="css\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="img\ajax-loader.gif" />
-    <Content Include="img\ajax-loader1.gif" />
-    <Content Include="img\avatar.png" />
-    <Content Include="img\avatar04.png" />
-    <Content Include="img\avatar2.png" />
-    <Content Include="img\avatar3.png" />
-    <Content Include="img\avatar5.png" />
-    <Content Include="img\avatar9.jpg" />
-    <Content Include="img\blur-background04.jpg" />
-    <Content Include="img\blur-background08.jpg" />
-    <Content Include="img\blur-background09.jpg" />
-    <Content Include="img\bootstrap-colorpicker\alpha-horizontal.png" />
-    <Content Include="img\bootstrap-colorpicker\alpha.png" />
-    <Content Include="img\bootstrap-colorpicker\hue-horizontal.png" />
-    <Content Include="img\bootstrap-colorpicker\hue.png" />
-    <Content Include="img\bootstrap-colorpicker\saturation.png" />
-    <Content Include="img\Centro.jpg" />
-    <Content Include="img\Centro1.png" />
-    <Content Include="img\credit\american-express.png" />
-    <Content Include="img\credit\cirrus.png" />
-    <Content Include="img\credit\mastercard.png" />
-    <Content Include="img\credit\mestro.png" />
-    <Content Include="img\credit\paypal.png" />
-    <Content Include="img\credit\paypal2.png" />
-    <Content Include="img\credit\visa.png" />
-    <Content Include="img\icons.png" />
-    <Content Include="img\sprite-skin-flat.png" />
-    <Content Include="img\sprite-skin-nice.png" />
-    <Content Include="img\user-bg.png" />
-    <Content Include="img\user.jpg" />
-    <Content Include="img\user2.jpg" />
+    <Content Include="Imagenes\Carro.png" />
+    <Content Include="Imagenes\CelularMotorola.jpg" />
+    <Content Include="Imagenes\CelularSamsung.jpg" />
+    <Content Include="Imagenes\CelularXiaomi.jpg" />
+    <Content Include="Imagenes\HeladeraCoventry.jpg" />
+    <Content Include="Imagenes\HeladeraPatrick.jpg" />
+    <Content Include="Imagenes\MicroondasAtma.jpg" />
+    <Content Include="Imagenes\MicroondasAurora.jpg" />
+    <Content Include="Imagenes\NotebookLenovo.jpg" />
+    <Content Include="Imagenes\NotebookSamsung.jpg" />
+    <Content Include="Imagenes\Panel.png" />
+    <Content Include="Imagenes\TelevisorNoblex.jpg" />
+    <Content Include="Imagenes\TelevisorPhilips.jpg" />
+    <Content Include="Imagenes\TreeView.jpg" />
     <Content Include="js\Facturar.js" />
     <Content Include="js\plugins\input-mask\phone-codes\phone-be.json" />
     <Content Include="js\plugins\input-mask\phone-codes\phone-codes.json" />
     <Content Include="js\plugins\slimScroll\slimScroll.jquery.json" />
-    <Content Include="img\bootstrap-colorpicker\Thumbs.db" />
-    <Content Include="img\credit\Thumbs.db" />
-    <Content Include="img\Thumbs.db" />
+    <Content Include="PaginaAdmin\ModificarArticulo.aspx" />
+    <Content Include="PaginaAdmin\Ventas.aspx" />
     <Content Include="PanelGeneral.aspx" />
-    <Content Include="Principal.Master" />
+    <Content Include="Admin1.Master" />
+    <Content Include="PaginaAdmin\Admin.Master" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="js\AdminLTE\app.js" />
     <Content Include="js\AdminLTE\dashboard.js" />
@@ -453,6 +440,8 @@
     <Content Include="js\plugins\timepicker\bootstrap-timepicker.js" />
     <Content Include="js\plugins\timepicker\bootstrap-timepicker.min.js" />
     <Content Include="Login.aspx" />
+    <Content Include="Registrarme.aspx" />
+    <Content Include="RegistrarmeUsuario.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -481,7 +470,7 @@
     <Content Include="Scripts\WebForms\WebForms.js" />
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
-    <Content Include="Site.Master" />
+    <Content Include="PaginaUser\User.Master" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -498,9 +487,23 @@
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
-    <Content Include="Site.Mobile.Master" />
+    <Content Include="PaginaUser\User.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PaginaAdmin\Articulos.aspx.cs">
+      <DependentUpon>Articulos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginaAdmin\Articulos.aspx.designer.cs">
+      <DependentUpon>Articulos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaginaAdmin\Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginaAdmin\Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -510,6 +513,20 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="PaginaUser\Catalogo.aspx.cs">
+      <DependentUpon>Catalogo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginaUser\Catalogo.aspx.designer.cs">
+      <DependentUpon>Catalogo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaginaAdmin\Clientes.aspx.cs">
+      <DependentUpon>Clientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginaAdmin\Clientes.aspx.designer.cs">
+      <DependentUpon>Clientes.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -576,6 +593,20 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PaginaAdmin\ModificarArticulo.aspx.cs">
+      <DependentUpon>ModificarArticulo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginaAdmin\ModificarArticulo.aspx.designer.cs">
+      <DependentUpon>ModificarArticulo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaginaAdmin\Ventas.aspx.cs">
+      <DependentUpon>Ventas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginaAdmin\Ventas.aspx.designer.cs">
+      <DependentUpon>Ventas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PanelGeneral.aspx.cs">
       <DependentUpon>PanelGeneral.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -583,27 +614,41 @@
     <Compile Include="PanelGeneral.aspx.designer.cs">
       <DependentUpon>PanelGeneral.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Principal.Master.cs">
-      <DependentUpon>Principal.Master</DependentUpon>
+    <Compile Include="Admin1.Master.cs">
+      <DependentUpon>Admin1.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Principal.Master.designer.cs">
-      <DependentUpon>Principal.Master</DependentUpon>
+    <Compile Include="Admin1.Master.designer.cs">
+      <DependentUpon>Admin1.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Site.Master.cs">
-      <DependentUpon>Site.Master</DependentUpon>
+    <Compile Include="Registrarme.aspx.cs">
+      <DependentUpon>Registrarme.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Site.Master.designer.cs">
-      <DependentUpon>Site.Master</DependentUpon>
+    <Compile Include="Registrarme.aspx.designer.cs">
+      <DependentUpon>Registrarme.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Site.Mobile.Master.cs">
-      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    <Compile Include="RegistrarmeUsuario.aspx.cs">
+      <DependentUpon>RegistrarmeUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Site.Mobile.Master.designer.cs">
-      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    <Compile Include="RegistrarmeUsuario.aspx.designer.cs">
+      <DependentUpon>RegistrarmeUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaginaUser\User.Master.cs">
+      <DependentUpon>User.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginaUser\User.Master.designer.cs">
+      <DependentUpon>User.Master</DependentUpon>
+    </Compile>
+    <Compile Include="PaginaUser\User.Mobile.Master.cs">
+      <DependentUpon>User.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginaUser\User.Mobile.Master.designer.cs">
+      <DependentUpon>User.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 using Dominio;
 using Negocio;
 
@@ -98,6 +99,20 @@ namespace Presentacion
             cmbTipoArt.Items.Add("Higiene");
             cmbTipoArt.Items.Add("Ropa y accesorios");
             cmbTipoArt.Items.Add("Comida");
+            
+        }
+
+        private void BtnFoto_Click(object sender, EventArgs e)
+        {
+            
+            
+                //OpenFileDialog para que abra la ventanita que te deja buscar
+                OpenFileDialog file = new OpenFileDialog();
+                file.ShowDialog();
+                //Path.GetFullPath es para saber la dirección completa y poder guardarla.
+                //para usarla tuve que incluir System.IO
+                txtFoto.Text = Path.GetFullPath(file.FileName);
+
             
         }
     }

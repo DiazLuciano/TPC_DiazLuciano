@@ -19,13 +19,11 @@ namespace Negocio
         public static String Codigo = "";
         public bool ValidarUsuario(Usuario usuario)
         {
-            
-            
                 AccesoDatos conexion;
                 try
                 {
                     conexion = new AccesoDatos();
-                    conexion.setearConsulta("select ID, Nombre, Contraseña from USUARIOS Where Nombre=@usuario and Contraseña=@contraseña");
+                    conexion.setearConsulta("select ID, Nombre, Contraseña,Tipo from USUARIOS Where Nombre=@usuario and Contraseña=@contraseña");
                     conexion.Comando.Parameters.Clear();
                     conexion.Comando.Parameters.AddWithValue("@usuario", usuario.nombre);
                     conexion.Comando.Parameters.AddWithValue("@contraseña", usuario.contraseña);
@@ -37,7 +35,8 @@ namespace Negocio
                         usuario.ID = (long)conexion.Lector["ID"];
                         usuario.nombre = (string)conexion.Lector["Nombre"];
                         usuario.contraseña = (string)conexion.Lector["Contraseña"];
-                    Codigo = Convert.ToString(usuario.ID);
+                        usuario.Tipo = (string)conexion.Lector["Tipo"];
+                        Codigo = Convert.ToString(usuario.ID);
 
                     return true;
                     }
@@ -52,6 +51,30 @@ namespace Negocio
                 }
             
            
+        }
+
+        public bool ValidarExisteUser(string nombre)
+        {
+            string existe="";
+            AccesoDatos AD = new AccesoDatos();
+            AD.setearConsulta("select nombre from usuarios where nombre = '" + nombre +"'");
+            AD.abrirConexion();
+            AD.ejecutarConsulta();
+            AD.Lector.Read();
+            if ((AD.Lector.IsDBNull(AD.Lector.GetOrdinal("Nombre"))))
+            {
+                existe = (string)AD.Lector["Nombre"];
+            }
+            
+            
+            if(string.IsNullOrEmpty(existe))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

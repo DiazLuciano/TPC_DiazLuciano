@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Dominio;
 using Negocio;
+using System.Windows;
 
 namespace WEB
 {
@@ -32,11 +33,21 @@ namespace WEB
                 if (usuarioNegocio.ValidarUsuario(usuarioCargado))
                 {
                     setusuario(usuarioCargado);
-                    Response.Redirect("PanelGeneral.aspx");
+                    if(usuarioCargado.Tipo=="Administrador")
+                    {
+                        Session["usuario"] = usuarioCargado;
+                        Response.Redirect("~/PaginaAdmin/Clientes.aspx");
+                    }
+                    else
+                    {
+                        Session["usuario"] = usuarioCargado;
+                        Response.Redirect("~/PaginaUser/Catalogo.aspx");
+                    }
+                    
                 }
                 else
                 {
-                    Response.Write("<script>alert('USUARIO INCORRECTO.'</script>");
+                    lblMensaje.Text = "Usuario Incorrecto";
                 }
             }
             catch (Exception ex)
