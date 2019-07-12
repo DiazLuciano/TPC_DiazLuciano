@@ -31,12 +31,12 @@
                         <div class="col-xs-6">
                             
                             <div class="form-group">
-                                <label for="username" class="control-label">Username</label>
+                                <label for="username" class="control-label">Usuario</label>
                                 <asp:TextBox ID="txtUsuario" runat="server" CssClass="form-control" placeholder="Ingrese Usuario"></asp:TextBox>
                                 <span class="help-block"></span>
                             </div>
                             <div class="form-group">
-                                <label for="password" class="control-label">Password</label>
+                                <label for="password" class="control-label">Contraeña</label>
                                 <asp:TextBox ID="txtContraseña" runat="server" TextMode="Password" CssClass="form-control" placeholder="Ingrese Contraseña"></asp:TextBox>
                                 <span class="help-block"></span>
                                 <asp:Button ID="btnIngresar" type="submit" runat="server" Text="Iniciar Sesión" class="btn btn-success btn-block" OnClick="btnIngresar_Click" />

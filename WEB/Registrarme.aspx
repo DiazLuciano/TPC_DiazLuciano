@@ -18,10 +18,10 @@
             <div style="position:absolute; z-index:1;" id= "layer1">
                 <div class="modal-body" style="margin: 30px 0px 0px 400px;">
                     <div style="margin-left:150px">
-                        
+                        <h1>Registro de Usuario</h1>
                             <div class="form-group">
-                                <label for="username" class="control-label">Username</label>
-                                <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control" placeholder="Ingrese Nombre Usuario"></asp:TextBox>
+                                <label for="Usuario" class="control-label">Usuario</label>
+                                <asp:TextBox ID="txtNombre1" runat="server" CssClass="form-control" placeholder="Ingrese Nombre Usuario"></asp:TextBox>
                                 <span class="help-block"></span>
                             </div>
                             <div class="form-group">

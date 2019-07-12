@@ -48,5 +48,7 @@ namespace Negocio
             }
 
         }
+
+        public int MyProperty { get; set; }
     }
 }

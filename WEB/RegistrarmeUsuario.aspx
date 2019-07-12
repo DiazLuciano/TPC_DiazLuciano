@@ -11,7 +11,24 @@
 </head>
 <body class="bg-black" style="background-image:url('Imagenes/TreeView.jpg')">
     <form id="form1" runat="server">
-        <div class="panel-img">
+        <h1 class="center"style="margin: 30px 0px 0px 400px;">Formulario de Registro</h1>
+        <div class="modal-body" style="margin: 30px 0px 0px 400px;">
+            <ul>
+                <li>
+                    <asp:TextBox runat="server" ID="Nombre" placeHolder="Dirección" />
+                    <asp:RequiredFieldValidator runat="server" ControlToValidate="Nombre"
+                    CssClass="field-validation-error" ErrorMessage="El campo de Nombre es obligatorio." />
+                    
+                </li>
+                <li>
+                    <asp:TextBox ID="TextBox1" runat="server" CssClass="field-style field-split align-left" placeHolder="Dirección"></asp:TextBox>
+                </li>
+                <li>
+                    <asp:TextBox ID="TextBox2" runat="server" CssClass="field-style field-split align-left" placeHolder="Dirección"></asp:TextBox>
+                </li>
+            </ul>
+        </div>
+        <%--<div class="panel-img">
             <img src="Imagenes/Panel.png" />
         </div>
         <div>
@@ -19,13 +36,19 @@
                 <div class="modal-body" style="margin: 30px 0px 0px 400px;">
                     <div>
                          <fieldset>
-                        <legend>Formulario de registro</legend>
+                        <legend>Datos Personales</legend>
                         <ol>
                             <li>
-                                <asp:Label runat="server" AssociatedControlID="UserName">Nombre de usuario</asp:Label>
-                                <asp:TextBox runat="server" ID="UserName" />
-                                <asp:RequiredFieldValidator runat="server" ControlToValidate="UserName"
-                                    CssClass="field-validation-error" ErrorMessage="El campo de nombre de usuario es obligatorio." />
+                                <asp:Label runat="server" AssociatedControlID="Nombre">Nombre</asp:Label>
+                                <asp:TextBox runat="server" ID="Nombre" />
+                                <asp:RequiredFieldValidator runat="server" ControlToValidate="Nombre"
+                                    CssClass="field-validation-error" ErrorMessage="El campo de nombre es obligatorio." />
+                            </li>
+                             <li>
+                                <asp:Label runat="server" AssociatedControlID="Apellido">Apellido</asp:Label>
+                                <asp:TextBox runat="server" ID="Apellido" />
+                                <asp:RequiredFieldValidator runat="server" ControlToValidate="Apellido"
+                                    CssClass="field-validation-error" ErrorMessage="El campo de Apellido es obligatorio." />
                             </li>
                             <li>
                                 <asp:Label runat="server" AssociatedControlID="Email">Dirección de correo electrónico</asp:Label>
@@ -47,6 +70,12 @@
                                 <asp:CompareValidator runat="server" ControlToCompare="Password" ControlToValidate="ConfirmPassword"
                                      CssClass="field-validation-error" Display="Dynamic" ErrorMessage="La contraseña y la contraseña de confirmación no coinciden." />
                             </li>
+                            <li>
+                                <asp:Label runat="server" AssociatedControlID="Direccion">Dirección</asp:Label>
+                                <asp:TextBox runat="server" ID="Direccion" />
+                                <asp:RequiredFieldValidator runat="server" ControlToValidate="Direccion"
+                                    CssClass="field-validation-error" ErrorMessage="El campo de Direccion es obligatorio." />
+                            </li>
                         </ol>
                         <asp:Button runat="server" CommandName="MoveNext" Text="Registrarse" />
                     </fieldset>
@@ -57,7 +86,7 @@
                   
                 </div>
 
-            </div>
+            </div>--%>
         </form>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

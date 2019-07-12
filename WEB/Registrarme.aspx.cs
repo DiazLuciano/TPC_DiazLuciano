@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Dominio;
 using Negocio;
+using System.Windows.Forms;
 
 namespace WEB
 {
@@ -27,22 +28,22 @@ namespace WEB
             UsuarioNegocio usuarioNegocio = new UsuarioNegocio();
             try
             {
-                usuarioCargado.nombre = txtNombre.Text.Trim();
+                usuarioCargado.nombre = txtNombre1.Text.Trim();
                 usuarioCargado.contraseña = txtContraseña.Text.Trim();
-                if (usuarioNegocio.ValidarExisteUser(txtNombre.Text))
+                if (usuarioNegocio.ValidarExisteUser(txtNombre1.Text)==true)
                 {
-                    Response.Redirect("RegistrarmeUsuario.aspx");
-
+                    Response.Redirect("~/RegistrarmeUsuario.aspx",false);
                 }
                 else
                 {
-                   Response.Write("<script>alert('USUARIO EXISTENTE.'</script>");               
+                    MessageBox.Show("Este Usuario Ya Existe");
+                                 
                 }
             }
             catch (Exception ex)
             {
-                Response.Write("<script>alert('USUARIO EXISTENTE.'</script>");
-                throw ex;
+                MessageBox.Show("ERROR " + ex);
+
             }
             
         }

@@ -14,6 +14,8 @@ namespace Dominio
         public decimal Preciocompra { get; set; }
         public decimal Precioventa { get; set; }
         public string tipoarticulo { get; set; }
+        public int Stock { get; set; }
+        public string Imagen { get; set; }
         public Boolean Estado { get; set; }
 
     }

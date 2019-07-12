@@ -16,6 +16,20 @@ namespace Negocio
             this.us = usuario;
 
         }
+
+        public long buscarUser(string user)
+        {
+            AccesoDatos AD = new AccesoDatos();
+            AD.setearConsulta("select *from usuarios where nombre like '"+ user + "'");
+            AD.abrirConexion();
+            AD.ejecutarConsulta();
+            long dni= 0;
+            if(AD.Lector.Read())
+            {
+                dni = (long)AD.Lector["DNI"];
+            }
+            return (dni);
+        }
         public static String Codigo = "";
         public bool ValidarUsuario(Usuario usuario)
         {
@@ -37,6 +51,7 @@ namespace Negocio
                         usuario.contraseña = (string)conexion.Lector["Contraseña"];
                         usuario.Tipo = (string)conexion.Lector["Tipo"];
                         Codigo = Convert.ToString(usuario.ID);
+                        conexion.cerrarConexion();
 
                     return true;
                     }
@@ -49,32 +64,28 @@ namespace Negocio
                 {
                     throw ex;
                 }
-            
            
+            
         }
 
-        public bool ValidarExisteUser(string nombre)
+        public bool ValidarExisteUser(string nom)
         {
-            string existe="";
-            AccesoDatos AD = new AccesoDatos();
-            AD.setearConsulta("select nombre from usuarios where nombre = '" + nombre +"'");
-            AD.abrirConexion();
-            AD.ejecutarConsulta();
-            AD.Lector.Read();
-            if ((AD.Lector.IsDBNull(AD.Lector.GetOrdinal("Nombre"))))
+            string cad="";
+                AccesoDatos AD = new AccesoDatos();
+                AD.setearConsulta("select nombre from usuarios where nombre = '" + nom.Trim()+ "'");
+                AD.abrirConexion();
+                AD.ejecutarConsulta();
+     
+            if(AD.Lector.Read())
             {
-                existe = (string)AD.Lector["Nombre"];
+                if (!Convert.IsDBNull(AD.Lector["nombre"].ToString()))
+                { cad = (string)AD.Lector["Nombre"]; }
             }
-            
-            
-            if(string.IsNullOrEmpty(existe))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            AD.cerrarConexion();
+   
+            if (cad == "") { return true; }
+            else { return false; }
+
         }
     }
 }

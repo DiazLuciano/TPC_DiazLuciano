@@ -53,7 +53,18 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -109,9 +120,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Imagenes\Portada.jpg" />
     <Content Include="PaginaAdmin\Articulos.aspx" />
-    <Content Include="PaginaUser\Catalogo.aspx" />
     <Content Include="PaginaAdmin\Clientes.aspx" />
+    <Content Include="PaginaAdmin\Facturacion.aspx" />
+    <Content Include="PaginaAdmin\Pedidos.aspx" />
+    <Content Include="PaginaUser\Carrito.aspx" />
+    <Content Include="PaginaUser\Catalogo.aspx" />
+    <Content Include="PaginaAdmin\Clientes1.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -311,6 +327,7 @@
     <Content Include="js\plugins\slimScroll\slimScroll.jquery.json" />
     <Content Include="PaginaAdmin\ModificarArticulo.aspx" />
     <Content Include="PaginaAdmin\Ventas.aspx" />
+    <Content Include="PaginaUser\RegistroCompra.aspx" />
     <Content Include="PanelGeneral.aspx" />
     <Content Include="Admin1.Master" />
     <Content Include="PaginaAdmin\Admin.Master" />
@@ -490,6 +507,9 @@
     <Content Include="PaginaUser\User.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CarritoCodigo\Detalle.cs" />
+    <Compile Include="CarritoCodigo\DetalleNegocio.cs" />
+    <Compile Include="CarritoCodigo\Pedido.cs" />
     <Compile Include="PaginaAdmin\Articulos.aspx.cs">
       <DependentUpon>Articulos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -513,6 +533,34 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="PaginaAdmin\Clientes.aspx.cs">
+      <DependentUpon>Clientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginaAdmin\Clientes.aspx.designer.cs">
+      <DependentUpon>Clientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaginaAdmin\Facturacion.aspx.cs">
+      <DependentUpon>Facturacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginaAdmin\Facturacion.aspx.designer.cs">
+      <DependentUpon>Facturacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaginaAdmin\Pedidos.aspx.cs">
+      <DependentUpon>Pedidos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginaAdmin\Pedidos.aspx.designer.cs">
+      <DependentUpon>Pedidos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaginaUser\Carrito.aspx.cs">
+      <DependentUpon>Carrito.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginaUser\Carrito.aspx.designer.cs">
+      <DependentUpon>Carrito.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PaginaUser\Catalogo.aspx.cs">
       <DependentUpon>Catalogo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -520,12 +568,12 @@
     <Compile Include="PaginaUser\Catalogo.aspx.designer.cs">
       <DependentUpon>Catalogo.aspx</DependentUpon>
     </Compile>
-    <Compile Include="PaginaAdmin\Clientes.aspx.cs">
-      <DependentUpon>Clientes.aspx</DependentUpon>
+    <Compile Include="PaginaAdmin\Clientes1.aspx.cs">
+      <DependentUpon>Clientes1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PaginaAdmin\Clientes.aspx.designer.cs">
-      <DependentUpon>Clientes.aspx</DependentUpon>
+    <Compile Include="PaginaAdmin\Clientes1.aspx.designer.cs">
+      <DependentUpon>Clientes1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
@@ -607,6 +655,13 @@
     <Compile Include="PaginaAdmin\Ventas.aspx.designer.cs">
       <DependentUpon>Ventas.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PaginaUser\RegistroCompra.aspx.cs">
+      <DependentUpon>RegistroCompra.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginaUser\RegistroCompra.aspx.designer.cs">
+      <DependentUpon>RegistroCompra.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PanelGeneral.aspx.cs">
       <DependentUpon>PanelGeneral.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -651,6 +706,7 @@
       <DependentUpon>User.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="VentaAdmin\VentaColocar.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

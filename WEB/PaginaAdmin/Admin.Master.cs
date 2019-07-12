@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 
 namespace WEB
 {
@@ -11,6 +12,24 @@ namespace WEB
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["usuario"] != null)
+            {
+                if (Request.Params["UsuarioNombre"] != null)
+                {
+                    lblBienvenido.Text = "Bienvenido " + Request.Params["UsuarioNombre"];
+                    Session["nombre"] = Request.Params["UsuarioNombre"];
+
+                }
+                else
+                {
+                    lblBienvenido.Text = "Bienvenido " + Convert.ToString(Session["nombre"]);
+                }
+            }
+            else
+            {
+                MessageBox.Show("DEBE LOGUEARSE");
+                Response.Redirect("~/Login.aspx");
+            }
 
         }
 

@@ -31,6 +31,8 @@ namespace Negocio
                     art.tipoarticulo = (string)AD.Lector["TipoArticulo"];
                     art.Preciocompra = (decimal)AD.Lector["Preciocompra"];
                     art.Precioventa = (decimal)AD.Lector["Precioventa"];
+                    art.Stock = (int)AD.Lector["Stock"];
+                    art.Imagen= (string)AD.Lector["Imagen"];
                     art.Estado = (bool)AD.Lector["estado"];
                     listado.Add(art);
                 }

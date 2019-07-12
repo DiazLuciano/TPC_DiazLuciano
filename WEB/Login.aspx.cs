@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using Dominio;
 using Negocio;
 using System.Windows;
+using System.Windows.Forms;
 
 namespace WEB
 {
@@ -19,7 +20,8 @@ namespace WEB
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            txtUsuario.Focus();
+            
         }
 
         protected void btnIngresar_Click(object sender, EventArgs e)
@@ -28,31 +30,40 @@ namespace WEB
             UsuarioNegocio usuarioNegocio = new UsuarioNegocio();
             try
             {
-                usuarioCargado.nombre = txtUsuario.Text.Trim();
-                usuarioCargado.contraseña = txtContraseña.Text.Trim();
-                if (usuarioNegocio.ValidarUsuario(usuarioCargado))
+                if (txtUsuario.Text != "" || txtContraseña.Text != "")
                 {
-                    setusuario(usuarioCargado);
-                    if(usuarioCargado.Tipo=="Administrador")
+                    usuarioCargado.nombre = txtUsuario.Text.Trim();
+                    usuarioCargado.contraseña = txtContraseña.Text.Trim();
+                    if (usuarioNegocio.ValidarUsuario(usuarioCargado))
                     {
-                        Session["usuario"] = usuarioCargado;
-                        Response.Redirect("~/PaginaAdmin/Clientes.aspx");
+                        setusuario(usuarioCargado);
+                        if (usuarioCargado.Tipo == "Administrador")
+                        {
+                            Session["usuario"] = usuarioCargado;
+                            Response.Redirect("~/PaginaAdmin/Clientes.aspx?UsuarioNombre=" + usuarioCargado.nombre, false);
+                        }
+                        else
+                        {
+                            Session["usuario"] = usuarioCargado.nombre;
+                            Response.Redirect("~/PaginaUser/Catalogo.aspx?UsuarioNombre=" + usuarioCargado.nombre, false);
+                        }
+
                     }
                     else
                     {
-                        Session["usuario"] = usuarioCargado;
-                        Response.Redirect("~/PaginaUser/Catalogo.aspx");
+                        ClientScript.RegisterStartupScript(typeof(Page), "alert",
+                           "<script language=JavaScript>alert('Usuario Incorrecto');</script>");
                     }
-                    
                 }
                 else
                 {
-                    lblMensaje.Text = "Usuario Incorrecto";
+                    ClientScript.RegisterStartupScript(typeof(Page), "alert",
+                           "<script language=JavaScript>alert('Debe completar los campos');</script>");
                 }
             }
             catch (Exception ex)
             {
-                throw ex;
+                MessageBox.Show("Error" + ex);
             }
         }
     }

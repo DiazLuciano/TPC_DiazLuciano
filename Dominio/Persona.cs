@@ -28,5 +28,7 @@ namespace Dominio
         public IList<Telefono> telefonos { get; set; }
         public bool Estado { get; set; }
 
+
+
     }
 }

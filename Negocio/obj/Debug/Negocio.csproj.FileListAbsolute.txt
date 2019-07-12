@@ -111,21 +111,21 @@ C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug
 C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\Dominio.pdb
 C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\es\Microsoft.Data.Tools.Components.resources.dll
 C:\Users\HP\Desktop\3 Cuatri\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\HP\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+C:\Users\HP\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Users\HP\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+C:\Users\HP\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\HP\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\Negocio.dll.config
 C:\Users\HP\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\Negocio.dll
 C:\Users\HP\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\Negocio.pdb
 C:\Users\HP\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\Dominio.dll
 C:\Users\HP\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\Microsoft.Data.Tools.Components.dll
+C:\Users\HP\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\Microsoft.SqlServer.Types.dll
 C:\Users\HP\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\Dominio.pdb
+C:\Users\HP\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\Dominio.dll.config
 C:\Users\HP\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\es\Microsoft.Data.Tools.Components.resources.dll
 C:\Users\HP\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\obj\Debug\Negocio.csprojAssemblyReference.cache
 C:\Users\HP\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
 C:\Users\HP\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\obj\Debug\Negocio.csproj.CopyComplete
 C:\Users\HP\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\obj\Debug\Negocio.dll
 C:\Users\HP\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\obj\Debug\Negocio.pdb
-C:\Users\HP\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\SqlServerTypes\x64\msvcr120.dll
-C:\Users\HP\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
-C:\Users\HP\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\SqlServerTypes\x86\msvcr120.dll
-C:\Users\HP\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
-C:\Users\HP\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\Microsoft.SqlServer.Types.dll
-C:\Users\HP\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\Negocio.dll.config
-C:\Users\HP\Desktop\3 Cuatri\Prog III\TPC_Diaz-master\Negocio\bin\Debug\Dominio.dll.config

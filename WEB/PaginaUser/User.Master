@@ -21,6 +21,8 @@
 </head>
 <body>
   <form runat="server">
+     
+      <asp:Image ID="Image1" runat="server" Width="1000" Height="200" ImageUrl="~/Imagenes/Portada.jpg" style="margin-left:150px"/>
         <asp:ScriptManager runat="server">
             <Scripts>
                 <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
@@ -42,25 +44,26 @@
         </asp:ScriptManager>
       
         <div class="navbar navbar-inverse navbar-fixed-top">
+            
             <div class="container">
+                <div class="pull-left">
+                    <asp:Label ID="lblBienvenido" runat="server" Font-Size="30px" ForeColor="OldLace"></asp:Label>
+                </div>
                 <div class="pull-right">
-                    <asp:Button ID="btnCerrarSesion" runat="server" Text="Cerrar Sesión" OnClick="btnCerrarSesion_Click" CssClass="btn btn-info"/>
+                    <asp:Button ID="btnCerrarSesion" runat="server" Text="Cerrar Sesión" OnClick="btnCerrarSesion_Click" CssClass="btn btn-info" style="margin-top:10px"/>
                 </div>
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
                       <%--<div>
                         <asp:Label font-size="Large" ID="lblBienvenido" runat="server" Text="Bienvenido" ForeColor="White"></asp:Label>
                     </div>--%>
 
                     <%--<a class="navbar-brand" runat="server" href="~/">Shopping Online</a>--%>
                 </div>
-                <div class="navbar-collapse collapse">
+                <div class="navbar-collapse collapse" >
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/PaginaUser/Catalogo.aspx">Catálogo</a></li>
+                        <li><a runat="server" href="~/PaginaUser/Catalogo.aspx">Contactanos</a></li>
+                        <li><a runat="server" href="~/PaginaUser/Catalogo.aspx">Carrito</a></li>
 
                     </ul>
                 </div>
