@@ -30,14 +30,14 @@
                             <div class="form-group">
                                 <label for="Usuario" class="control-label">Usuario</label>
                                 <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control" placeholder="Ingrese Nombre Usuario"></asp:TextBox>
-                                <span class="help-block"></span>
+                                <%--<span class="help-block"></span>--%>
                                 <asp:RequiredFieldValidator ForeColor="Red" Font-Size="X-Large" Font-Bold="True" runat="server" ControlToValidate="txtNombre"
                                 CssClass="field-validation-error" ErrorMessage="!" ValidationGroup="Continuar" />
                             </div>
                             <div class="form-group">
                                 <label for="password" class="control-label">Password</label>
                                 <asp:TextBox ID="txtContraseña" runat="server" TextMode="Password" CssClass="form-control" placeholder="Ingrese Contraseña"></asp:TextBox>
-                                <span class="help-block"></span>
+                                <%--<span class="help-block"></span>--%>
                                 <asp:RequiredFieldValidator ForeColor="Red" Font-Size="X-Large" Font-Bold="True" runat="server" ControlToValidate="txtContraseña"
                                 CssClass="field-validation-error" ErrorMessage="!" ValidationGroup="Continuar" />
                             </div>

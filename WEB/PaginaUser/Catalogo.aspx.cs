@@ -36,12 +36,6 @@ namespace WEB
                     "<script language=JavaScript>alert('Debe iniciar sesión');</script>");
                 Response.Redirect("~/Login.aspx", false);
             }
-            //else
-            //{
-            //    ClientScript.RegisterStartupScript(typeof(Page), "alert",
-            //        "<script language=JavaScript>alert('Debe loguearse');</script>");
-            //    Response.Redirect("Login.aspx");
-            //}
             
         }
 

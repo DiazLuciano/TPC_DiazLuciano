@@ -20,6 +20,9 @@ namespace WEB
             AD.ejecutarConsulta();
             AD.Lector.Read();
             txtID.Text = AD.Lector["ID"].ToString();
+            //Usuario us = new Usuario();
+            //us = (Usuario)Session["UserReg"];
+            //txtNombre.Text = us.nombre;
 
         }
         private Telefono GetEntityT()
@@ -76,18 +79,22 @@ namespace WEB
         {
             Cliente cli = GetEntityC();
             Telefono tel = GetEntityT();
+            Usuario us = (Usuario)Session["UserReg"];
+            us.DNI = Convert.ToInt64(txtDNI.Text);
+            
 
             ClientesNegocio CN = new ClientesNegocio();
             TelefonoNegocio TN = new TelefonoNegocio();
+            UsuarioNegocio UN = new UsuarioNegocio();
 
             try
             {
 
-                    CN.AgregarCliente(cli);
-                    TN.agregar(tel, cli.DNI);
-                    Response.Write("<script>alert('REGISTRO INGRESADO')</script>");
+                CN.AgregarCliente(cli);
+                TN.agregar(tel, cli.DNI);
+                UN.AgregarUs(us);
 
-                Response.Redirect("Exito.aspx");
+                Response.Redirect("Exito.aspx?ID=" + txtID.Text, false);
 
             }
 

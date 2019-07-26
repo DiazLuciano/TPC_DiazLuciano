@@ -32,6 +32,7 @@
                             <div class="form-group">
                                 <label for="password" class="control-label">Contraeña</label>
                                 <asp:TextBox ID="txtContraseña" runat="server" TextMode="Password" CssClass="form-control" placeholder="Ingrese Contraseña"></asp:TextBox>
+                                <br />
                                 <asp:Button ID="btnIngresar" type="submit" runat="server" Text="Iniciar Sesión" class="btn btn-success btn-block" OnClick="btnIngresar_Click" />
                             </div>
                         </div>

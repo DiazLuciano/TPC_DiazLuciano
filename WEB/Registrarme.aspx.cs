@@ -32,6 +32,7 @@ namespace WEB
                 usuarioCargado.contraseña = txtContraseña.Text.Trim();
                 if (usuarioNegocio.ValidarExisteUser(txtNombre.Text)==true)
                 {
+                    Session["UserReg"] = usuarioCargado;
                     Response.Redirect("~/RegistrarmeUsuario.aspx",false);
                 }
                 else

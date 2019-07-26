@@ -17,27 +17,34 @@ namespace WEB.PaginaUser
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.Params["ID"] == null)
+            if (Sesion.situacion == true)
             {
-                Response.Redirect("Catalogo.aspx");
+                if (Request.Params["ID"] == null)
+                {
+                    Response.Redirect("Catalogo.aspx");
+                }
+                else
+                {
+                    long id = long.Parse(Request.Params["ID"]);
+                    AccesoDatos AD = new AccesoDatos();
+                    AD.setearConsulta("Select * from Articulos where ID = " + id);
+                    AD.abrirConexion();
+                    AD.ejecutarConsulta();
+                    if (AD.Lector.Read())
+                    {
+                        lblIDPro.Text = Convert.ToString(AD.Lector["ID"]);
+                        lblDes.Text = (string)AD.Lector["descripcion"];
+                        lblMarca.Text = (string)AD.Lector["Marca"];
+                        lblPrecio.Text = Convert.ToString(AD.Lector["PrecioVenta"]);
+                        lblCat.Text = (string)AD.Lector["TipoArticulo"];
+                        lblStock.Text = Convert.ToString(AD.Lector["Stock"]);
+                    }
+                    AD.cerrarConexion();
+                }
             }
             else
             {
-                long id = long.Parse(Request.Params["ID"]);
-                AccesoDatos AD = new AccesoDatos();
-                AD.setearConsulta("Select * from Articulos where ID = " + id );
-                AD.abrirConexion();
-                AD.ejecutarConsulta();
-                if(AD.Lector.Read())
-                {
-                    lblIDPro.Text = Convert.ToString(AD.Lector["ID"]);
-                    lblDes.Text = (string)AD.Lector["descripcion"];
-                    lblMarca.Text = (string)AD.Lector["Marca"];
-                    lblPrecio.Text = Convert.ToString(AD.Lector["PrecioVenta"]);
-                    lblCat.Text = (string)AD.Lector["TipoArticulo"];
-                    lblStock.Text = Convert.ToString(AD.Lector["Stock"]);
-                }
-                AD.cerrarConexion();
+                Response.Redirect("~/Login.aspx", false);
             }
         }
 

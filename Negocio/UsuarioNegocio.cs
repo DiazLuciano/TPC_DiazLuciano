@@ -87,5 +87,24 @@ namespace Negocio
             else { return false; }
 
         }
+        public void AgregarUs(Usuario us)
+        {
+            AccesoDatos AD = new AccesoDatos();
+            AD.setearConsulta("Insert into Usuarios (DNI,Nombre,Contraseña,Tipo,Estado) values (" + us.DNI + ",'" + us.nombre + "','" + us.contraseña + "','Usuario',1)");
+            try
+            {
+                AD.abrirConexion();
+                AD.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                AD.cerrarConexion();
+            }
+
+        }
     }
 }

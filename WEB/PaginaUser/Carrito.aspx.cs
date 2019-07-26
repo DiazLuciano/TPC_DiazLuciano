@@ -15,18 +15,25 @@ namespace WEB.PaginaUser
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!Page.IsPostBack)
+            if (Sesion.situacion == true)
             {
-                UsuarioNegocio UN = new UsuarioNegocio();
-                //instanciar detallenegocio
-                DetalleNegocio tabla = new DetalleNegocio((DataTable)Session["carrito"]);
-                //listar
-                GridView1.DataSource = tabla.getRegistro;
-                GridView1.DataBind();
-                //mostrar total
-                lblTotal.Text = tabla.totalizar().ToString();
+                if (!Page.IsPostBack)
+                {
+                    UsuarioNegocio UN = new UsuarioNegocio();
+                    //instanciar detallenegocio
+                    DetalleNegocio tabla = new DetalleNegocio((DataTable)Session["carrito"]);
+                    //listar
+                    GridView1.DataSource = tabla.getRegistro;
+                    GridView1.DataBind();
+                    //mostrar total
+                    lblTotal.Text = tabla.totalizar().ToString();
 
-                txtDNI.Text = UN.buscarUser((string)Session["nombre"]).ToString();
+                    txtDNI.Text = UN.buscarUser((string)Session["nombre"]).ToString();
+                }
+            }
+            else
+            {
+                Response.Redirect("~/Login.aspx", false);
             }
         }
 

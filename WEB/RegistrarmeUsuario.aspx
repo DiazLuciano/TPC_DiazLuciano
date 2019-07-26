@@ -101,7 +101,7 @@
                                 <label style="color: azure">CUIL/CUIT</label>
                             </div>
                             <div class="form-group">
-                                <asp:TextBox ID="txtCUILCUIT" runat="server" Width="100px" Text=""></asp:TextBox>
+                                <asp:TextBox ID="txtCUILCUIT" runat="server" Width="100px" Text="" TextMode="Number"></asp:TextBox>
                                 <asp:RequiredFieldValidator ForeColor="Red" Font-Size="X-Large" Font-Bold="True" runat="server" ControlToValidate="txtCUILCUIT"
                                 CssClass="field-validation-error" ErrorMessage="!" ValidationGroup="Registrar"/>
                             </div>
