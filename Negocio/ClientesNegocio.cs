@@ -72,6 +72,7 @@ namespace Negocio
             AD.abrirConexion();
             AD.ejecutarConsulta();
             id = (long)AD.Lector["ID"];
+            AD.cerrarConexion();
             return id;
         }
         public void AgregarCliente(Cliente cli)
@@ -79,7 +80,7 @@ namespace Negocio
             AccesoDatos AD = new AccesoDatos();
             TelefonoNegocio TN = new TelefonoNegocio();
 
-            AD.setearConsulta("Exec SP_InsertarClientes " + cli.DNI + ",'" + cli.nombre + "','" + cli.apellido + "','" + cli.genero + "','" + cli.fnac + "'," + cli.edad + ",'" + cli.Email + "','" + cli.direccion + "'," + cli.CP + ",'" + cli.Localidad + "' ,'" + cli.Ciudad + "' ,'" + cli.Provincia + "' ,'" + cli.tipo + "' ," + cli.CUILCUIT + ",'" + cli.razonsocial + "'");
+            AD.setearConsulta("Exec SP_InsertarClientes " + cli.DNI + ",'" + cli.nombre + "','" + cli.apellido + "','" + cli.genero + "','" + cli.fnac + "'," + cli.edad + ",'" + cli.Email + "','" + cli.direccion + "'," + cli.CP + ",'" + cli.Localidad + "' ,'" + cli.Ciudad + "' ,'" + cli.Provincia + "' ," + cli.CUILCUIT + "");
 
             try
             {

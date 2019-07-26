@@ -21,6 +21,7 @@ namespace WEB
         protected void Page_Load(object sender, EventArgs e)
         {
             txtUsuario.Focus();
+            Sesion.cambiarEstado(false);
             
         }
 
@@ -39,11 +40,13 @@ namespace WEB
                         setusuario(usuarioCargado);
                         if (usuarioCargado.Tipo == "Administrador")
                         {
+                            Sesion.cambiarEstado(true);
                             Session["usuario"] = usuarioCargado;
                             Response.Redirect("~/PaginaAdmin/Clientes.aspx?UsuarioNombre=" + usuarioCargado.nombre, false);
                         }
                         else
                         {
+                            Sesion.cambiarEstado(true);
                             Session["usuario"] = usuarioCargado.nombre;
                             Response.Redirect("~/PaginaUser/Catalogo.aspx?UsuarioNombre=" + usuarioCargado.nombre, false);
                         }

@@ -16,7 +16,8 @@ namespace WEB
         DataTable carrito = new DataTable();
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            if (Sesion.situacion==true)
+            {
                 if (!Page.IsPostBack)
                 {
 
@@ -28,13 +29,19 @@ namespace WEB
                     }
 
                 }
-            
+            }
             else
             {
                 ClientScript.RegisterStartupScript(typeof(Page), "alert",
-                    "<script language=JavaScript>alert('Debe loguearse');</script>");
-                Response.Redirect("Login.aspx");
+                    "<script language=JavaScript>alert('Debe iniciar sesión');</script>");
+                Response.Redirect("~/Login.aspx", false);
             }
+            //else
+            //{
+            //    ClientScript.RegisterStartupScript(typeof(Page), "alert",
+            //        "<script language=JavaScript>alert('Debe loguearse');</script>");
+            //    Response.Redirect("Login.aspx");
+            //}
             
         }
 
@@ -67,6 +74,11 @@ namespace WEB
                 string id = ((Label)e.Item.FindControl("lblID")).Text;
                 Response.Redirect("RegistroCompra.aspx?ID=" + id,false);
             }
+        }
+
+        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("Carrito.aspx");
         }
     }
 }

@@ -8,6 +8,14 @@
     <title>Registrarme</title>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="Content/Style.css" rel="stylesheet" />
+    <style type="text/css">
+        .auto-style1 {
+            position: relative;
+            padding: 15px;
+            left: -30px;
+            top: -30px;
+        }
+    </style>
 </head>
 <body class="bg-black" style="background-image:url('Imagenes/TreeView.jpg')">
     <form id="form1" runat="server">
@@ -16,21 +24,27 @@
         </div>
         <div>
             <div style="position:absolute; z-index:1;" id= "layer1">
-                <div class="modal-body" style="margin: 30px 0px 0px 400px;">
+                <div class="auto-style1" style="margin: 0px 0px 0px 400px;">
                     <div style="margin-left:150px">
                         <h1>Registro de Usuario</h1>
                             <div class="form-group">
                                 <label for="Usuario" class="control-label">Usuario</label>
-                                <asp:TextBox ID="txtNombre1" runat="server" CssClass="form-control" placeholder="Ingrese Nombre Usuario"></asp:TextBox>
+                                <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control" placeholder="Ingrese Nombre Usuario"></asp:TextBox>
                                 <span class="help-block"></span>
+                                <asp:RequiredFieldValidator ForeColor="Red" Font-Size="X-Large" Font-Bold="True" runat="server" ControlToValidate="txtNombre"
+                                CssClass="field-validation-error" ErrorMessage="!" ValidationGroup="Continuar" />
                             </div>
                             <div class="form-group">
                                 <label for="password" class="control-label">Password</label>
                                 <asp:TextBox ID="txtContraseña" runat="server" TextMode="Password" CssClass="form-control" placeholder="Ingrese Contraseña"></asp:TextBox>
                                 <span class="help-block"></span>
+                                <asp:RequiredFieldValidator ForeColor="Red" Font-Size="X-Large" Font-Bold="True" runat="server" ControlToValidate="txtContraseña"
+                                CssClass="field-validation-error" ErrorMessage="!" ValidationGroup="Continuar" />
                             </div>
                             <div class="form-group">
-                                <asp:Button ID="btnSiguiente" type="submit" runat="server" Text="Siguiente" class="btn btn-success btn-block" OnClick="btnSiguiente_Click" />
+                                <asp:Button ID="btnSiguiente" ValidationGroup="Continuar" type="submit" runat="server" Text="Siguiente" class="btn btn-success btn-block" OnClick="btnSiguiente_Click" />
+                                <br />
+                                <asp:Button ID="btnRegresar"  runat="server" Text="Regresar" class="btn btn-danger btn-block" OnClick="btnRegresar_Click"  />
                             </div>
                             </div>
                     </div>

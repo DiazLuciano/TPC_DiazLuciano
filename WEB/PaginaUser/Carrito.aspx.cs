@@ -26,7 +26,7 @@ namespace WEB.PaginaUser
                 //mostrar total
                 lblTotal.Text = tabla.totalizar().ToString();
 
-                txtDNI.Text = UN.buscarUser((string)Session["usuario"]).ToString();
+                txtDNI.Text = UN.buscarUser((string)Session["nombre"]).ToString();
             }
         }
 

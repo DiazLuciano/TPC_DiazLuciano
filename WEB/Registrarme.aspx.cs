@@ -28,16 +28,16 @@ namespace WEB
             UsuarioNegocio usuarioNegocio = new UsuarioNegocio();
             try
             {
-                usuarioCargado.nombre = txtNombre1.Text.Trim();
+                usuarioCargado.nombre = txtNombre.Text.Trim();
                 usuarioCargado.contraseña = txtContraseña.Text.Trim();
-                if (usuarioNegocio.ValidarExisteUser(txtNombre1.Text)==true)
+                if (usuarioNegocio.ValidarExisteUser(txtNombre.Text)==true)
                 {
                     Response.Redirect("~/RegistrarmeUsuario.aspx",false);
                 }
                 else
                 {
-                    MessageBox.Show("Este Usuario Ya Existe");
-                                 
+                    ClientScript.RegisterStartupScript(typeof(Page), "alert",
+                    "<script language=JavaScript>alert('Este usuario ya existe, elija otro por favor.');</script>");
                 }
             }
             catch (Exception ex)
@@ -46,6 +46,11 @@ namespace WEB
 
             }
             
+        }
+
+        protected void btnRegresar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Login.aspx");
         }
     }
 }

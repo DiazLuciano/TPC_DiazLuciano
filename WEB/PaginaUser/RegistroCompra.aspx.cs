@@ -10,6 +10,7 @@ using Negocio;
 using System.Data;
 using WEB.CarritoCodigo;
 
+
 namespace WEB.PaginaUser
 {
     public partial class RegistroCompra : System.Web.UI.Page
@@ -67,7 +68,11 @@ namespace WEB.PaginaUser
             else
             {
                 ClientScript.RegisterStartupScript(typeof(Page), "alert",
-                    "<script language=JavaScript>alert('No ha ingresado una cantidad valida');</script>");
+                    "<script language=JavaScript>alert('No ha ingresado una cantidad valida')</script>");
+                //                < div class="alert alert-primary" role="alert">
+                //  A simple primary alert—check it out!
+                //</div>
+                //alert('No ha ingresado una cantidad valida')
             }
             
 

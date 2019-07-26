@@ -120,7 +120,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Exito.aspx" />
+    <Content Include="Imagenes\CarroLogo.png" />
     <Content Include="Imagenes\Portada.jpg" />
+    <Content Include="Imagenes\shoppinglogo.jpg" />
     <Content Include="PaginaAdmin\Articulos.aspx" />
     <Content Include="PaginaAdmin\Clientes.aspx" />
     <Content Include="PaginaAdmin\Facturacion.aspx" />
@@ -510,6 +513,13 @@
     <Compile Include="CarritoCodigo\Detalle.cs" />
     <Compile Include="CarritoCodigo\DetalleNegocio.cs" />
     <Compile Include="CarritoCodigo\Pedido.cs" />
+    <Compile Include="Exito.aspx.cs">
+      <DependentUpon>Exito.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Exito.aspx.designer.cs">
+      <DependentUpon>Exito.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PaginaAdmin\Articulos.aspx.cs">
       <DependentUpon>Articulos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -705,6 +715,7 @@
     <Compile Include="PaginaUser\User.Mobile.Master.designer.cs">
       <DependentUpon>User.Mobile.Master</DependentUpon>
     </Compile>
+    <Compile Include="Sesion.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="VentaAdmin\VentaColocar.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">

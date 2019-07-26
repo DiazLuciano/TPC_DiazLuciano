@@ -43,14 +43,14 @@
             </tr>
             <tr>
                 <td style="width: 98px">
-                    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Grabar" />
+                    <asp:Button ID="Button1" class="btn btn-primary" runat="server" OnClick="Button1_Click" Text="Grabar" />
                 </td>
                 <td colspan="2" style="width: 98px">
                     &nbsp;</td>
                 <td style="width: 98px">
                     &nbsp;</td>
                 <td>
-                    <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Regresar" />
+                    <asp:Button ID="Button2" class="btn btn-danger" runat="server" OnClick="Button2_Click" Text="Regresar" />
                 </td>
                 <td colspan="2">
                     &nbsp;</td>
