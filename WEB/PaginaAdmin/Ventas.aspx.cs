@@ -15,24 +15,34 @@ namespace WEB.PaginaAdmin
         public static double total;
         protected void Page_Load(object sender, EventArgs e)
         {
-            txtTotal.Text = "$";
-            AccesoDatos AD = new AccesoDatos();
+            if (Sesion.situacion == true)
+            {
 
-            try
-            {
-                AD.setearConsulta("Select *from Usuarios where ID = " + UsuarioNegocio.Codigo);
-                AD.abrirConexion();
-                AD.ejecutarConsulta();
-                AD.Lector.Read();
-                txtLeAtiende.Text = (string)AD.Lector["Nombre"];
+
+                txtTotal.Text = "$";
+                AccesoDatos AD = new AccesoDatos();
+
+                try
+                {
+                    AD.setearConsulta("Select *from Usuarios where ID = " + UsuarioNegocio.Codigo);
+                    AD.abrirConexion();
+                    AD.ejecutarConsulta();
+                    AD.Lector.Read();
+                    txtLeAtiende.Text = (string)AD.Lector["Nombre"];
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    AD.cerrarConexion();
+                }
             }
-            catch (Exception)
+            else
             {
-                throw;
-            }
-            finally
-            {
-                AD.cerrarConexion();
+                Response.Redirect("~/Login.aspx", false);
+
             }
         }
 

@@ -13,7 +13,13 @@ namespace WEB.PaginaAdmin
         Pedido p = new Pedido();
         protected void Page_Load(object sender, EventArgs e)
         {
-  
+            if (Sesion.situacion == true)
+            {
+            }
+            else
+            {
+                Response.Redirect("~/Login.aspx", false);
+            }
         }
 
         protected void btnBuscar_Click(object sender, EventArgs e)

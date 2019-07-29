@@ -16,11 +16,18 @@ namespace WEB.PaginaAdmin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Page.IsPostBack)
+            if (Sesion.situacion == true)
             {
-                lblVendedor.Text = Convert.ToString(Session["nombre"]);
-                txtDNI.Focus();
-                Session["lista"] = new List<VentaColocar>();
+                if (!Page.IsPostBack)
+                {
+                    lblVendedor.Text = Convert.ToString(Session["nombre"]);
+                    txtDNI.Focus();
+                    Session["lista"] = new List<VentaColocar>();
+                }
+            }
+            else
+            {
+                Response.Redirect("~/Login.aspx", false);
             }
         }
 

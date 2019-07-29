@@ -20,6 +20,7 @@ namespace WEB
             AD.ejecutarConsulta();
             AD.Lector.Read();
             txtID.Text = AD.Lector["ID"].ToString();
+            txtDNI.Focus();
             //Usuario us = new Usuario();
             //us = (Usuario)Session["UserReg"];
             //txtNombre.Text = us.nombre;
@@ -52,8 +53,6 @@ namespace WEB
             cli.Email = txtEmail.Text;
             cli.genero = Convert.ToChar(ddlSexo.SelectedValue == "Femenino" ? 'F' : ddlSexo.SelectedValue == "Masculino" ? 'F' : 'O');
             cli.Estado = true;
-            
-
             return cli;
         }
 
@@ -64,10 +63,21 @@ namespace WEB
 
         protected void btnCalcularEdad_Click(object sender, EventArgs e)
         {
+
             try
             {
                 DateTime fechaNac = Convert.ToDateTime(txtFecha.Text);
-                txtEdad.Text = (DateTime.Today.AddTicks(-fechaNac.Ticks).Year - 1).ToString();
+
+                if (fechaNac.Year < DateTime.Today.Year)
+                {
+                    txtEdad.Text = (DateTime.Today.AddTicks(-fechaNac.Ticks).Year - 1).ToString();
+                }
+                else
+                {
+                    ClientScript.RegisterStartupScript(typeof(Page), "alert",
+                           "<script language=JavaScript>alert('Año Invalido');</script>");
+                }
+            
             }
             catch (Exception)
             {

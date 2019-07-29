@@ -15,13 +15,19 @@ namespace WEB
         protected void Page_Load(object sender, EventArgs e)
         {
             AccesoDatos AD = new AccesoDatos();
-
-            if (!Page.IsPostBack) //nos aseguramos que se haga una unica vez
+            if (Sesion.situacion == true)
             {
+                if (!Page.IsPostBack) //nos aseguramos que se haga una unica vez
+                {
 
-                DataSet ds = AD.dataSet("select *from Articulos");
-                dgvArticulos.DataSource = ds.Tables[0];
-                dgvArticulos.DataBind();
+                    DataSet ds = AD.dataSet("select *from Articulos");
+                    dgvArticulos.DataSource = ds.Tables[0];
+                    dgvArticulos.DataBind();
+                }
+            }
+            else
+            {
+                Response.Redirect("~/Login.aspx", false);
             }
         }
         protected void dgvArticulos_RowCommand(object sender, GridViewCommandEventArgs e)
